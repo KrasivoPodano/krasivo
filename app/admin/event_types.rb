@@ -8,7 +8,7 @@ ActiveAdmin.register EventType do
    end
 
    form do |f|  
-     f.inputs "Details" do
+     f.inputs t('properties') do
        f.input :title
      end
      f.actions

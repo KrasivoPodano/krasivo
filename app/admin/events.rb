@@ -12,16 +12,16 @@ ActiveAdmin.register Event do
   end
   
   form do |f|  
-    f.inputs "Details" do
+    f.inputs t('properties') do
       f.input :title
       f.input :date, :as => :datepicker
       f.input :text
     end
     
-    f.inputs "Album" do
+    f.inputs t('album') do
       f.input :album_id, :as => :select, :collection => Album.all
     end
-    f.inputs "Type" do
+    f.inputs t('event_type') do
       f.input :event_type_id, :as => :select, :collection => EventType.all
     end
     

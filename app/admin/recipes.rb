@@ -11,7 +11,7 @@ ActiveAdmin.register Recipe do
    form do |f|  
      f.inputs "Details" do
        f.input :title
-       f.input :text
+       f.input :text, :as => :ckeditor, :label => false
      end
      f.actions
    end
@@ -19,7 +19,9 @@ ActiveAdmin.register Recipe do
   show do
     attributes_table do
       row :title
-      row :text
+      row :text do |row|
+        row.text.html_safe
+      end
     end  
    end
 end

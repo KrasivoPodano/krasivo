@@ -1,0 +1,43 @@
+ru:
+  destroy: "Удалить"
+  images: "Изображения"
+  details: "Детали"
+  properties: "Свойства"
+  title: "Название"
+  image: "Изображение"  
+  event_type: "Тип мероприятия"
+  album: "Альбом"
+  activerecord:
+    models: 
+      album:
+        one: "Альбом"
+        few: "Альбомы"
+        many: "Альбомов"
+        other: "Альбомы"
+      photo: "Фото"
+      event_type:
+        one: "Тип мероприятия"
+        other: "Типы мероприятий"
+      event:
+        one: "Мероприятие"
+        other: "Мероприятия"
+      recipe:
+        one: "Рецепт"
+        other: "Рецепты"
+    attributes:
+      recipe:
+        title: "Название"
+        text: "Описание"        
+      event:
+        title: "Название"
+        date: "Дата"
+        text: "Описание"  
+      event_type:
+        title: "Название"
+      photo:
+        title: "Название"
+        image: "Изображение"
+      album:
+        title: "Название"
+        text: "Описание"
+        
