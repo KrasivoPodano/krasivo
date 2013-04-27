@@ -15,10 +15,11 @@
   document.createElement('footer');
   </script>
   <![endif]-->
+<%= yield :head %>
 </head>
 <body>
-
+<%= render 'layouts/order_form' %>
 <%= yield %>
-
+<%= render 'layouts/footer' %>
 </body>
 </html>

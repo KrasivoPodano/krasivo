@@ -2,8 +2,11 @@ Krasivo::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
+
+  match '/contacts' => 'static_pages#contacts'
+
   root :to => 'static_pages#home'
-  
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

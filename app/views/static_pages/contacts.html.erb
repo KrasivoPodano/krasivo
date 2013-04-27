@@ -1,0 +1,168 @@
+<% content_for :head do %>
+<script src="http://api-maps.yandex.ru/2.0/?load=package.standard&mode=debug&lang=ru-RU" type="text/javascript"></script>
+<script type="text/javascript">
+    /* При успешной загрузке API выполняется
+       соответствующая функция */
+    ymaps.ready(function () { 
+       var myMap = new ymaps.Map("YMapsID", {
+// Центр карты
+center: [59.9160,30.3091],
+// Коэффициент масштабирования 
+zoom: 17,
+// Тип карты
+type: "yandex#map"
+}
+);
+    var myPlacemark = new ymaps.Placemark(
+// Координаты метки
+[59.9167,30.3081], {
+    /* Свойства метки:
+       - контент значка метки */
+    iconContent: "",
+    // - контент балуна метки
+    balloonContent: "Красиво подано"
+}, {
+    /* Опции метки:
+       - флаг перетаскивания метки */
+    draggable: false,
+    /* - показывать значок метки 
+       при открытии балуна */
+    hideIconOnBalloonOpen: true
+}
+);
+
+// Добавление метки на карту
+myMap.geoObjects.add(myPlacemark);
+    
+    
+    });
+</script>
+<% end %>
+
+<header>
+    <div class="container">
+
+        <div class="links">
+            <a href="#">фуд-студия</a>
+            <a href="#">кейтеринг</a>
+        </div>
+        <nav class="header-menu">
+            <span><a href="#">о школе</a></span>
+            <span><a href="#">календарь</a></span>
+            <span><a href="#">услуги</a></span>
+            <span><a href="#">заказать</a></span>
+            <span><a href="#">рецепты</a></span>
+            <span><a class="active" href="#">контакты</a></span>
+        </nav>
+        <div class="header-contacts">
+            <span class="phones">812 964 76 77</span>
+            <br />
+            <a href="#">карта проезда</a>
+            <br />
+            <a href="#">все события школы</a>
+        </div>
+        <a href="#" class="logo"><img src="assets/logo.png" alt="" /></a>
+        <div class="header-text">
+            Наша кулинарная школа приглашает вас пройти обучение в рамках предлагаемых занятиях и совершенствовать свои кулинарные умения на наших мастер классах. бла бла бла
+        </div>
+        <a href="#"  class="hider-slider show"><span>развернуть карту</span></a>
+    </div>
+</header>
+<div class="content">
+    <div class="fotorama-container map">
+       <div id="YMapsID" style="height: 750px;"></div>
+    </div>
+    <div class="container">
+
+        <aside>
+            <div class="event-info">
+                <p>
+                    Кстати, у нас есть кое-что:
+                </p>
+                <p>
+                    <span class="strong">18 апреля — курс лепки пельменей!</span>
+                </p>
+                <p>
+                    стоимость: <span class="strong">17000 <span class="b-rub">Р</span></span>
+                </p>
+                <p>
+                    идут: <span class="strong">17 человек</span>
+                </p>
+
+                <p>
+                    <a href="#">Подробнее</a>
+                </p>
+                <p>
+                    <a href="#" class="button-blue">я пойду!</a>  <a href="#" class="button-blue active">я записался</a>
+                    <br />
+                </p>
+                <p>
+                    <a href="#">И ещё 5 событий</a>
+                </p>
+            </div>
+
+        </aside>
+        <section class="event-main">
+            <h1>наш адрес — не дом и не улица!</h1>
+
+            <h3>наш адрес:</h3>
+
+            <p>
+                Измайловский проспект, 2а
+            </p>
+
+            <h3>Телефон для связи:</h3>
+            <p>
+                812 964 7677
+                <br />
+                812 964 7667
+            </p>
+
+            <h3>скайп для связи:</h3>
+
+            <a href="skype:krasivopodano">krasivopodano</a>
+
+            <div class="buf"></div>
+            <h3 class="back-info">в крайнем случае,
+            <br />
+            не обламывайтесь, и..</h3>
+
+            <a class="comments read button-back" href="#"><span>Напишите нам здесь!</span></a>
+        </section>
+        <div class="buf"></div>
+    </div>
+
+    <div class="blocks-bottom inner-page">
+        <div class="block">
+            <a href="#"><img src="assets/demo1.jpg" alt="" /></a>
+            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
+            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+            </p>
+            <a href="#">Подробнее</a>
+        </div>
+        <div class="block">
+            <a href="#"><img src="assets/demo1.jpg" alt="" /></a>
+            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
+            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+            </p>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+            </p>
+            <a href="#">Подробнее</a>
+        </div>
+        <div class="block">
+            <a href="#"><img src="assets/demo1.jpg" alt="" /></a>
+            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
+            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+            </p>
+            <a href="#">Подробнее</a>
+        </div>
+
+    </div>
+</div>

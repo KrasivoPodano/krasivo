@@ -80,7 +80,7 @@ var i = 0;
 		i++;
 		}
 	})
-	$(".removephone").live('click', function(e) {
+	$(".removephone").bind('click', function(e) {
 		e.preventDefault();
 		$(this).parent().remove();
 		i--;
