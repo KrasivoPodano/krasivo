@@ -31,7 +31,10 @@ ru:
       event:
         title: "Название"
         date: "Дата"
-        text: "Описание"  
+        text: "Описание" 
+        shorttext: "Текст для главной" 
+        eventdetails: "Детали занятия"
+        image: "Изображение"
       event_type:
         title: "Название"
       photo:

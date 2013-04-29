@@ -17,8 +17,11 @@
                     </div>
                     <div class="slide-text">
                         <h2><%= event.title %></h2>
-                        <span class="slide-date"><%= event.date %></span>
-                        <p><%= event.text %></p>
+                        <span class="slide-date"><%= Russian::strftime(event.date, "%d %B") %><% if event.eventdetails? %>: 
+						<%= event.eventdetails %>
+						<% end %>
+						</span>
+                        <p><%= event.shorttext %></p>
                         <a href="#" class="button-blue active">подробнее</a>
                     </div>
                 </div>

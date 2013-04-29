@@ -15,7 +15,9 @@ ActiveAdmin.register Event do
     f.inputs t('properties') do
       f.input :title
       f.input :date, :as => :datepicker
-      f.input :text
+      f.input :shorttext, :input_html => { :rows => 1  }
+      f.input :eventdetails, :input_html => { :rows => 1  }
+      f.input :text, :as => :ckeditor, :label => false
       f.input :main
       f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:thumb))
     end
