@@ -86,7 +86,7 @@ var i = 0;
 		i--;
 	})
 	
-	$(".button-back").click(function(e) {
+	$(".button-back, .order").click(function(e) {
 		e.preventDefault();
 		$(".blue").show();
 		$(".form").show();

@@ -5,12 +5,12 @@
             <a href="#">кейтеринг</a>
         </div>
         <nav class="header-menu">
-            <span><a href="#">о школе</a></span>
+            <span><%= link_to "события", "/", :class => ('active' if controller?("static_pages") && action?("home")) %></span>
             <span><a href="#">календарь</a></span>
             <span><a href="#">услуги</a></span>
-            <span><a href="#">заказать</a></span>
+            <span><a href="#" class="order">заказать</a></span>
             <span><a href="#">рецепты</a></span>
-            <span><a class="active" href="#">контакты</a></span>
+            <span><%= link_to "контакты", contacts_path, :class => ('active' if controller?("static_pages") && action?("contacts")) %></span>
         </nav>
         <div class="header-contacts">
             <span class="phones">812 964 76 77</span>
@@ -19,10 +19,12 @@
             <br />
             <a href="#">все события школы</a>
         </div>
-        <a href="#" class="logo"><img src="assets/logo.png" alt="" /></a>
+        <a href="/" class="logo"><img src="assets/logo.png" alt="" /></a>
         <div class="header-text">
             Наша кулинарная школа приглашает вас пройти обучение в рамках предлагаемых занятиях и совершенствовать свои кулинарные умения на наших мастер классах. бла бла бла
         </div>
-
+		<% if controller.action_name == 'contacts' %>
+		<a href="#"  class="hider-slider show"><span>развернуть карту</span></a>
+		<% end %>
     </div>
 </header>
