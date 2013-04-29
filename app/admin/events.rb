@@ -16,6 +16,8 @@ ActiveAdmin.register Event do
       f.input :title
       f.input :date, :as => :datepicker
       f.input :text
+      f.input :main
+      f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:thumb))
     end
     
     f.inputs t('album') do
@@ -34,6 +36,10 @@ ActiveAdmin.register Event do
     attributes_table do
       row :title
       row :date
+      row :main
+      row :image do |row|
+        if row.image? then image_tag(row.image.url(:thumb)) end
+        end
       row :text do |row|
         row.text.html_safe
       end

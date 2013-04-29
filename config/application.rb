@@ -31,7 +31,6 @@ module Krasivo
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :ru
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -58,5 +57,19 @@ module Krasivo
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.before_configuration do
+      I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+      I18n.locale = :ru
+      I18n.default_locale = :ru
+      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+      config.i18n.locale = :ru
+      # bypasses rails bug with i18n in production\
+      I18n.reload!
+      config.i18n.reload!
+    end
+
+    config.i18n.locale = :ru
+    config.i18n.default_locale = :ru
   end
 end

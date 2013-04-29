@@ -557,12 +557,6 @@ span.phones{
 	padding-top:550px;
 	color:#fffffd;
 }
-#slide-1{
-	background:url('slide1.jpg') center top no-repeat;
-}
-#slide-2{
-	background:url('slide2.jpg') center top no-repeat;
-}
 .slidesjs-container{
 	min-height:749px;
 }

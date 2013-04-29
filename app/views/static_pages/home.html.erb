@@ -4,7 +4,8 @@
         <div class="fotorama" data-width="100%" data-height="750" data-aspectRatio="1.5"
         data-minHeight="750" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0"
         data-shadows="false" data-cropToFit="true">
-        <div class="slide" id="slide-1">
+		<% @main.each do |event| %>
+        <div class="slide" style="background:url(<%= event.image.url(:medium) %>);">
             <div class="slide-content">
                 <div class="container">
                     <div class="slide-buttons">
@@ -15,37 +16,15 @@
                         <a class="comments write" href="#"><span>комментировать</span></a>
                     </div>
                     <div class="slide-text">
-                        <h2>Мастер-класс по приготовлению праздничного ужина к 8 марта!</h2>
-                        <span class="slide-date">12 апреля: 4 занятия по 2,5–3 часа</span>
-                        <p>
-                            Будем учиться готовить изысканную итальянскую закуску, нежнейшей рулет из индейки с вялеными томатами и десерт Тирамису.
-                        </p>
+                        <h2><%= event.title %></h2>
+                        <span class="slide-date"><%= event.date %></span>
+                        <p><%= event.text %></p>
                         <a href="#" class="button-blue active">подробнее</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="slide" id="slide-2">
-            <div class="slide-content">
-                <div class="container">
-                    <div class="slide-buttons">
-                        <a href="#" class="button-blue">я пойду!</a>
-                        <br />
-                        <a href="#">15 человек уже записались</a>
-                        <a class="comments read" href="#"><span>15 комментариев</span></a>
-                        <a class="comments write" href="#"><span>комментировать</span></a>
-                    </div>
-                    <div class="slide-text">
-                        <h2>Мастер-класс по приготовлению праздничного ужина к 23 февраля!</h2>
-                        <span class="slide-date">12 апреля: 4 занятия по 2,5–3 часа</span>
-                        <p>
-                            Будем учиться готовить изысканную итальянскую закуску, нежнейшей рулет из индейки с вялеными томатами и десерт Тирамису.
-                        </p>
-                        <a href="#" class="button-blue active">подробнее</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  	<% end %>
     </div>
 </div>
     <div class="blocks-main">
