@@ -7,7 +7,7 @@
 .jScrollPaneDrag,
 .jScrollArrowUp,
 .jScrollArrowDown {
-	background: url(images/arr.png) 15px 11px no-repeat;
+	background: url(arr.png) 15px 11px no-repeat;
 }
 .cusel { /* общий вид селекта включая стрелку справа */
 margin-top:5px;
@@ -86,7 +86,7 @@ color:#249ee7;
 */
 .classDisCusel,
 .classDisCusel .cuselFrameRight {
-	background-image: url(../images/selects-2-dis.png) !important;
+	background-image: url(selects-2-dis.png) !important;
 	cursor: default;
 	color: #ccc;
 }
