@@ -122,7 +122,7 @@ var i = 0;
 		})
 		$(this).val(str);
 	})
-	$("input:text").live("click", function(){
+	$("input:text").bind("click", function(){
 		if ($(this).val() == $(this).data("first")){
 			$(this).val("");
 		}

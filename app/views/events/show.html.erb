@@ -1,0 +1,106 @@
+<div class="content">
+    <div class="fotorama-container">
+        <div class="fotorama" data-width="100%" data-height="750" data-aspectRatio="1.5"
+        data-minHeight="750" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0"
+        data-shadows="false" data-cropToFit="true">
+		    <% @photos.each do |photo| %>
+			<%= image_tag(photo.image.url(:medium)) %>
+            <% end %>
+        </div>
+    </div>
+    <div class="container">
+        <aside>
+
+            <script type="text/javascript" src="http://vk.com/js/api/openapi.js?93"></script>
+
+<!-- VK Widget -->
+<div id="vk_groups"></div>
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "330", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 51178669);
+</script>
+        </aside>
+        <section class="event-main">
+            <h1>Мастер-класс по приготовлению праздничного ужина к 8 марта!</h1>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров.Научиться готовить может каждый.
+            </p>
+
+            <h3>Программа курса</h3>
+
+            <h4>День первый</h4>
+            <p>
+                Каша рассыпчатая гречневая 223 ккал
+                <br />
+                Салат из капусты с помидорами и яблоками 47 ккал
+                <br />
+                Суп-харчо 47.06 ккал
+                <br />
+                Узбекский плов 103 ккал
+                <br />
+                Печёные бананы по-карибски 190 ккал
+            </p>
+
+            <h4>День второй</h4>
+            <p>
+                Каша рассыпчатая рисовая 206 ккал
+                <br />
+                Салат из макарон, ветчины и овощей 138 ккал
+                <br />
+                Куриный суп по-французски 49 ккал
+                <br />
+                Куриное филе в остром соусе с ананасами 76 ккал
+                <br />
+                Амброзия (фруктовый салат) 94 ккал
+            </p>
+
+            <h4>День третий</h4>
+            <p>
+                Каша овсяная с грушей 178 ккал
+                <br />
+                Салат из цветной капусты, помидоров и зелени 39 ккал
+                <br />
+                Уха с грибами 42 ккал
+                <br />
+                Треска по-польски 102 ккал
+                <br />
+                Персиковое граните 55 ккал
+                <br />
+            </p>
+        </section>
+        <div class="buf"></div>
+    </div>
+
+    <div class="blocks-bottom inner-page">
+        <div class="block">
+            <a href="#"><img src="assets/demo1.jpg" alt="" /></a>
+            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
+            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+            </p>
+            <a href="#">Подробнее</a>
+        </div>
+        <div class="block">
+            <a href="#"><img src="assets/demo1.jpg" alt="" /></a>
+            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
+            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+            </p>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+            </p>
+            <a href="#">Подробнее</a>
+        </div>
+        <div class="block">
+            <a href="#"><img src="assets/demo1.jpg" alt="" /></a>
+            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
+            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
+            <p>
+                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+            </p>
+            <a href="#">Подробнее</a>
+        </div>
+
+    </div>
+</div>

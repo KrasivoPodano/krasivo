@@ -1,7 +1,10 @@
 Krasivo::Application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
+  get "events/show"
 
+  mount Ckeditor::Engine => '/ckeditor'
+  
+  match 'events/:id' => 'events#show', :as => :event
 
   match '/contacts' => 'static_pages#contacts'
 
