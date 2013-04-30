@@ -80,9 +80,9 @@ var i = 0;
 		i++;
 		}
 	})
-	$(".removephone").bind('click', function(e) {
+	$(".removephone").on('click', function(e) {
 		e.preventDefault();
-		$(this).parent().remove();
+		$(this).parent().hide();
 		i--;
 	})
 	
@@ -122,7 +122,7 @@ var i = 0;
 		})
 		$(this).val(str);
 	})
-	$("input:text").bind("click", function(){
+	$("input:text").on("click", function(){
 		if ($(this).val() == $(this).data("first")){
 			$(this).val("");
 		}

@@ -43,7 +43,7 @@ ActiveAdmin.register Event do
         if row.image? then image_tag(row.image.url(:thumb)) end
         end
       row :text do |row|
-        row.text.html_safe
+        raw row.text.html_safe
       end
       row :album_id
       row :event_type_id
