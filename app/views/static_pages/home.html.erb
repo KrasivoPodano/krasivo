@@ -26,68 +26,27 @@
     </div>
 </div>
     <div class="blocks-main">
+		<% @closest.each do |event| %>
         <div class="block">
             <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <a href="#">Подробнее</a>
+            <h2><%= event.title %></h2>
+            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | 1500 <span class="b-rub">Р</span></span>
+            <p><%= event.shorttext %></p>
+            <%= link_to "подробнее", event %>
         </div>
-        <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <a href="#">Подробнее</a>
-        </div>
-        <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <a href="#">Подробнее</a>
-        </div>
+		<% end %>
+
+        
     </div>
     <div class="blocks-bottom">
+		<% @events.each do |event| %>
         <div class="block">
             <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <a href="#">Подробнее</a>
+            <h2><%= event.title %></h2>
+            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | 1500 <span class="b-rub">Р</span></span>
+            <p><%= event.shorttext %></p>
+            <%= link_to "подробнее", event %>
         </div>
-        <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <a href="#">Подробнее</a>
-        </div>
-        <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <a href="#">Подробнее</a>
-        </div>
-
+		<% end %>
     </div>
 </div>

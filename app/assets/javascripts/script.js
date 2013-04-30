@@ -72,19 +72,7 @@ $(function() {
 		return true;
 	}
 
-var i = 0;
-	$(".addphone").click(function(e) {
-		e.preventDefault();
-		if(i<2){
-		$(".more-phones").append("<div class='form-line'><label>Ещё один телефон</label> <input type='text' data-first='+7 981 000-6969' value='+7 981 000-6969' /><a href='#' class='removephone'>&mdash; удалить номер</a></div>");
-		i++;
-		}
-	})
-	$(".removephone").on('click', function(e) {
-		e.preventDefault();
-		$(this).parent().hide();
-		i--;
-	})
+
 	
 	$(".button-back, .order").click(function(e) {
 		e.preventDefault();
@@ -101,10 +89,10 @@ var i = 0;
 		$(".form").hide();
 	})
 	$(".social a").mouseover(function() {
-		$(this).find("img").attr("src", "images/" + $(this).attr("rel") + "-hover.png");
+		$(this).find("img").attr("src", "assets/" + $(this).attr("rel") + "-hover.png");
 	})
 	$(".social a").mouseout(function() {
-		$(this).find("img").attr("src", "images/" + $(this).attr("rel") + ".png");
+		$(this).find("img").attr("src", "assets/" + $(this).attr("rel") + ".png");
 	})
 
 	$(".budget").on("change", function() {
