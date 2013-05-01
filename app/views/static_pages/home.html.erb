@@ -1,12 +1,12 @@
 <div class="content">
  <div class="fotorama-container main-page">
-        <div class="fotorama" data-width="100%" data-height="750" data-aspectRatio="1.5"
-        data-minHeight="750" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0"
-        data-shadows="false" data-cropToFit="true">
+        <div class="fotorama" data-width="100%" data-height="610" data-aspectRatio="1.5"
+        data-minHeight="610" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0"
+        data-nav="none" data-shadows="false" data-cropToFit="true">
 		<% @main.each do |event| %>
 		<% unless event.front_images.blank? %>
         <div class="slide" style="background:url(<%= event.front_images.first.image.url(:medium) %>);">
-            <div class="slide-content">
+            <div class="slide-content" style="margin-top: -140px;">
                 <div class="container">
                     <div class="slide-buttons">
                         
