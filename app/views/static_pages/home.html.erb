@@ -4,6 +4,7 @@
         data-minHeight="750" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0"
         data-shadows="false" data-cropToFit="true">
 		<% @main.each do |event| %>
+		<% unless event.front_images.blank? %>
         <div class="slide" style="background:url(<%= event.front_images.first.image.url(:medium) %>);">
             <div class="slide-content">
                 <div class="container">
@@ -22,31 +23,41 @@
                 </div>
             </div>
         </div>
-  	<% end %>
+		<% end %>
+  	    <% end %>
     </div>
 </div>
     <div class="blocks-main">
-		<% @closest.each do |event| %>
+		<h1><%= link_to "Предстоящие события", future_events_path %></h1>
+		<% @future.each do |event| %>
         <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
+			<% unless event.front_images.blank? %>
+			<%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+			<% end %>
             <h2><%= event.title %></h2>
-            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | 1500 <span class="b-rub">Р</span></span>
+            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | <%= event.price %> <span class="b-rub">Р</span></span>
             <p><%= event.shorttext %></p>
             <%= link_to "подробнее", event %>
         </div>
 		<% end %>
-
-        
+		
     </div>
+
+
     <div class="blocks-bottom">
-		<% @events.each do |event| %>
+		<h1><%= link_to "Прощедшие события", past_events_path %></h1>
+		<% @past.each do |event| %>
         <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
+			<% unless event.front_images.blank? %>
+            <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+			<% end %>
             <h2><%= event.title %></h2>
-            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | 1500 <span class="b-rub">Р</span></span>
+            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | <%= event.price %> <span class="b-rub">Р</span></span>
             <p><%= event.shorttext %></p>
             <%= link_to "подробнее", event %>
         </div>
 		<% end %>
+		
     </div>
 </div>
+

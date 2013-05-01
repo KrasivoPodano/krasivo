@@ -6,7 +6,7 @@
         </div>
         <nav class="header-menu">
             <span><%= link_to "о школе", "/", :class => ('active' if controller?("static_pages") && action?("home")) %></span>
-            <span><a href="#">календарь</a></span>
+            <span><%= link_to "календарь", future_events_path, :class => ('active' if controller?("events") && action?("future")) %></span>
             <span><a href="#">услуги</a></span>
             <span><a href="#" class="order">заказать</a></span>
             <span><%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %></span>
@@ -17,16 +17,16 @@
             <br />
             <a href="/contacts">карта проезда</a>
             <br />
-            <a href="/">все события школы</a>
+            <a href="/future">все события школы</a>
         </div>
         <a href="/" class="logo"><img src="/assets/logo.png" alt="" /></a>
         <div class="header-text">
             Наша кулинарная школа приглашает вас пройти обучение в рамках предлагаемых занятиях и совершенствовать свои кулинарные умения на наших мастер классах. бла бла бла
         </div>
-		<% if controller.controller_name == 'events' %>
+		<% if controller?("events") && action?("show") %>
 		<a href="#"  class="hider-slider show"><span>развернуть медиа</span></a>
 		<% end %>
-		<% if controller.action_name == 'contacts' %>
+		<% if action?("contacts") %>
 		<a href="#"  class="hider-slider show"><span>развернуть карту</span></a>
 		<% end %>
     </div>

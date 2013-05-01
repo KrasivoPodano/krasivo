@@ -1,10 +1,15 @@
 Krasivo::Application.routes.draw do
 
+  # Restful
   resources :recipes
 
   mount Ckeditor::Engine => '/ckeditor'
   
+  
+  # Events
   match 'events/:id' => 'events#show', :as => :event
+  match 'future' => 'events#future', :as => :future_events
+  match 'past' => 'events#past', :as => :past_events
 
   match '/contacts' => 'static_pages#contacts'
 

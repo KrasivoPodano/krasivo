@@ -1,8 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
     @main = Event.main.all
-    @closest = Event.where("date >= ?", Time.now ).limit(3).order("date desc")
-    @events = Event.limit(3)
+    @future = Event.where("date >= ?", Time.now ).order("date desc").limit(3)
+    @past = Event.where("date <= ?", Time.now ).order("date asc").limit(3)
   end
   
   def contacts

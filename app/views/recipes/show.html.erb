@@ -1,2 +1,6 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<div class="content">
+	<div class="container" style="margin-top: 200px; margin-bottom: 50px; min-height: 300px;">
+	<h1><%= @recipe.title %></h1>
+	<%= raw @recipe.text.html_safe %>
+	</div>
+</div>

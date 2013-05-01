@@ -14,6 +14,7 @@ ActiveAdmin.register Event do
   form do |f|  
     f.inputs t('properties') do
       f.input :title
+      f.input :price
       f.input :date, :as => :datepicker
       f.input :shorttext, :input_html => { :rows => 1  }
       f.input :eventdetails, :input_html => { :rows => 1  }
