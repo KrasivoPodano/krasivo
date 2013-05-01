@@ -1,6 +1,6 @@
 Krasivo::Application.routes.draw do
 
-  get "events/show"
+  resources :recipes
 
   mount Ckeditor::Engine => '/ckeditor'
   

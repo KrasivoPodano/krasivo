@@ -19,7 +19,6 @@ ActiveAdmin.register Event do
       f.input :eventdetails, :input_html => { :rows => 1  }
       f.input :text, :as => :ckeditor, :label => false
       f.input :main
-      f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:thumb))
     end
     
     f.inputs t('album') do
@@ -29,7 +28,11 @@ ActiveAdmin.register Event do
       f.input :event_type_id, :as => :select, :collection => EventType.all
     end
     
-
+    f.has_many :front_images do |attachment_form| 
+      attachment_form.input :image, :as => :file, :hint => ( attachment_form.object.new_record? || !attachment_form.object.image ) ? nil : image_tag(attachment_form.object.image.url(:thumb))
+      attachment_form.input :_destroy, :as => :boolean, :required => false, :label => t('destroy')
+    end
+    
     f.actions
   end
   
@@ -39,9 +42,6 @@ ActiveAdmin.register Event do
       row :title
       row :date
       row :main
-      row :image do |row|
-        if row.image? then image_tag(row.image.url(:thumb)) end
-        end
       row :text do |row|
         raw row.text.html_safe
       end

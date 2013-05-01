@@ -1,0 +1,14 @@
+<div class="content">
+	<div style="margin-top: 250px;">
+    <div class="blocks-bottom">
+		<% @recipes.each do |recipe| %>
+        <div class="block" style="margin-top: -80px;">
+            <%= link_to image_tag(recipe.image.url(:medium)), recipe %>
+            <h2><%= recipe.title %></h2>
+            <p><%= recipe.shorttext %></p>
+            <%= link_to "подробнее", recipe %>
+        </div>
+		<% end %>
+    </div>
+	</div>
+</div>

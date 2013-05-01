@@ -4,7 +4,7 @@
         data-minHeight="750" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0"
         data-shadows="false" data-cropToFit="true">
 		<% @main.each do |event| %>
-        <div class="slide" style="background:url(<%= event.image.url(:medium) %>);">
+        <div class="slide" style="background:url(<%= event.front_images.first.image.url(:medium) %>);">
             <div class="slide-content">
                 <div class="container">
                     <div class="slide-buttons">

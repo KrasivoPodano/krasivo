@@ -89,10 +89,10 @@ $(function() {
 		$(".form").hide();
 	})
 	$(".social a").mouseover(function() {
-		$(this).find("img").attr("src", "assets/" + $(this).attr("rel") + "-hover.png");
+		$(this).find("img").attr("src", "/assets/" + $(this).attr("rel") + "-hover.png");
 	})
 	$(".social a").mouseout(function() {
-		$(this).find("img").attr("src", "assets/" + $(this).attr("rel") + ".png");
+		$(this).find("img").attr("src", "/assets/" + $(this).attr("rel") + ".png");
 	})
 
 	$(".budget").on("change", function() {

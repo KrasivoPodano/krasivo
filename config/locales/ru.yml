@@ -6,6 +6,8 @@ ru:
   title: "Название"
   image: "Изображение"  
   event_type: "Тип мероприятия"
+  recipe_type: "Тип рецепта"
+  front_images: "Изображение для слайдера"
   album: "Альбом"
   activerecord:
     models: 
@@ -15,6 +17,9 @@ ru:
         many: "Альбомов"
         other: "Альбомы"
       photo: "Фото"
+      front_image:
+        one: "Изображение для слайдера"
+        other: "Изображения для слайдера"
       event_type:
         one: "Тип мероприятия"
         other: "Типы мероприятий"
@@ -24,6 +29,9 @@ ru:
       recipe:
         one: "Рецепт"
         other: "Рецепты"
+      recipe_type:
+        one: "Тип рецепта"
+        other: "Типы рецептов"
     attributes:
       recipe:
         title: "Название"
@@ -34,9 +42,10 @@ ru:
         text: "Описание" 
         shorttext: "Текст для главной" 
         eventdetails: "Детали занятия"
-        image: "Изображение"
       event_type:
         title: "Название"
+      recipe_type:
+        title: "Название"    
       photo:
         title: "Название"
         image: "Изображение"
