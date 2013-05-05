@@ -22,7 +22,7 @@ ActiveAdmin.register Album do
     
     f.has_many :photos do |attachment_form| 
       attachment_form.input :title  
-      attachment_form.input :image, :as => :file, :input_html => { :hidden => true }, :hint => ( attachment_form.object.new_record? || !attachment_form.object.image ) ? nil : image_tag(attachment_form.object.image.url(:thumb))
+      attachment_form.input :image, :as => :file, :hint => ( attachment_form.object.new_record? || !attachment_form.object.image ) ? nil : image_tag(attachment_form.object.image.url(:thumb))
       attachment_form.input :_destroy, :as => :boolean, :required => false, :label => t('destroy'), :input_html => { :class => 'destraction' }
     end
     
