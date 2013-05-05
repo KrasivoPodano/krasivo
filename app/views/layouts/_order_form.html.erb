@@ -1,68 +1,38 @@
 <div class="blue"></div>
 <div class="form">
 
-    <form action="#">
+    <%= form_for(@order) do |f| %>
         <a href="#" class="close"></a>
         <div class="service-info">
             <div class="form-head">
-                <h2>Заказать услугу:</h2>
-                <select>
-                    <option value="корпоративный праздник" >корпоративный праздник</option>
-                    <option value="корпоративный праздник2" selected="selected" >корпоративный праздник2</option>
-                    <option value="корпоративный праздник3" >корпоративный праздник3</option>
-                    <option value="корпоративный праздник4" >корпоративный праздник4</option>
-                </select>
-            </div>
-            <div class="form-line">
-            <span class="myCheck">
-                <input type="checkbox" checked="checked" />
-            </span>
-            <label>Педиатрические десерты</label>
-            </div>
-
-            <div class="form-line niceRadio-box">
-            <input type="radio" class="niceRadio" name="myradio" id="myradio1" tabindex="1" checked="checked"/><label>Озорные клоуны</label>       
-             <input type="radio" class="niceRadio" name="myradio" id="myradio2" tabindex="2" /><label>НЕ Озорные клоуны</label>
-            </div>
-            <div class="form-line">
-                 <span class="myCheck">
-                <input type="checkbox" checked="checked" />
-            </span>
-            <label>Карлики-трансвеститы</label>
-            </div>
-            <div class="form-line">
-          
-            <label>У нас есть бюджет:</label><span class="b-rub">
-                <input type="text" class="budget" data-first="0 Р"  value="0 Р"/>
-            </span>
+                <h2>представьтесь, пожалуйста:</h2>
            </div>
         </div>
-        <div class="client-info">
+        <div class="client-info" style="margin-top: -110px;">
             <div class="form-head">
-                <h2>представьтесь, пожалуйста:</h2>
             </div>
             <div class="form-line">
             <label>Компания </label>
-            <input type="text" data-first="Грузовичкоф" value="Грузовичкоф"/>
+            <input name="order[company]" type="text" data-first="Грузовичкоф" value="Грузовичкоф"/>
             </div>
              <div class="form-line">
             <label>Контактное лицо</label>
-            <input type="text" data-first="Марсель" value="Марсель" />
+            <input name="order[name]" type="text" data-first="Марсель" value="Марсель" />
             </div>
             <div class="form-line">
             <label>Телефон</label>
-            <input type="text" name="tel" data-first="+7 981 000-6969" value="+7 981 000-6969"/><a href="#" class="addphone">+ добавить ещё</a>
+            <input type="text" name="order[phone1]" data-first="+7 981 000-6969" value="+7 981 000-6969"/><a href="#" class="addphone">+ добавить ещё</a>
            </div>
             <div class="more-phones"> </div>
             <div class="form-line">
             <label>Электропочта</label>
-            <input style="width: 330px;" type="text" data-first="marselka@gruzowitchkoff.ru" value="marselka@gruzowitchkoff.ru" /> 
+            <input name="order[mail]" style="width: 330px;" type="text" data-first="marselka@gruzowitchkoff.ru" value="marselka@gruzowitchkoff.ru" /> 
             </div>
             <div class="form-line">
                 <label class="textarea">Ваш комментарий</label>
-            <textarea></textarea>
+            <textarea name="order[comment]"></textarea>
             </div>
         </div>
-        <input type="submit" value="Заказать" />
-    </form>
+        <%= f.submit "Заказать" %>
+    <% end %>
 </div>

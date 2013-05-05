@@ -1,7 +1,10 @@
 Krasivo::Application.routes.draw do
 
+  get "orders/create"
+
   # Restful
   resources :recipes
+  resources :orders
 
   mount Ckeditor::Engine => '/ckeditor'
   
