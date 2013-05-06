@@ -27,6 +27,7 @@
 <%= f.inputs t('more_images') do %>
 <div style="margin-left: 25px;">
 <%= file_field_tag("album_photos_image", multiple: true, name: "album[photos_attributes][][image]") %>
+<%= f.submit 'Загрузить', :name => 'preview_button' %>
 </div>
 <% end %>
 	
