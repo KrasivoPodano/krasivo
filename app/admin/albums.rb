@@ -35,6 +35,21 @@ form :partial => "admin/album"
 
    
    controller do
+     def create 
+       
+       @album = Album.new(params[:album])
+       
+       respond_to do |format|
+          if @album.save
+            format.html { redirect_to edit_admin_album_path(@album) }
+          else
+            format.html { render action: "new" }
+          end
+        end
+       
+     end
+        
+
      def update
        @album = Album.find(params[:id])
        

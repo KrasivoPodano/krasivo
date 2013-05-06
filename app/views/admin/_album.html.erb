@@ -4,11 +4,10 @@
    <%= f.input :text, :input_html => { :rows => 12  } %>
 <% end %>
 
-
+<% unless @album.new_record? %>
 <fieldset class="inputs"><legend><span>Изображения</span></legend>
 <div style="margin-left: 25px;">
 <% @album.photos.each do |photo| %>
-
 <div class="album_element">
 <div class="image_caption">
 	<%= link_to 'X', admin_album_photo_path(@album, photo),
@@ -16,11 +15,7 @@
 </div>
 <%= image_tag photo.image.url(:thumb), :class => 'album__image' %>
 </div>
-
-
-
 <% end %>
-
 </div>
 </fieldset>
 
@@ -30,11 +25,15 @@
 <%= f.submit 'Загрузить', :name => 'preview_button' %>
 </div>
 <% end %>
+<% end %>
+
 	
 
 <fieldset class="actions">
 <ol>
+<% unless @album.new_record? %>
 <li><%= f.submit 'Изменить', :name => 'preview_button' %></li>
+<% end %>
 <li><%= f.submit 'Сохранить' %></li>
 </ol>
 </fieldset>
