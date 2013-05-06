@@ -33,4 +33,21 @@ form :partial => "admin/album"
       
    end
 
+   
+   controller do
+     def update
+       @album = Album.find(params[:id])
+       
+       respond_to do |format|
+         if params[:preview_button] && @album.update_attributes(params[:album])
+           format.html { redirect_to action: "edit" }
+        elsif @album.update_attributes(params[:album])
+          format.html { redirect_to :action => :show }
+         else
+           format.html { render action: "edit" }
+         end
+       end
+     end        
+   end
+
 end

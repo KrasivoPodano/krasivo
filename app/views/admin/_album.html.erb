@@ -1,15 +1,19 @@
 <%= semantic_form_for [:admin, @album], :html => {:multipart => true} do |f| %>
 <%= f.inputs t('properties') do %>
    <%= f.input :title %>
-   <%= f.input :text %>
+   <%= f.input :text, :input_html => { :rows => 12  } %>
 <% end %>
 
 
 <fieldset class="inputs"><legend><span>Изображения</span></legend>
 <div style="margin-left: 25px;">
 <% @album.photos.each do |photo| %>
+
 <%= image_tag photo.image.url(:thumb), :class => 'album__image' %>
+<%= link_to 'Destroy', admin_album_photo_path(@album, photo),
+            :confirm => 'Are you sure?', :method => :delete, :class => 'image_destroy' %>
 <% end %>
+
 </div>
 </fieldset>
 
@@ -19,5 +23,11 @@
 </div>
 <% end %>
 	
-<%= f.actions :submit %>
+
+<fieldset class="actions">
+<ol>
+<li><%= f.submit 'Изменить', :name => 'preview_button' %></li>
+<li><%= f.submit 'Сохранить' %></li>
+</ol>
+</fieldset>
 <% end %>
