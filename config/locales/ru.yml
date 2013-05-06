@@ -9,6 +9,7 @@ ru:
   recipe_type: "Тип рецепта"
   front_images: "Изображение для слайдера"
   album: "Альбом"
+  more_images: "Добавить еще изображения"
   activerecord:
     models: 
       album:

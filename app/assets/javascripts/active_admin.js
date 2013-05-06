@@ -14,6 +14,22 @@ $(document).ready(function(){
 
 	
   });
+
+	
+  $('.album__image').on("click", function(){
+	answer = confirm("Are you sure?");
+	      if (answer) {
+			$(this).hide();
+	         return true;
+	      }else{
+	         return false;
+	      };
+
+	
+  });
+
+
+
   
 });
 
