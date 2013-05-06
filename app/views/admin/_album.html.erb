@@ -9,9 +9,16 @@
 <div style="margin-left: 25px;">
 <% @album.photos.each do |photo| %>
 
+<div class="album_element">
+<div class="image_caption">
+	<%= link_to 'X', admin_album_photo_path(@album, photo),
+	            :confirm => 'Are you sure?', :method => :delete, :class => 'image_destroy' %>
+</div>
 <%= image_tag photo.image.url(:thumb), :class => 'album__image' %>
-<%= link_to 'Destroy', admin_album_photo_path(@album, photo),
-            :confirm => 'Are you sure?', :method => :delete, :class => 'image_destroy' %>
+</div>
+
+
+
 <% end %>
 
 </div>
