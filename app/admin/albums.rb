@@ -10,7 +10,7 @@ ActiveAdmin.register Album do
     default_actions
   end
 
-form :partial => "admin/album"
+form :partial => "album"
   
   show do |album|
     attributes_table do
