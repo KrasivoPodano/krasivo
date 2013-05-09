@@ -22,7 +22,7 @@
 <%= f.inputs t('more_images') do %>
 <div style="margin-left: 25px;">
 <%= file_field_tag("album_photos_image", multiple: true, name: "album[photos_attributes][][image]") %>
-<%= f.submit 'Загрузить', :name => 'preview_button' %>
+<%= f.submit 'Загрузить изображения', :name => 'preview_button' %>
 </div>
 <% end %>
 <% end %>
@@ -32,9 +32,10 @@
 <fieldset class="actions">
 <ol>
 <% unless @album.new_record? %>
-<li><%= f.submit 'Изменить', :name => 'preview_button' %></li>
+<li><%= f.submit 'Сохранить и продолжить', :name => 'preview_button' %></li>
 <% end %>
-<li><%= f.submit 'Сохранить' %></li>
+<li><%= f.submit 'Сохранить и закрыть' %></li>
+<li><%= button_to "Отмена", admin_albums_path, :html => { "data-method" => "get" } %></li>
 </ol>
 </fieldset>
 <% end %>
