@@ -1,1 +1,3 @@
-$('#<%= @photo.id %>').remove();
+$('#<%= @photo.id %>').fadeOut('fast', function(){
+        $(this).remove();
+    });

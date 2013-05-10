@@ -1,4 +1,5 @@
-<%= semantic_form_for [:admin, @album], :html => {:multipart => true} do |f| %>
+<%= semantic_form_for [:admin, @album], :html => {:multipart => true, :id => 'album_form'} do |f| %>
+
 <%= f.inputs t('properties') do %>
    <%= f.input :title %>
    <%= f.input :text, :input_html => { :rows => 12  } %>
@@ -6,28 +7,22 @@
 
 <% unless @album.new_record? %>
 <fieldset class="inputs"><legend><span>Изображения</span></legend>
-<div style="margin-left: 25px;">
-<% @album.photos.each do |photo| %>
-<div class="album_element" id="<%= photo.id %>" onMouseOut="$(this).children('.image_caption').hide();" onmouseover="$(this).children('.image_caption').show();">
-<div class="image_caption" style="display: none;">
-	<%= link_to 'Удалить', admin_album_photo_path(@album, photo),
-	            :confirm => 'Are you sure?', :method => :delete, :class => 'image_destroy', :remote => true %>
-</div>
-<%= image_tag photo.image.url(:thumb), :class => 'album__image', :id => photo.id %>
-</div>
-<% end %>
+<div id="album_photos" style="margin-left: 25px;">
+<%= render :partial => 'photos', :locals => { :@album => @album } %>
+
 </div>
 </fieldset>
 
 <%= f.inputs t('more_images') do %>
 <div style="margin-left: 25px;">
+
+
 <%= file_field_tag("album_photos_image", multiple: true, name: "album[photos_attributes][][image]") %>
 <%= f.submit 'Загрузить изображения', :name => 'preview_button' %>
+
 </div>
 <% end %>
 <% end %>
-
-	
 
 <fieldset class="actions">
 <ol>

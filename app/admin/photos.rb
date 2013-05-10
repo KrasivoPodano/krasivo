@@ -3,6 +3,11 @@ ActiveAdmin.register Photo do
   navigation_menu :album
   
   controller do
+ 
+    
+    
+    
+    
     def destroy
       @photo = Photo.find(params[:id])
       @photo.destroy

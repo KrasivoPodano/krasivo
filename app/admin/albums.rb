@@ -51,9 +51,15 @@ form :partial => "album"
      def update
        @album = Album.find(params[:id])
        
+        if request.xhr? 
+          render :partial => 'photos', layout: false
+         end
+              
        respond_to do |format|
          if params[:preview_button] && @album.update_attributes(params[:album])
            format.html { redirect_to action: "edit" }
+           format.js
+           flash[:notice] = t('album_updated')
         elsif @album.update_attributes(params[:album])
           format.html { redirect_to :action => :index }
          else
