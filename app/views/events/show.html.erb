@@ -1,6 +1,8 @@
 <div class="content">
 	
+	
     <div class="fotorama-container">
+	<% unless @event.front_images.blank? %>
         <div class="fotorama" data-width="100%" data-height="750" data-aspectRatio="1.5"
         data-minHeight="750" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0"
         data-shadows="false" data-cropToFit="true">
@@ -8,7 +10,9 @@
 			<%= image_tag(photo.image.url(:medium)) %>
             <% end %>
         </div>
+	<% end %>
     </div>
+    
 	
     <div class="container">
         <section class="event-main">
