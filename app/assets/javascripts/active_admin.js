@@ -1,10 +1,9 @@
 //= require active_admin/base
 
+/*
 
 $(document).ready(function(){
 
-
-/*
   $('.destraction').on("click", function(){
 	answer = confirm("Are you sure?");
 	      if (answer) {
@@ -29,8 +28,6 @@ $(document).ready(function(){
 
 	
 	});
-
-*/
 	
   $('#upload_photos').on("click", function() {
       $('#album_form').submit();
@@ -41,4 +38,4 @@ $(document).ready(function(){
   
 });
 
-
+*/
