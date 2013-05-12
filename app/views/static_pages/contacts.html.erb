@@ -51,25 +51,16 @@ myMap.geoObjects.add(myPlacemark);
                     Кстати, у нас есть кое-что:
                 </p>
                 <p>
-                    <span class="strong">18 апреля — курс лепки пельменей!</span>
+                    <span class="strong"><%= Russian::strftime(@event.date, "%d %B") %> — <%= @event.title %></span>
                 </p>
                 <p>
-                    стоимость: <span class="strong">17000 <span class="b-rub">Р</span></span>
-                </p>
-                <p>
-                    идут: <span class="strong">17 человек</span>
+                    стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span>
                 </p>
 
                 <p>
-                    <a href="#">Подробнее</a>
+                    <%= link_to "Подробнее", @event %>
                 </p>
-                <p>
-                    <a href="#" class="button-blue">я пойду!</a>  <a href="#" class="button-blue active">я записался</a>
-                    <br />
-                </p>
-                <p>
-                    <a href="#">И ещё 5 событий</a>
-                </p>
+                
             </div>
 
         </aside>
@@ -79,15 +70,23 @@ myMap.geoObjects.add(myPlacemark);
             <h3>наш адрес:</h3>
 
             <p>
-                Измайловский проспект, 2а
+                Измайловский проспект, д. 2, офис 56, лестница №7 <br/>
+				Вход через кафе "Галата". Домофон №19
             </p>
 
             <h3>Телефон для связи:</h3>
             <p>
-                812 964 7677
-                <br />
-                812 964 7667
+                812 942-67-52 
             </p>
+
+			<h3>Наша почта:</h3>
+            <p>
+                по любым вопросам - <a href="mailto:info@krasivopodano.ru">info@krasivopodano.ru</a><br/>
+				по вопросам рекламы - <a href="mailto:pr@krasivopodano.ru">pr@krasivopodano.ru</a><br/>
+				есть вопрос к мастер-шефу - <a href="mailto:master@krasivopodano.ru">master@krasivopodano.ru</a><br/>
+				нужна фудсъемка - <a href="mailto:mail@krasivopodano.ru">mail@krasivopodano.ru</a><br/>
+            </p>
+            
 
             <h3>скайп для связи:</h3>
 
@@ -104,36 +103,18 @@ myMap.geoObjects.add(myPlacemark);
     </div>
 
     <div class="blocks-bottom inner-page">
+		<% @events.each do |event| %>
         <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
+            <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+            <h2><%= event.title %></h2>
+            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | <%= event.price %> <span class="b-rub">Р</span></span>
             <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
+                <%= event.shorttext %>
             </p>
-            <a href="#">Подробнее</a>
+            <%= link_to "подробнее", event %>
         </div>
-        <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <a href="#">Подробнее</a>
-        </div>
-        <div class="block">
-            <a href="#"><img src="/assets/demo1.jpg" alt="" /></a>
-            <h2>«Готовим с удовольствием» — курс для начинающих кулинаров.</h2>
-            <span class="blocks-date">5 апреля 16:00 | 1500 <span class="b-rub">Р</span></span>
-            <p>
-                В своей основе курс рассчитан для начинающих кулинаров. Научиться готовить может каждый.
-            </p>
-            <a href="#">Подробнее</a>
-        </div>
+		<% end %>
+        
 
     </div>
 </div>

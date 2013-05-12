@@ -10,20 +10,7 @@ ActiveAdmin.register Recipe do
      default_actions
    end
 
-   form do |f|  
-     f.inputs "Details" do
-       f.input :title
-       f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:medium))
-       f.input :shorttext, :input_html => { :rows => 1  }
-       f.input :text, :as => :ckeditor, :label => false
-     end
-     
-     f.inputs t('recipe_type') do
-       f.input :recipe_type_id, :as => :select, :collection => RecipeType.all
-     end
-     
-     f.actions
-   end
+     form :partial => "form"
 
   show do
     attributes_table do

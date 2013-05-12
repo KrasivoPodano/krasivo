@@ -6,5 +6,7 @@ class StaticPagesController < ApplicationController
   end
   
   def contacts
+    @event = Event.where("date >= ?", Time.now ).order("date desc").first
+    @events = Event.where("date >= ?", Time.now ).order("date desc").limit(3)
   end
 end

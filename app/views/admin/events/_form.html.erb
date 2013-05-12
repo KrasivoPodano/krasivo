@@ -1,0 +1,64 @@
+<%= semantic_form_for [:admin, @event], :html => {:multipart => true} do |f| %>
+
+<%= f.inputs t('properties') do %>
+
+<%= f.input :title %>
+<%= f.input :price %>
+<%= f.input :date, :as => :date_picker %>
+<%= f.input :shorttext, :input_html => { :rows => 1  } %>
+<%= f.input :eventdetails, :input_html => { :rows => 1  } %>
+<%= f.input :text, :as => :ckeditor, :label => false %>
+<%= f.input :main %>
+<% end %>
+
+<%= f.inputs t('album') do %>
+<%= f.input :album_id, :as => :select, :collection => Album.all, :label => false %>
+<% end %>
+
+<%= f.inputs t('event_type') do %>
+<%= f.input :event_type_id, :as => :select, :collection => EventType.all, :label => false %>
+<% end %>
+
+<% unless @event.new_record? %>
+<fieldset class="inputs"><legend><span>Изображения для слайдера</span></legend>
+<div id="album_photos" style="margin-left: 25px;">
+	<% @event.front_images.each do |image| %>
+	<div class="album_element" id="<%= image.id %>" onMouseOut="$(this).children('.image_caption').hide();" onmouseover="$(this).children('.image_caption').show();">
+	<div class="image_caption" style="display: none;">
+		<%= link_to 'Удалить', admin_event_front_image_path(@event, image),
+		            :confirm => 'Вы уверены?', :method => :delete, :class => 'image_destroy', :remote => true %>
+	</div>
+	<%= image_tag image.image.url(:admin), :class => 'album__image', :id => image.id %>
+	</div>
+	<% end %>
+
+</div>
+</fieldset>
+
+<%= f.inputs t('more_images') do %>
+<div style="margin-left: 25px;">
+
+
+<%= file_field_tag("event_front_images_image", multiple: true, name: "event[front_images_attributes][][image]") %>
+<%= f.submit 'Загрузить изображения', :name => 'preview_button' %>
+
+</div>
+<% end %>
+<% end %>
+
+
+<%= link_to "Предпросмотр", event_path(@event), :target => "_blank" %>
+
+<fieldset class="actions">
+<ol>
+<li><%= f.submit 'Сохранить и продолжить', :name => 'preview_button' %></li>
+<li><%= f.submit 'Сохранить и закрыть' %></li>
+<li><%= button_to "Отмена", admin_events_path, :html => { "data-method" => "get" } %></li>
+</ol>
+</fieldset>
+
+<% end %>
+
+
+
+

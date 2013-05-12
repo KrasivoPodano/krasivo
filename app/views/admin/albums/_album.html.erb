@@ -26,9 +26,6 @@
 
 <fieldset class="actions">
 <ol>
-<% unless @album.new_record? %>
-<li><%= f.submit 'Сохранить и продолжить', :name => 'preview_button' %></li>
-<% end %>
 <li><%= f.submit 'Сохранить и закрыть' %></li>
 <li><%= button_to "Отмена", admin_albums_path, :html => { "data-method" => "get" } %></li>
 </ol>

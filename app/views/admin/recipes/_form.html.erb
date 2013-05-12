@@ -1,0 +1,29 @@
+<%= semantic_form_for [:admin, @recipe], :html => {:multipart => true} do |f| %>
+
+<%= f.inputs "Details" do %>
+<%= f.input :title %>
+<%= f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:medium)) %> 
+<%= f.input :shorttext, :input_html => { :rows => 1  } %>
+<%= f.input :text, :as => :ckeditor, :label => false %>
+<% end %>
+<%= f.inputs t('recipe_type') do %>
+<%= f.input :recipe_type_id, :as => :select, :collection => RecipeType.all %>
+<% end %>
+
+
+
+<%= link_to "Предпросмотр", recipe_path(@recipe), :target => "_blank" %>
+
+<fieldset class="actions">
+<ol>
+<li><%= f.submit 'Сохранить и продолжить', :name => 'preview_button' %></li>
+<li><%= f.submit 'Сохранить и закрыть' %></li>
+<li><%= button_to "Отмена", admin_recipes_path, :html => { "data-method" => "get" } %></li>
+</ol>
+</fieldset>
+
+<% end %>
+
+
+
+

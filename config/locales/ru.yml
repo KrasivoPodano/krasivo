@@ -11,6 +11,7 @@ ru:
   album: "Альбом"
   more_images: "Добавить еще изображения"
   album_updated: "Альбом изменен"
+  event_updated: "Событие изменено"
   activerecord:
     models: 
       album:
@@ -40,6 +41,7 @@ ru:
         text: "Описание"        
       event:
         title: "Название"
+        price: "Стоимость"
         date: "Дата"
         text: "Описание" 
         shorttext: "Текст для главной" 

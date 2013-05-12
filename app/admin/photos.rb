@@ -12,9 +12,8 @@ ActiveAdmin.register Photo do
         format.html { redirect_to :back }
         format.js
       end
-      
-      
     end
+    
   end
   
 end
