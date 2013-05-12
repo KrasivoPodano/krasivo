@@ -1,14 +1,13 @@
 <header>
     <div class="container">
         <div class="links">
-            <a href="#">фуд-студия</a>
-            <a href="#">кейтеринг</a>
+            <a href="#">директору</a>
         </div>
         <nav class="header-menu">
             <span><%= link_to "о школе", "/", :class => ('active' if controller?("static_pages") && action?("home")) %></span>
-            <span><%= link_to "календарь", future_events_path, :class => ('active' if controller?("events") && action?("future")) %></span>
-            <span><a href="#">услуги</a></span>
-            <span><a href="#" class="order">заказать</a></span>
+            <span><%= link_to "расписание", future_events_path, :class => ('active' if controller?("events") && action?("future")) %></span>
+            <span><a href="#">что преподаем</a></span>
+            <span><a href="#" class="order">записаться на урок</a></span>
             <span><%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %></span>
             <span><%= link_to "контакты", contacts_path, :class => ('active' if controller?("static_pages") && action?("contacts")) %></span>
         </nav>
