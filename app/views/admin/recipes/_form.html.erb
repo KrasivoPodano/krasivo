@@ -11,8 +11,9 @@
 <% end %>
 
 
-
+<% unless @recipe.new_record? %>
 <%= link_to "Предпросмотр", recipe_path(@recipe), :target => "_blank" %>
+<% end %>
 
 <fieldset class="actions">
 <ol>

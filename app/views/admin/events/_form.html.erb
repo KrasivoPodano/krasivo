@@ -46,8 +46,9 @@
 <% end %>
 <% end %>
 
-
+<% unless @event.new_record? %>
 <%= link_to "Предпросмотр", event_path(@event), :target => "_blank" %>
+<% end %>
 
 <fieldset class="actions">
 <ol>

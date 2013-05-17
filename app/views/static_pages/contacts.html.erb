@@ -44,7 +44,8 @@ myMap.geoObjects.add(myPlacemark);
        <div id="YMapsID" style="height: 750px;"></div>
     </div>
     <div class="container">
-
+		
+		<% unless @event.nil? %>
         <aside>
             <div class="event-info">
                 <p>
@@ -64,6 +65,9 @@ myMap.geoObjects.add(myPlacemark);
             </div>
 
         </aside>
+
+		<% end %>
+		
         <section class="event-main">
             <h1>наш адрес — не дом и не улица!</h1>
 
@@ -101,7 +105,7 @@ myMap.geoObjects.add(myPlacemark);
         </section>
         <div class="buf"></div>
     </div>
-
+	<% unless @events.blank? %>
     <div class="blocks-bottom inner-page">
 		<% @events.each do |event| %>
         <div class="block">
@@ -114,7 +118,6 @@ myMap.geoObjects.add(myPlacemark);
             <%= link_to "подробнее", event %>
         </div>
 		<% end %>
-        
-
     </div>
+    <% end %>
 </div>

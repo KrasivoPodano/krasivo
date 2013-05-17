@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   belongs_to :event_type
   has_many :front_images
   accepts_nested_attributes_for :front_images, :allow_destroy => true
-  validates :title, :date, :text, :price, :presence => true
+  validates :title, :date, :text, :event_type_id, :album_id, :price, :presence => true
   validates :shorttext, :length => { :maximum => 125 }
   validates :eventdetails, :length => { :maximum => 70 }
   just_define_datetime_picker :date, :add_to_attr_accessible => true
