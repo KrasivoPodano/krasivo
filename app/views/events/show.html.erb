@@ -29,6 +29,12 @@ VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "330", color1: 'FF
         <section class="event-main">
             <h1><%= @event.title %></h1>
             <%= raw @event.text.html_safe %>
+			<script type="text/javascript" src="//yandex.st/share/share.js"
+			charset="utf-8"></script>
+			<div class="yashare-auto-init" data-yashareL10n="ru"
+			 data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir"
+
+			></div>
         </section>
         <div class="buf"></div>
 		
