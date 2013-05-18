@@ -47,8 +47,9 @@ myMap.geoObjects.add(myPlacemark);
 	
 
 		
-		<% unless @event.nil? %>
+		
         <aside>
+			<% unless @event.nil? %>
             <div class="event-info">
                 <p>
                     Кстати, у нас есть кое-что:
@@ -64,17 +65,19 @@ myMap.geoObjects.add(myPlacemark);
                     <%= link_to "Подробнее", @event %>
                 </p>
             </div>
-			<script type="text/javascript" src="http://vk.com/js/api/openapi.js?93"></script>
+			<% end %>
+
+
+			           <script type="text/javascript" src="http://vk.com/js/api/openapi.js?93"></script>
+
 			<!-- VK Widget -->
 			<div id="vk_groups" style="margin-top: 20px;"></div>
 			<script type="text/javascript">
 			VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "330", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 51178669);
 			</script>
-
-
         </aside>
 
-		<% end %>
+		
 		
         <section class="event-main">
             <h1>наш адрес — не дом и не улица!</h1>
@@ -90,6 +93,7 @@ myMap.geoObjects.add(myPlacemark);
             <p>
                 812 942-67-52 
             </p>
+
 
 			<h3>Наша почта:</h3>
             <p>
