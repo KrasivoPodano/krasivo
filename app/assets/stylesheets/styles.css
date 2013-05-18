@@ -533,12 +533,12 @@ span.phones{
 }
 .header-text{
 	float:left;
-	font-size: 13px;
+	font-size: 15px;
 	margin:40px  0 0 40px;
 	width:425px;
 	color:#9b2021;
-	line-height:20px;
-	letter-spacing: -0.3px;
+	line-height:25px;
+	letter-spacing: -0.1px;
 }
 
 
