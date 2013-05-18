@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   belongs_to :album
   belongs_to :event_type
   has_many :front_images
+  has_many :orders
   accepts_nested_attributes_for :front_images, :allow_destroy => true
   validates :title, :date, :text, :event_type_id, :album_id, :price, :presence => true
   validates :shorttext, :length => { :maximum => 125 }

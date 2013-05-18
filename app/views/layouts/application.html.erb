@@ -18,7 +18,7 @@
 <%= yield :head %>
 </head>
 <body>
-<%= render :partial => 'layouts/order_form', :locals => { :@order => Order.new } %>
+<%= render :partial => 'layouts/order_form', :locals => { :@order => Order.new, :@events => Event.all } %>
 <%= render 'layouts/header' %>
 <%= yield %>
 <%= render 'layouts/footer' %>

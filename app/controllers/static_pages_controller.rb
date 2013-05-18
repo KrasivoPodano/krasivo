@@ -9,4 +9,10 @@ class StaticPagesController < ApplicationController
     @event = Event.where("date >= ?", Time.now ).order("date desc").first
     @events = Event.where("date >= ?", Time.now ).order("date desc").limit(3)
   end
+  
+  def shcool
+  end
+  
+  def services
+  end
 end

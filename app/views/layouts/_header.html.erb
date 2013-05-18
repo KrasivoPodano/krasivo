@@ -4,9 +4,9 @@
             <a href="#">директору</a>
         </div>
         <nav class="header-menu">
-            <span><%= link_to "о школе", "/", :class => ('active' if controller?("static_pages") && action?("home")) %></span>
+            <span><%= link_to "о школе", school_path, :class => ('active' if controller?("static_pages") && action?("school")) %></span>
             <span><%= link_to "расписание", future_events_path, :class => ('active' if controller?("events") && action?("future")) %></span>
-            <span><a href="#">что преподаем</a></span>
+            <span><%= link_to "что преподаем", "#", :class => ('active' if controller?("static_pages") && action?("services")) %></span>
             <span><a href="#" class="order">записаться на урок</a></span>
             <span><%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %></span>
             <span><%= link_to "контакты", contacts_path, :class => ('active' if controller?("static_pages") && action?("contacts")) %></span>
@@ -20,7 +20,7 @@
         </div>
         <a href="/" class="logo"><img src="/assets/logo.png" alt="" /></a>
         <div class="header-text">
-            Наша кулинарная школа приглашает вас пройти обучение в рамках предлагаемых занятиях и совершенствовать свои кулинарные умения на наших мастер классах.
+            Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется.
         </div>
 		<% if controller?("events") && action?("show") %>
 		<a href="#"  class="hider-slider show"><span>развернуть медиа</span></a>

@@ -15,6 +15,8 @@ Krasivo::Application.routes.draw do
   match 'past' => 'events#past', :as => :past_events
 
   match '/contacts' => 'static_pages#contacts'
+  match '/school' => 'static_pages#school'
+  match '/services' => 'static_pages#services'
 
   root :to => 'static_pages#home'
 
