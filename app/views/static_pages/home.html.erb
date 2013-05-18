@@ -27,6 +27,8 @@
   	    <% end %>
     </div>
 </div>
+
+	<% unless @future.blank? %>
     <div class="blocks-main">
 		<h1><%= link_to "Предстоящие события", future_events_path %></h1>
 		<% @future.each do |event| %>
@@ -39,11 +41,11 @@
             <p><%= event.shorttext %></p>
             <%= link_to "подробнее", event %>
         </div>
-		<% end %>
-		
+		<% end %>	
     </div>
+	<% end %>
 
-
+	<% unless @past.blank? %>
     <div class="blocks-bottom">
 		<h1><%= link_to "Прошедшие события", past_events_path %></h1>
 		<% @past.each do |event| %>
@@ -57,7 +59,7 @@
             <%= link_to "подробнее", event %>
         </div>
 		<% end %>
-		
     </div>
+	<% end %>
 </div>
 
