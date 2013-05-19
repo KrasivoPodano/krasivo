@@ -24,4 +24,35 @@ ActiveAdmin.register Recipe do
       row :recipe_type_id
     end  
    end
+   
+   controller do
+
+      def create 
+        @recipe = Recipe.new(params[:recipe])
+
+        respond_to do |format|
+           if @recipe.save
+             format.html { redirect_to edit_admin_event_path(@recipe) }
+           else
+             format.html { render action: "new" }
+           end
+         end 
+      end
+
+      def update
+        @recipe = Recipe.find(params[:id])
+
+        respond_to do |format|
+          if params[:preview_button] && @recipe.update_attributes(params[:recipe])
+            format.html { redirect_to action: "edit" }
+            flash[:notice] = t('recipe_updated')
+         elsif @recipe.update_attributes(params[:recipe])
+           format.html { redirect_to :action => :index }
+          else
+            format.html { render action: "edit" }
+          end
+        end
+      end        
+    end
+   
 end

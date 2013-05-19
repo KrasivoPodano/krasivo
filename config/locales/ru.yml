@@ -12,6 +12,7 @@ ru:
   more_images: "Добавить еще изображения"
   album_updated: "Альбом изменен"
   event_updated: "Событие изменено"
+  recipe_updated: "Рецепт изменен"
   activerecord:
     models: 
       album:
