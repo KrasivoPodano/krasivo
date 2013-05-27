@@ -35,9 +35,9 @@ module ApplicationHelper
    
    def order_link(event)
      if current_cart.events.exists?(event)
-       unless current_user.appointments.find_by_event_id(event.id)
+       
        link_to "Записаться", appointments_path(event_id: event), method: :post, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
-       end
+       
       end   
    end
 end
