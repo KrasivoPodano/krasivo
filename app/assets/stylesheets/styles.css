@@ -521,6 +521,7 @@ box-shadow:         0px 2px 0px rgba(85, 10, 11, 1);
 	color:#cf2b2b;
 	text-decoration:underline;	
 }
+
 span.phones{
 	font-family: 'Conv_NeoSansPro-Bold',Sans-Serif;
 	font-size:18px;
@@ -539,6 +540,16 @@ span.phones{
 	color:#9b2021;
 	line-height:25px;
 	letter-spacing: -1px;
+}
+
+.header-text .link {
+	color:#0b4568;
+	text-decoration:underline;
+	line-height:26px;
+}
+.header-text .link:hover{
+	color:#cf2b2b;
+	text-decoration:underline;	
 }
 
 
@@ -568,7 +579,7 @@ span.phones{
 }
 .slide-buttons{
 	float:left;
-	width:220px;
+	width:280px;
 	padding-top:20px;
 }
 .slide-buttons .button-blue{
@@ -576,7 +587,7 @@ span.phones{
 }
 .slide-text{
 	float:left;
-	width:620px;
+	width:580px;
 	margin-left:80px;
 }
 .slide-text h2{

@@ -1,5 +1,16 @@
 Krasivo::Application.routes.draw do
 
+  resources :line_items
+  resources :events
+
+
+  resources :carts
+  
+  resources :appointments
+
+
+  devise_for :users
+
   get "orders/create"
 
   # Restful

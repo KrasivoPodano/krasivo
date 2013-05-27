@@ -30,6 +30,9 @@ ru:
       event:
         one: "Мероприятие"
         other: "Мероприятия"
+      appointment:
+        one: "Запись"
+        other: "Записи"
       recipe:
         one: "Рецепт"
         other: "Рецепты"
@@ -58,4 +61,9 @@ ru:
       album:
         title: "Название"
         text: "Описание"
+      appointment:
+        user: "Пользователь"
+        event: "Событие"
+        user_id: "Пользователь"
+        event_id: "Событие"
         

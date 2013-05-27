@@ -9,7 +9,11 @@
             <div class="slide-content" style="margin-top: -140px;">
                 <div class="container">
                     <div class="slide-buttons">
-                        
+						<span class="<%= event.id %>"><%= appointment_link(event) %> <%= order_link(event) %></span>
+                        <br />
+                        <a href="#">15 человек уже записались</a>
+                        <a class="comments read" href="#"><span>15 комментариев</span></a>
+                        <a class="comments write" href="#"><span>комментировать</span></a>
                     </div>
                     <div class="slide-text">
                         <h2><%= event.title %></h2>

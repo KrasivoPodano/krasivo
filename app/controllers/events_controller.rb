@@ -16,4 +16,15 @@ class EventsController < ApplicationController
     @events = Event.where("date <= ?", Time.now ).order("date asc")
   end 
   
+  def destroy
+    @event = Event.find(params[:id])
+    @cart = current_cart    
+    @line_item = @cart.line_items.find_by_event_id(@event)
+    @line_item.destroy
+    
+    respond_to do |format|
+      format.html { redirect_to :back }
+    end
+  end
+  
 end

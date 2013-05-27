@@ -20,7 +20,10 @@
         </div>
         <a href="/" class="logo"><img src="/assets/logo.png" alt="" /></a>
         <div class="header-text">
-            Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется.
+            Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется. <br/>
+			<% unless current_cart.line_items.empty? %>
+			<%= link_to "мои любимые", cart_path(current_cart), :class => 'link' %>
+			<% end %>
         </div>
 		<% if controller?("events") && action?("show") %>
 		<a href="#"  class="hider-slider show"><span>развернуть медиа</span></a>
