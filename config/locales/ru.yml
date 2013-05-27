@@ -39,6 +39,9 @@ ru:
       recipe_type:
         one: "Тип рецепта"
         other: "Типы рецептов"
+      user:
+        one: "Пользователь"
+        other: "Пользователи"
     attributes:
       recipe:
         title: "Название"
@@ -66,4 +69,8 @@ ru:
         event: "Событие"
         user_id: "Пользователь"
         event_id: "Событие"
+      user:
+        name: "Имя"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
         
