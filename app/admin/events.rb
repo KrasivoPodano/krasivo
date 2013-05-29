@@ -8,6 +8,7 @@ ActiveAdmin.register Event do
     column :text do |row|
       row.text.html_safe
     end
+    column :main
     default_actions
   end
   
