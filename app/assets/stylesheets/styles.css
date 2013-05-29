@@ -641,12 +641,18 @@ span.phones{
 	font-size:0px;
 	line-height:0px;
 }
-.blocks-bottom{
+.blocks-bottom {
 	width:960px;
 	margin:0 auto;
 	font-size:0px;
 	line-height:0px;
 }
+
+.authorization_container{
+	width:960px;
+	margin:0 auto;
+}
+
 .blocks-bottom .block{
 	padding-bottom:130px;
 }
@@ -1142,5 +1148,9 @@ border-radius: 7px;
 /* YaMap */
 #YMapsID{
 	height:750px;
+}
+
+.auth_button {
+	width: 240px !important;
 }
 

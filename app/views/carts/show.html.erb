@@ -2,10 +2,17 @@
 	<div style="margin-top: 250px; margin-bottom: 200px;" class="container">
 		
 		<h1>Куда я хочу пойти </h1>
-		<table>
+		<table class="user_events">
+		<tr>
+		  <th>Событие</th>
+		  <th>Дата</th>
+		  <th></th>
+		  <th></th>
+		</tr>
 		<% @cart.events.each do |event| %>
 		<tr>
 		  <td><%= event.title %></td>
+		  <td><%= Russian::strftime(event.date, "%d %B") %></td>
 		  <td><%= appointment_link(event) %></td>
 		  <td><%= order_link(event) %></td>
 		</tr>

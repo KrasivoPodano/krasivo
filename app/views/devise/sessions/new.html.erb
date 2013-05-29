@@ -1,43 +1,47 @@
 <div class="content">
-	<div сlass="container" style="margin-top: 250px;">
+  <div class="container" style="margin-top: 200px; margin-bottom: 50px; min-height: 400px;">
+	<div class="text-page">
 
-<h2>Пожалуйста, авторизуйтесь:</h2>
+<div style="width: 50%; float: left;">
+
+<h1>Пожалуйста, авторизуйтесь:</h1>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
+  <div>Электронная почта:<br /><br />
   <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
+<br />
+  <div>Пароль:<br /><br />
   <%= f.password_field :password %></div>
-
+<br />
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div><%= f.check_box :remember_me %> Запомнить меня</div>
   <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div><%= f.submit "Авторизоваться", :class => 'auth_button' %></div>
 <% end %>
+  
+ 
+</div>
 
-<%= render "devise/shared/links" %>
+<div style="width: 50%; float: left;">
 
-<h2>Sign up</h2>
+<h1>Пожалуйста, зарегистрируйтесь:</h1>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div>Электронная почта:<br /><br />
   <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
+<br />
+  <div>Пароль:<br /><br />
   <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
+<br />
+  <div>Пароль еще разок:<br /><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Зарегистрироваться", :class => 'auth_button' %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
-
-    </div>
 </div>
-
+    </div>
+	</div>

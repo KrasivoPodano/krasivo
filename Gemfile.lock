@@ -150,8 +150,6 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
-    rails-i18n (0.7.3)
-      i18n (~> 0.5)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -217,7 +215,6 @@ DEPENDENCIES
   mysql2
   paperclip
   rails (= 3.2.13)
-  rails-i18n
   russian (~> 0.6.0)
   sass-rails (~> 3.2.3)
   sqlite3

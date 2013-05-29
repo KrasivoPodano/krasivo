@@ -29,3 +29,27 @@
 .unlike_link, .appointment_link {
 	color: black;
 }
+
+table.user_events {
+	background-color: #ffffe7;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border-spacing: 40px 10px;
+	
+	th {
+		text-align: left;
+		padding: 10px;
+
+	}
+	
+	tr, td {
+		padding: 10px;
+
+	}
+	
+	tr:last-child {
+		
+	}
+	
+	
+}
