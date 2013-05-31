@@ -13,15 +13,15 @@
 		<tr>
 		  <th>Событие</th>
 		  <th>Дата</th>
-		  <th></th>
-		  <th></th>
+		  <th>Записаться?</th>
+		  <th>Подтверждено?</th>
 		</tr>
 		<% @cart.events.each do |event| %>
 		<tr>
 		  <td><%= event.title %></td>
 		  <td><%= Russian::strftime(event.date, "%d %B") %></td>
-		  <td><%= cart_like(event) %></td>
-		  <td><%= order_link(event) %></td>
+		  <td><%= cart_order(event) %></td>
+		  <td><%=  %></td>
 		</tr>
 		<% end %>
 		</table>

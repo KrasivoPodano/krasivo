@@ -35,6 +35,14 @@ module ApplicationHelper
        link_to "убрать из избранного", event, method: :delete, :class => controller_name == "carts" ? 'unlike_link' : 'button-blue active'
    end
    
+   def cart_order(event)
+       if user_signed_in? && current_user.events.exists?(event)
+        "Я записался"
+       else
+         link_to "Записаться", appointments_path(event_id: event), remote: true, method: :post, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
+      end 
+     end
+   
    def order_link(event)
      if user_signed_in? && current_user.events.exists?(event)
        link_to "Я записан", cart_path(current_cart), :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'

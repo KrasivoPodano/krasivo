@@ -910,6 +910,11 @@ right:10px;
 	display:none;
 }
 
+.form a.active {
+	color:#661515;
+	text-decoration:underline;
+}
+
 .form.auth_popup {
 	width:400px;
 	margin-left:-250px;

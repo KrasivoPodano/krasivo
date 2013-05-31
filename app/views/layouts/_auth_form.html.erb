@@ -1,26 +1,52 @@
 <div class="blue auth_popup"></div>
 <div class="form auth_popup">
-
-    <a href="#" class="close"></a>
+  <a href="#" class="close"></a>
+	
+	<a href="#" id="show_sign_in_frame">Авторизоваться</a> |
+	<a href="#" id="show_sign_up_frame">Зарегистрироваться</a>
+	<br/><br/><br/>
+	
+  <div id="sign_in_frame">	
     <div class="service-info">
-        <div class="form-head">
-            <h2>авторизуйтесь, пожалуйста:</h2>
-       </div>
+      <div class="form-head" style="margin-bottom: 20px;">
+        <h2>авторизуйтесь, пожалуйста:</h2>
+      </div>
     </div>
 	
 	<%= form_for("user", :url => session_path(resource_name), :html => {:id => "sign_in_user"}) do |f| %>
 	  <div>Электронная почта:<br /><br />
 	  <%= f.email_field :email, :autofocus => true %></div>
-	<br />
+	  <br />
 	  <div>Пароль:<br /><br />
 	  <%= f.password_field :password %></div>
-	<br />
-
-	    <div><%= f.check_box :remember_me %> Запомнить меня</div>
-
-
+	  <br />
+	  <div><%= f.check_box :remember_me %> Запомнить меня</div>
 	  <div><%= f.submit "Авторизоваться", :class => 'auth_button' %></div>
+	<% end %>	
+  </div>
 
-	<% end %>
+  <div id="sign_up_frame" style="display: none">	
+    <div class="service-info">
+      <div class="form-head" style="margin-bottom: 20px;">
+        <h2>Зарегистрируйтесь, пожалуйста:</h2>
+      </div>
+    </div>
+	
+	<%= form_for("user", :url => registration_path("user")) do |f| %>
+	  <%= devise_error_messages! %>
+
+	  <div>Электронная почта:<br /><br />
+	  <%= f.email_field :email, :autofocus => true %></div>
+	  <br />
+	  <div>Пароль:<br /><br />
+	  <%= f.password_field :password %></div>
+	  <br />
+
+	  <div>Пароль еще разок:<br /><br />
+	  <%= f.password_field :password_confirmation %></div>
+		<br />
+	  <div><%= f.submit "Зарегистрироваться", :class => 'auth_button' %></div>
+	<% end %>	
+  </div>
     
 </div>
