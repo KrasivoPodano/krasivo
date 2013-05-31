@@ -2,6 +2,13 @@
 	<div style="margin-top: 250px; margin-bottom: 200px;" class="container">
 		
 		<h1>Куда я хочу пойти </h1>
+		
+		<% if current_cart.line_items.blank? %>
+		
+		Тут пусто
+		
+		<% else %>
+		
 		<table class="user_events">
 		<tr>
 		  <th>Событие</th>
@@ -13,18 +20,11 @@
 		<tr>
 		  <td><%= event.title %></td>
 		  <td><%= Russian::strftime(event.date, "%d %B") %></td>
-		  <td><%= appointment_link(event) %></td>
+		  <td><%= cart_like(event) %></td>
 		  <td><%= order_link(event) %></td>
 		</tr>
 		<% end %>
 		</table>
-		
-		<% if user_signed_in? %>
-		  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-		<% else %>
-		  <%= link_to "Sign up", new_user_registration_path %> |
-		  <%= link_to "Login", new_user_session_path %>
 		<% end %>
-		
     </div>
 </div>

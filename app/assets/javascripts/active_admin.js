@@ -1,9 +1,11 @@
 //= require active_admin/base
 
+
+
+
+
+
 /*
-
-$(document).ready(function(){
-
   $('.destraction').on("click", function(){
 	answer = confirm("Are you sure?");
 	      if (answer) {
@@ -36,6 +38,6 @@ $(document).ready(function(){
 
 
   
-});
+
 
 */

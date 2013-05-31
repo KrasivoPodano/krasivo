@@ -904,11 +904,23 @@ right:10px;
 	z-index:1000;
 	background:#74bee8;
 		-webkit-border-radius: 7px;
--moz-border-radius: 7px;
-border-radius: 7px;
-color:#fff;
-display:none;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	color:#fff;
+	display:none;
 }
+
+.form.auth_popup {
+	width:400px;
+	margin-left:-250px;
+}
+
+.form.notice {
+	display:block;
+	width:400px;
+	margin-left:-250px;
+}
+
 .form h2{
 	color:#fff;
 	font-size:38px;
@@ -1088,6 +1100,10 @@ input[type="submit"]:hover{
 	z-index:999;
 	background:#0b4568;
 	opacity:0.9;
+}
+
+.blue.notice{
+	display:block;
 }
 
 .niceRadio {

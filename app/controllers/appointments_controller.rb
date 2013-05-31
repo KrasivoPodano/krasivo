@@ -10,6 +10,8 @@ class AppointmentsController < ApplicationController
     
     respond_to do |format|
       if @order.save
+        flash[:notice] = t('order_success')
+        format.js
         format.html { redirect_to :back }
       else
         format.html  { redirect_to events_path }

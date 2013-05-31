@@ -7,7 +7,7 @@
             <span><%= link_to "о школе", school_path, :class => ('active' if controller?("static_pages") && action?("school")) %></span>
             <span><%= link_to "расписание", future_events_path, :class => ('active' if controller?("events") && action?("future")) %></span>
             <span><%= link_to "что преподаем", services_path, :class => ('active' if controller?("static_pages") && action?("services")) %></span>
-            <span><a href="#" class="order">записаться на урок</a></span>
+            <span><a href="#" class="auth_popup_link">записаться на урок</a></span>
             <span><%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %></span>
             <span><%= link_to "контакты", contacts_path, :class => ('active' if controller?("static_pages") && action?("contacts")) %></span>
         </nav>
@@ -21,8 +21,16 @@
         <a href="/" class="logo"><img src="/assets/logo.png" alt="" /></a>
         <div class="header-text">
             Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется. <br/>
+
+			<% if user_signed_in? %>
+			  <strong><%= current_user.email %></strong>
+			  <%= link_to "Выйти", destroy_user_session_path, method: :delete, :class => 'link' %>
+			<% else %>
+			  <%= link_to "Регистрация", new_user_registration_path, :class => 'link' %> |
+			  <%= link_to "Вход", new_user_session_path, :class => 'link', :remote => true %>
+			<% end %>
 			<% unless current_cart.line_items.empty? %>
-			<%= link_to "мои любимые", cart_path(current_cart), :class => 'link' %>
+			 | <%= link_to "Мои любимые", cart_path(current_cart), :class => 'link' %>
 			<% end %>
         </div>
 		<% if controller?("events") && action?("show") %>

@@ -24,18 +24,36 @@ module ApplicationHelper
    end
    
    def appointment_link(event)
-          
-     
      if current_cart.events.exists?(event)
-       link_to "я передумал", event, method: :delete, :class => controller_name == "carts" ? 'unlike_link' : 'button-blue active'
+       link_to "мне нравится", event, method: :delete, :class => controller_name == "carts" ? 'unlike_link' : 'button-blue active'
      else
-       link_to "я пойду!", line_items_path(event_id: event), :class => 'button-blue', :method => :post
+       link_to "мне нравится", line_items_path(event_id: event), :class => 'button-blue', :method => :post
      end
    end
    
-   def order_link(event)
-     if current_cart.events.exists?(event)
-       link_to "Записаться", appointments_path(event_id: event), method: :post, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
-      end   
+   def cart_like(event)
+       link_to "убрать из избранного", event, method: :delete, :class => controller_name == "carts" ? 'unlike_link' : 'button-blue active'
    end
+   
+   def order_link(event)
+     if user_signed_in? && current_user.events.exists?(event)
+       link_to "Я записан", cart_path(current_cart), :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
+     else
+       link_to "Записаться", appointments_path(event_id: event), remote: true, method: :post, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
+    end 
+   end
+   
+   def resource_name
+       :user
+     end
+
+   def resource
+     @resource ||= User.new
+   end
+
+   def devise_mapping
+     @devise_mapping ||= Devise.mappings[:user]
+   end
+   
+   
 end

@@ -74,11 +74,16 @@ $(function() {
 
 
 	
-	$(".button-back, .order").click(function(e) {
+	$(".button-back, .order_popup_link").click(function(e) {
 		e.preventDefault();
-		$(".blue").show();
-		$(".form").show();
+		$(".order_popup").show();
 	})
+	
+	$(".auth_popup_link").click(function(e) {
+		e.preventDefault();
+		$(".auth_popup").show();
+	})
+	
 	$(".blue").click(function() {
 		$(".blue").hide();
 		$(".form").hide();
@@ -88,6 +93,8 @@ $(function() {
 		$(".blue").hide();
 		$(".form").hide();
 	})
+	
+	
 	$(".social a").mouseover(function() {
 		$(this).find("img").attr("src", "/assets/" + $(this).attr("rel") + "-hover.png");
 	})

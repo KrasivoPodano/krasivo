@@ -16,3 +16,15 @@ $(function() {
 				return false;
         });
 });
+
+/*
+
+$(document).ready(function(){
+
+$('#sign_in_user').bind('ajax:success', function(data, response, xhr){
+  $('#sign_in_user').hide();
+});
+
+});
+
+*/

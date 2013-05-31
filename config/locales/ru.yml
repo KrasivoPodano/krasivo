@@ -13,6 +13,9 @@ ru:
   album_updated: "Альбом изменен"
   event_updated: "Событие изменено"
   recipe_updated: "Рецепт изменен"
+  auth_success: "Вы успешно авторизовались"
+  order_success: "Вы успешно записались"
+  auth_failure: "заполните поля верно"
   activerecord:
     models: 
       album:

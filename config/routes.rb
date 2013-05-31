@@ -9,7 +9,7 @@ Krasivo::Application.routes.draw do
   resources :appointments
 
 
-  devise_for :users
+  devise_for :users, :controllers => {sessions: 'sessions'}
 
   get "orders/create"
 

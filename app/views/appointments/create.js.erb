@@ -1,0 +1,7 @@
+$('#notice').html("<%=j render :partial => 'layouts/notice', :flash => flash %>");
+$(".close").click(function(e) {
+	e.preventDefault();
+	$(".blue").hide();
+	$(".form").hide();
+})
+<% flash.clear %>

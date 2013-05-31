@@ -1,0 +1,26 @@
+<div class="blue auth_popup"></div>
+<div class="form auth_popup">
+
+    <a href="#" class="close"></a>
+    <div class="service-info">
+        <div class="form-head">
+            <h2>авторизуйтесь, пожалуйста:</h2>
+       </div>
+    </div>
+	
+	<%= form_for("user", :url => session_path(resource_name), :html => {:id => "sign_in_user"}) do |f| %>
+	  <div>Электронная почта:<br /><br />
+	  <%= f.email_field :email, :autofocus => true %></div>
+	<br />
+	  <div>Пароль:<br /><br />
+	  <%= f.password_field :password %></div>
+	<br />
+
+	    <div><%= f.check_box :remember_me %> Запомнить меня</div>
+
+
+	  <div><%= f.submit "Авторизоваться", :class => 'auth_button' %></div>
+
+	<% end %>
+    
+</div>
