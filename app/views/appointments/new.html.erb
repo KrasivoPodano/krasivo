@@ -1,0 +1,17 @@
+<div style="margin-top: 300px; width: 500px; height: 300px; background-color: grey;">
+
+<%= form_for @appointment do |f| %>
+
+
+
+  <div>Сколько человек пойдет:
+  <%= f.number_field :people, :min => 0 %></div>
+  <br />
+  <div>Ваш комметарий:
+  <%= f.text_area :comment %></div>
+  <br />
+  <%= f.submit "Авторизоваться", :class => 'auth_button' %>
+
+
+<% end %>
+</div>

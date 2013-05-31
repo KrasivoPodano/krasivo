@@ -335,7 +335,7 @@ a {
 	text-decoration:underline;
 }
 a:hover {
-	color:#661515;
+	color:#249ee7;
 	text-decoration:underline;
 }
 .event-main a{
@@ -911,14 +911,15 @@ right:10px;
 }
 
 .form a.active {
-	color:#661515;
-	text-decoration:underline;
+	color:#186999;;
+	text-decoration:none;
 }
 
-.form.auth_popup {
+.form.auth_popup, .form.appointment_popup {
 	width:400px;
 	margin-left:-250px;
 }
+
 
 .form.notice {
 	display:block;

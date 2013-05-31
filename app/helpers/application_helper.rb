@@ -25,31 +25,35 @@ module ApplicationHelper
    
    def appointment_link(event)
      if current_cart.events.exists?(event)
-       link_to "мне нравится", event, method: :delete, :class => controller_name == "carts" ? 'unlike_link' : 'button-blue active'
+       link_to image_tag('heart.png'), event, method: :delete, :class => controller_name == "carts" ? 'unlike_link' : 'button-blue active'
      else
-       link_to "мне нравится", line_items_path(event_id: event), :class => 'button-blue', :method => :post
+       link_to image_tag('heart.png'), line_items_path(event_id: event), :class => 'button-blue', :method => :post
      end
    end
+   
+   def order_link(event)
+     if user_signed_in? && current_user.events.exists?(event)
+       link_to "Я записан", cart_path(current_cart), :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
+     else
+       link_to "Записаться", new_appointment_path(event_id: event), remote: true, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
+    end 
+   end
+   
+   
    
    def cart_like(event)
        link_to "убрать из избранного", event, method: :delete, :class => controller_name == "carts" ? 'unlike_link' : 'button-blue active'
    end
    
    def cart_order(event)
-       if user_signed_in? && current_user.events.exists?(event)
-        "Я записался"
-       else
-         link_to "Записаться", appointments_path(event_id: event), remote: true, method: :post, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
-      end 
-     end
-   
-   def order_link(event)
      if user_signed_in? && current_user.events.exists?(event)
-       link_to "Я записан", cart_path(current_cart), :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
+      "Я записался"
      else
        link_to "Записаться", appointments_path(event_id: event), remote: true, method: :post, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
     end 
-   end
+  end
+   
+
    
    def resource_name
        :user
