@@ -75,6 +75,9 @@ ru:
         event: "Событие"
         user_id: "Пользователь"
         event_id: "Событие"
+        people: "Кол-во людей"
+        comment: "Комментарий"
+        check: "Одобрена"
       user:
         name: "Имя"
         password: "Пароль"

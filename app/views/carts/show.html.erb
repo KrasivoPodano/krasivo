@@ -21,7 +21,7 @@
 		  <td><%= event.title %></td>
 		  <td><%= Russian::strftime(event.date, "%d %B") %></td>
 		  <td><%= cart_order(event) %></td>
-		  <td><%=  %></td>
+		  <td><%= event_checked(event) %></td>
 		</tr>
 		<% end %>
 		</table>

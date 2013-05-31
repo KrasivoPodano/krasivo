@@ -25,9 +25,9 @@ module ApplicationHelper
    
    def appointment_link(event)
      if current_cart.events.exists?(event)
-       link_to image_tag('heart.png'), event, method: :delete, :class => controller_name == "carts" ? 'unlike_link' : 'button-blue active'
+       link_to image_tag('heart.png'), event, method: :delete, :class => 'button-pink active'
      else
-       link_to image_tag('heart.png'), line_items_path(event_id: event), :class => 'button-blue', :method => :post
+       link_to image_tag('heart.png'), line_items_path(event_id: event), :class => 'button-pink', :method => :post
      end
    end
    
@@ -35,7 +35,7 @@ module ApplicationHelper
      if user_signed_in? && current_user.events.exists?(event)
        link_to "Я записан", cart_path(current_cart), :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
      else
-       link_to "Записаться", new_appointment_path(event_id: event), remote: true, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
+       link_to "Записаться", new_appointment_path(event_id: event), remote: true, :class => 'button-blue'
     end 
    end
    
@@ -49,8 +49,18 @@ module ApplicationHelper
      if user_signed_in? && current_user.events.exists?(event)
       "Я записался"
      else
-       link_to "Записаться", appointments_path(event_id: event), remote: true, method: :post, :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
+       link_to "Записаться", new_appointment_path(event_id: event), remote: true, :class => 'appointment_link'
     end 
+  end
+  
+  def event_checked(event)
+    appointment = Appointment.find_by_user_id_and_event_id(current_user.id, event.id)
+    if appointment && appointment.check?
+      "Да"
+    else
+      "Нет"
+    end
+    
   end
    
 
