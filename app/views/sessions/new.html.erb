@@ -3,7 +3,14 @@
 	<div class="text-page">
 
 
-<%= form_for("user", :url => session_path(resource_name), :html => {:id => "sign_in_user"}) do |f| %>
+
+<h1>Пожалуйста, авторизуйтесь:</h1>
+
+
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<%= devise_error_messages! %>
+
   <div>Электронная почта:<br /><br />
   <%= f.email_field :email, :autofocus => true %></div>
 <br />
@@ -18,6 +25,7 @@
 <% end %>
   
  
+
 </div>
     </div>
 	</div>

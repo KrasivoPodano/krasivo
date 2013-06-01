@@ -62,6 +62,7 @@ $(document).ready(function(){
 	
 	$('#login_link').on("click", function() {
 		$('.auth_popup').show();
+		$('#show_sign_in_frame').addClass('active');
 		
 		return false
 	});
