@@ -1021,6 +1021,32 @@ margin-top:-10px;
 font-family: 'ALSRubl-Verdana', Verdana, sans-serif;
 vertical-align:middle;
 }
+
+input[type="text"].numbers{
+	height:25px;
+	width:15px;
+	padding:0px 15px;
+	border:2px solid #fff;
+	margin-left:25px;
+	background:#249ee7;
+	font-size:14px;
+		-webkit-box-shadow: 0px 2px 0px rgba(24, 105, 153, 1) inset;
+-moz-box-shadow:    0px 2px 0px rgba(24, 105, 153, 1) inset;
+box-shadow:         0px 2px 0px rgba(24, 105, 153, 1) inset;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+color:#fff;
+display:inline-block;
+margin-top:-10px;
+font-family: 'ALSRubl-Verdana', Verdana, sans-serif;
+vertical-align:middle;
+}
+
+input[type="text"].numbers.date{
+	width:85px;	
+}
+
 .client-info{
 	margin-top:75px;
 }
@@ -1096,7 +1122,7 @@ text-decoration:none;
 	background:#a51717;
 }
 .form-line{
-	
+	margin-bottom: 10px;
 }
 input[type="submit"]{
 	width:140px;

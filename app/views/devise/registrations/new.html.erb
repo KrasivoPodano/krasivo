@@ -1,18 +1,22 @@
-<h2>Sign up</h2>
+<div class="content">
+  <div class="container" style="margin-top: 200px; margin-bottom: 50px; min-height: 400px;">
+	<div class="text-page">
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %>
   <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
+	<br/><br/>
+  <div><%= f.label :password %>
   <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
+	<br/><br/>
+  <div><%= f.label :password_confirmation %><br/>
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Зарегистрироваться", :class => 'auth_button' %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+</div>
+</div>

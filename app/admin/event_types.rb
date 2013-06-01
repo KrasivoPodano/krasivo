@@ -3,6 +3,7 @@ ActiveAdmin.register EventType do
    config.clear_sidebar_sections!
 
    index do 
+     column :id
      column :title
      default_actions
    end

@@ -33,7 +33,6 @@
     </div>
 	
 	<%= form_for("user", :url => registration_path("user")) do |f| %>
-	  <%= devise_error_messages! %>
 
 	  <div>Электронная почта:<br /><br />
 	  <%= f.email_field :email, :autofocus => true %></div>

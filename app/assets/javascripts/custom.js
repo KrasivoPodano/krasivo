@@ -20,7 +20,7 @@ $(function() {
 
 
 $(document).ready(function(){
-
+	
 
 	$('#show_sign_in_frame').on("click", function() {
 		$('#show_sign_up_frame').removeClass('active');
@@ -50,7 +50,27 @@ $(document).ready(function(){
 		return false
 	});
 	
+	$('#register_link').on("click", function() {
+		$('.auth_popup').show();
+		$('#show_sign_in_frame').removeClass('active');
+		$('#show_sign_up_frame').addClass('active');
+		$('#sign_in_frame').hide();
+		$('#sign_up_frame').show();
+		
+		return false
+	});
 	
+	$('#login_link').on("click", function() {
+		$('.auth_popup').show();
+		
+		return false
+	});
+	
+	
+	
+/*	$(".order_popup").show();*/
+	
+
 	
 
 /*

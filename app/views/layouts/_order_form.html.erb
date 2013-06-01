@@ -3,36 +3,123 @@
 
     <%= form_for @order do |f| %>
         <a href="#" class="close"></a>
-        <div class="service-info">
+
+		<div class="service-info">
+			
             <div class="form-head">
-                <h2>представьтесь, пожалуйста:</h2>
-           </div>
+                <h2>Заказать услугу:</h2>
+                <%= f.collection_select(:event_type_id, EventType.all, :id, :title)%>
+            </div>
+
+			<!--meropriyatie-->
+			<div id="meropriyatie">
+				
+				<div class="form-line">
+	            <label>Кол-во человек:</label><span class="b-rub">
+	                <input type="text" name="order[people]" class="numbers" data-first="1"  value="1"/>
+	            </span>
+	           </div>
+	
+				<div class="form-line">
+	            <label>Дата:</label><span class="b-rub">
+	                <input type="text" name="order[date]" class="numbers date" data-first="11.10.2013"  value="11.10.2013"/>
+	            </span>
+	           </div>
+	
+				<div class="form-line">
+	            <label>Удобное время проведения:</label><span class="b-rub">
+	                <input type="text" name="order[time]" class="numbers date" data-first="16:00"  value="16:00"/>
+	            </span>
+	           </div>
+			
+	            <div class="form-line">
+	            <label>У нас есть бюджет:</label><span class="b-rub">
+	                <input type="text" name="order[money]" class="budget" data-first="0 Р"  value="0 Р"/>
+	            </span>
+	           </div>
+	
+		    </div>
+		
+			<!--birthsday-->
+				<div id="birthsday" style="display:none;">
+
+					<div class="form-line">
+		            <label>Кол-во человек:</label><span class="b-rub">
+		                <input type="text" name="order[people]" class="numbers" data-first="1"  value="1"/>
+		            </span>
+		           </div>
+
+					<div class="form-line">
+		            <label>Дата:</label><span class="b-rub">
+		                <input type="text" name="order[date]" class="numbers date" data-first="11.10.2013"  value="11.10.2013"/>
+		            </span>
+		           </div>
+
+					<div class="form-line">
+		            <label>Удобное время проведения:</label><span class="b-rub">
+		                <input type="text" name="order[time]" class="numbers date" data-first="16:00"  value="16:00"/>
+		            </span>
+		           </div>
+		
+					<div class="form-line">
+                    <span class="myCheck">
+                        <input name="order[beautiful_cake]" type="checkbox" checked="checked" />
+                    </span>
+                    <label>Я хочу красивый торт</label>
+                    </div>
+
+					<div class="form-line">
+                    <span class="myCheck">
+                        <input name="order[ornament]" type="checkbox" checked="checked" />
+                    </span>
+                    <label>Украшения</label>
+                    </div>
+
+		            <div class="form-line">
+		            <label>У нас есть бюджет:</label><span class="b-rub">
+		                <input type="text" name="order[money]" class="budget" data-first="0 Р"  value="0 Р"/>
+		            </span>
+		           </div>
+
+			    </div>		
+			<!--children-->
+			
+			<!--corporate-->
+
         </div>
-        <div class="client-info" style="margin-top: -110px;">
+
+
+
+        <div class="client-info">
+	
             <div class="form-head">
+            <h2>представьтесь, пожалуйста:</h2>
             </div>
+
             <div class="form-line">
-            <label>Компания </label>
-            <input name="order[company]" type="text" data-first="Грузовичкоф" value="Грузовичкоф"/>
-            </div>
-             <div class="form-line">
             <label>Контактное лицо</label>
             <input name="order[name]" type="text" data-first="Марсель" value="Марсель" />
             </div>
+
             <div class="form-line">
             <label>Телефон</label>
             <input type="text" name="order[phone1]" data-first="+7 981 000-6969" value="+7 981 000-6969"/><a href="#" class="addphone">+ добавить ещё</a>
-           </div>
+            </div>
+
             <div class="more-phones"> </div>
+
             <div class="form-line">
             <label>Электропочта</label>
             <input name="order[mail]" style="width: 330px;" type="text" data-first="marselka@gruzowitchkoff.ru" value="marselka@gruzowitchkoff.ru" /> 
             </div>
+
             <div class="form-line">
-                <label class="textarea">Ваш комментарий</label>
+            <label class="textarea">Ваш комментарий</label>
             <textarea name="order[comment]"></textarea>
             </div>
+
         </div>
+
         <%= f.submit "Заказать" %>
     <% end %>
 </div>

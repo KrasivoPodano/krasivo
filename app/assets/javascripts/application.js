@@ -78,3 +78,11 @@
     };
 
 })();
+
+$(document).ready(function(){
+
+$('#order_event_type_id').change(function() {
+	$(this).parent().hide();
+});
+
+});

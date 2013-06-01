@@ -18,9 +18,11 @@
 <%= yield :head %>
 </head>
 <body>
+<% if notice %>
 <div id="notice">
 <%= render :partial => 'layouts/notice', :flash => flash %>
 </div>
+<% end %>
 <%= render :partial => 'layouts/appointment_form', :locals => { :@appointment => Appointment.new } %>
 <%= render :partial => 'layouts/order_form', :locals => { :@order => Order.new, :@events => Event.all } %>
 <%= render 'layouts/auth_form' %>
