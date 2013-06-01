@@ -5,13 +5,13 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %>
+  <div>Электронная почта:<br /><br />
   <%= f.email_field :email, :autofocus => true %></div>
-	<br/><br/>
-  <div><%= f.label :password %>
+	<br/>
+  <div>Пароль:<br /><br />
   <%= f.password_field :password %></div>
-	<br/><br/>
-  <div><%= f.label :password_confirmation %><br/>
+	<br/>
+  <div><%= f.label :password_confirmation %><br/><br/>
   <%= f.password_field :password_confirmation %></div>
 
   <div><%= f.submit "Зарегистрироваться", :class => 'auth_button' %></div>
