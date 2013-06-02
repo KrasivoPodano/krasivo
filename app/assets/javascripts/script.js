@@ -38,6 +38,20 @@ $(function() {
 			scrollArrows : true
 		}
 		cuSel(params);
+		 $("#order_type_select").on("change", function(){
+
+		target = $('#order_type_select').attr('value');
+
+		if(target == "День рождения") {
+		    $('#birthsday').show();
+		    $('#meropriyatie').hide();
+			}
+
+		else {
+			    $('#birthsday').hide();
+				$('#meropriyatie').show();
+			}
+		});
 	}
 
 	jQuery(".myCheck").mousedown(function() {

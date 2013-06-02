@@ -1,6 +1,6 @@
 class AddFieldsToOrders < ActiveRecord::Migration
   def change
-    add_column :orders, :event_type_id, :integer
+    add_column :orders, :event_type, :string
     add_column :orders, :people, :integer
     add_column :orders, :date, :date
     add_column :orders, :time, :time

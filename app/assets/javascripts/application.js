@@ -16,6 +16,21 @@
 //= require rails.validations
 //= require_tree .
 
+
+
+$(document).ready(function(){
+	
+$("#order_type_select").on("change", function(){
+
+target = $('#order_type_select').attr('value');
+
+alert(target)
+
+
+});
+
+});
+
 // Limit scope pollution from any deprecated API
 (function() {
 

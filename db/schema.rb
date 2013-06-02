@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(:version => 20130531202213) do
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
     t.integer  "event_id"
-    t.integer  "event_type_id"
+    t.string   "event_type"
     t.integer  "people"
     t.date     "date"
     t.time     "time"

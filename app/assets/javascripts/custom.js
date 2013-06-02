@@ -68,6 +68,13 @@ $(document).ready(function(){
 	});
 	
 	
+	$('.order_popup').show();
+	
+	
+
+	
+		
+	
 	
 /*	$(".order_popup").show();*/
 	

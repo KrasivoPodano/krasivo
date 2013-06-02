@@ -8,7 +8,12 @@
 			
             <div class="form-head">
                 <h2>Заказать услугу:</h2>
-                <%= f.collection_select(:event_type_id, EventType.all, :id, :title)%>
+                <select name="order[event_type]" id="order_type_select">
+                    <option value="Мероприятие" selected="selected">Мероприятие</option>
+                    <option value="День рождения">День рождения</option>
+                    <option value="Детский праздник">Детский праздник</option>
+                    <option value="Корпоратив">Корпоратив</option>
+                </select>
             </div>
 
 			<!--meropriyatie-->
@@ -63,7 +68,7 @@
 		
 					<div class="form-line">
                     <span class="myCheck">
-                        <input name="order[beautiful_cake]" type="checkbox" checked="checked" />
+                        <%= f.check_box :beautiful_cake %>
                     </span>
                     <label>Я хочу красивый торт</label>
                     </div>
