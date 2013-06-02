@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531202213) do
+ActiveRecord::Schema.define(:version => 20130602202835) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -129,10 +129,9 @@ ActiveRecord::Schema.define(:version => 20130531202213) do
     t.string   "phone3"
     t.string   "mail"
     t.text     "comment"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "event_id"
-    t.string   "event_type"
     t.integer  "people"
     t.date     "date"
     t.time     "time"
@@ -140,7 +139,8 @@ ActiveRecord::Schema.define(:version => 20130531202213) do
     t.boolean  "ornament"
     t.boolean  "children_cake"
     t.boolean  "animators"
-    t.decimal  "money",          :precision => 8, :scale => 0
+    t.integer  "money",          :limit => 8
+    t.string   "event_type"
   end
 
   create_table "photos", :force => true do |t|
