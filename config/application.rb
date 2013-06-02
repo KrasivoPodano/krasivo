@@ -40,6 +40,19 @@ module Krasivo
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
+    
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      address:        "smtp.locum.ru",
+      port:           25, 
+      domain:         "locum.ru",
+      authentication: "login",
+      user_name:      "iam@babrovka.ru",
+      password:       "111715",
+      enable_starttls_auto: false,
+      openssl_verify_mode: false 
+    }
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,

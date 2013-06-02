@@ -21,8 +21,11 @@
 	  <%= f.password_field :password %></div>
 	  <br />
 	  <div><%= f.check_box :remember_me %> Запомнить меня</div>
+	<br /><br />
+	<%= link_to 'Забыли пароль?', new_password_path(resource_name) %>
 	  <div><%= f.submit "Авторизоваться", :class => 'auth_button' %></div>
-	<% end %>	
+	<% end %>
+		
   </div>
 
   <div id="sign_up_frame" style="display: none">	
@@ -43,7 +46,8 @@
 
 	  <div>Пароль еще разок:<br /><br />
 	  <%= f.password_field :password_confirmation %></div>
-		<br />
+		<br /><br/>
+		<%= link_to 'Забыли пароль?', new_password_path(resource_name) %>
 	  <div><%= f.submit "Зарегистрироваться", :class => 'auth_button' %></div>
 	<% end %>	
   </div>
