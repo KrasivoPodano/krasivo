@@ -62,9 +62,7 @@ module ApplicationHelper
     end
     
   end
-   
-
-   
+  
    def resource_name
        :user
      end
@@ -75,6 +73,15 @@ module ApplicationHelper
 
    def devise_mapping
      @devise_mapping ||= Devise.mappings[:user]
+   end
+   
+   def who_goes(event)
+     line_items = LineItem.where(:event_id => event.id).all
+     if line_items.size < 1
+       nil
+     else
+       line_items.count
+     end
    end
    
    

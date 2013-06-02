@@ -1,29 +1,40 @@
 <div class="content">
 	<div style="margin-top: 250px; margin-bottom: 200px;" class="container">
-		
+		<% unless current_cart.line_items.blank? %>	
 		<h1>Куда я хочу пойти </h1>
-		
-		<% if current_cart.line_items.blank? %>
-		
-		Тут пусто
-		
-		<% else %>
-		
 		<table class="user_events">
 		<tr>
 		  <th>Событие</th>
 		  <th>Дата</th>
 		  <th>Записаться?</th>
-		  <th>Подтверждено?</th>
 		</tr>
 		<% @cart.events.each do |event| %>
 		<tr>
 		  <td><%= event.title %></td>
 		  <td><%= Russian::strftime(event.date, "%d %B") %></td>
 		  <td><%= cart_order(event) %></td>
-		  <td><% if user_signed_in? %><%= event_checked(event) %><% else %>Нет<% end %></td>
 		</tr>
 		<% end %>
+		</table>
+		<% end %>
+		
+		<% if user_signed_in? %>
+		<h1>Куда я пойду</h1>
+		<table class="user_events">
+		<tr>
+		  <th>Событие</th>
+		  <th>Дата</th>
+		  <th>Подтверждено?</th>
+		</tr>
+		
+		<% current_user.events.each do |event| %>
+		<tr>
+		  <td><%= event.title %></td>
+		  <td><%= Russian::strftime(event.date, "%d %B") %></td>
+		  <td><%= event_checked(event) %></td>
+		</tr>
+		<% end %>
+		
 		</table>
 		<% end %>
     </div>
