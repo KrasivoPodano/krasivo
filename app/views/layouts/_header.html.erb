@@ -29,7 +29,7 @@
 			  <%= link_to "Регистрация", "#", :class => 'link', :id => 'register_link' %> |
 			  <%= link_to "Вход", "#", :class => 'link', :id => 'login_link' %>
 			<% end %>
-			<% unless current_cart.line_items.empty? %>
+			<% if current_cart.line_items.exists? || user_signed_in? && current_user.events.exists? %>
 			 | <%= link_to "Мои любимые", cart_path(current_cart), :class => 'link' %>
 			<% end %>
         </div>

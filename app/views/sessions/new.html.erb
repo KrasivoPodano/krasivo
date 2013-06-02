@@ -20,6 +20,8 @@
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> Запомнить меня</div>
   <% end -%>
+<br /><br />
+<%= link_to 'Забыли пароль?', new_password_path(resource_name), :class => 'unlike_link' %>
 
   <div><%= f.submit "Авторизоваться", :class => 'auth_button' %></div>
 <% end %>
