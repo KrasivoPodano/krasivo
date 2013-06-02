@@ -3,17 +3,18 @@
 	<div class="text-page">
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div>Электронная почта:<br /><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div>Электронная почта:<br />
+  	<%= f.email_field :email, :autofocus => true  %></div>
+	<div class="field_error"><%= f.object.errors[:email].first %></div>
 	<br/>
-  <div>Пароль:<br /><br />
-  <%= f.password_field :password %></div>
+  <div>Пароль:<br />
+  <%= f.password_field :password %>
+	<div class="field_error"><%= f.object.errors[:password].first %></div></div>
 	<br/>
-  <div><%= f.label :password_confirmation %><br/><br/>
+  <div><%= f.label :password_confirmation %><br/>
   <%= f.password_field :password_confirmation %></div>
-
+<div class="field_error"><%= f.object.errors[:password_confirmation].first %></div></div>
   <div><%= f.submit "Зарегистрироваться", :class => 'auth_button' %></div>
 <% end %>
 

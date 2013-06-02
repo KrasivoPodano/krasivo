@@ -63,6 +63,7 @@ GEM
     ckeditor (4.0.4)
       mime-types
       orm_adapter
+    client_side_validations (3.2.5)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -206,6 +207,7 @@ DEPENDENCIES
   activeadmin (~> 0.6.0)
   capistrano
   ckeditor (~> 4.0.4)
+  client_side_validations
   coffee-rails (~> 3.2.1)
   devise-i18n!
   execjs
