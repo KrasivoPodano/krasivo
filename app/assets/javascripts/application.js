@@ -17,20 +17,6 @@
 //= require_tree .
 
 
-
-$(document).ready(function(){
-	
-$("#order_type_select").on("change", function(){
-
-target = $('#order_type_select').attr('value');
-
-alert(target)
-
-
-});
-
-});
-
 // Limit scope pollution from any deprecated API
 (function() {
 
@@ -94,11 +80,3 @@ alert(target)
     };
 
 })();
-
-$(document).ready(function(){
-
-$('#order_event_type_id').change(function() {
-	$(this).parent().hide();
-});
-
-});
