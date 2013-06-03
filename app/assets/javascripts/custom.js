@@ -3,7 +3,7 @@ $(function() {
 		
         $(".addphone").on('click', function() {
 			if(i<4) {
-            $(".more-phones").append("<div class='form-line'><label>Ещё один телефон</label> <input type='text' name='order[phone" + i + "]'  data-first='+7 981 000-6969' value='+7 981 000-6969' /><a href='#' class='removephone'>&mdash; удалить номер</a></div>");
+            $(".more-phones").append("<div class='form-line'><label>Ещё один телефон</label> <input type='text' name='order[phone" + i + "]'  placeholder='+7 981 000-6969'/><a href='#' class='removephone'>&mdash; удалить номер</a></div>");
 			i++;
 		}
 			return false;
