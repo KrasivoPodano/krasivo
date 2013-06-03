@@ -713,7 +713,7 @@ footer{
 }
 .footer-menu nav{
 	float:left;
-	width:220px;
+	width:300px;
 	margin-left:20px;
 }
 .footer-menu nav li{
@@ -728,7 +728,7 @@ footer{
 	color:#ffffe6;
 	background:#661515;
 	padding:0 20px;
-	width:180px;
+	width:230px;
 	-webkit-border-radius: 7px;
 -moz-border-radius: 7px;
 border-radius: 7px;	
@@ -767,7 +767,7 @@ color:#9b2021;
 }
 .footer-contact{
 	float:right;
-	margin:50px 20px 0 0;
+	margin:50px 120px 0 0;
 	font-size:18px;
 	font-weight:bold;
 	

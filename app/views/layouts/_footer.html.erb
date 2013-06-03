@@ -3,68 +3,45 @@
 
         <div class="footer-menu">
             <nav>
-                <a href="#" class="section active">кулинарная школа</a>
+				<%= link_to "кулинарная школа", "/", :class => (unless b2b? then 'section active' else 'section' end)  %>
                 <ul>
                     <li>
-                        <a href="#"> о школе</a>
+                       <%= link_to "о школе", school_path, :class => ('active' if controller?("static_pages") && action?("school")) %>
                     </li>
                     <li>
-                        <a href="#">календарь событий</a>
+                        <%= link_to "расписание", future_events_path, :class => ('active' if controller?("events") && action?("future")) %>
                     </li>
                     <li>
-                        <a href="#">архив событий</a>
+                        <%= link_to "что преподаем", services_path, :class => ('active' if controller?("static_pages") && action?("services")) %>
                     </li>
                     <li>
-                        <a href="#">услуги нашей школы</a>
+                        <a href="#" class="order_popup_link">записаться на урок</a>
                     </li>
                     <li>
-                        <a href="#">заказать услуги</a>
+                        <%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %>
                     </li>
                     <li>
-                        <a href="#">рецепты вкусностей</a>
-                    </li>
-                    <li>
-                        <a href="#">контакты школы</a>
+                        <%= link_to "контакты", contacts_path, :class => ('active' if controller?("static_pages") && action?("contacts")) %>
                     </li>
                 </ul>
             </nav>
             <nav>
-                <a href="#" class="section">фуд-студия</a>
+				<%= link_to "фуд-студия и кейтеринг", "/b2b/food", :class => (if b2b? then 'section active' else 'section' end)  %>
                 <ul>
                     <li>
-                        <a href="#"> о фуд-студии</a>
+                        <%= nav_link "фуд-студия", b2b_food_path %>
                     </li>
                     <li>
-                        <a href="#">портфолио</a>
+                        <%= nav_link "портфолио", b2b_portfolio_path %>
                     </li>
                     <li>
-                        <a href="#">заказать услуги</a>
+                        <%= nav_link "кейтеринг", b2b_catering_path %>
                     </li>
                     <li>
-                        <a href="#">стоимость услуг</a>
+                        <%= nav_link "стоимость услуг", b2b_price_path %>
                     </li>
                     <li>
-                        <a href="#">контакты студии</a>
-                    </li>
-                </ul>
-            </nav>
-            <nav>
-                <a href="#" class="section">кейтеринг</a>
-                <ul>
-                    <li>
-                        <a href="#"> о фуд-студии</a>
-                    </li>
-                    <li>
-                        <a href="#">портфолио</a>
-                    </li>
-                    <li>
-                        <a href="#">заказать услуги</a>
-                    </li>
-                    <li>
-                        <a href="#">стоимость услуг</a>
-                    </li>
-                    <li>
-                        <a href="#">контакты студии</a>
+                        <%= nav_link "контакты", b2b_contacts_path %>
                     </li>
                 </ul>
             </nav>
@@ -84,7 +61,7 @@
         <div class="copy">
             <%= Time.now.year %> © студия вкусноты «Красиво подано», все права защищены
             <br />
-            вы имеете право хранить молчание, повара, всё что вы скажете может быть приготовлено в супе
+            вы имеете право хранить молчание, всё что вы скажете может быть приготовлено в супе
         </div>
     </div>
 </footer>
