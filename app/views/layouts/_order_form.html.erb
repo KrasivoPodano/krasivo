@@ -75,7 +75,7 @@
 
 					<div class="form-line">
                     <span class="myCheck">
-                        <input name="order[ornament]" type="checkbox" checked="checked" />
+                        <%= f.check_box :ornament %>
                     </span>
                     <label>Украшения</label>
                     </div>
@@ -88,8 +88,84 @@
 
 			    </div>		
 			<!--children-->
+			<div id="children" style="display:none;">
+
+				<div class="form-line">
+	            <label>Кол-во человек:</label><span class="b-rub">
+	                <input type="text" name="order[people]" class="numbers" data-first="1"  value="1"/>
+	            </span>
+	           </div>
+
+				<div class="form-line">
+	            <label>Дата:</label><span class="b-rub">
+	                <input type="text" name="order[date]" class="numbers date" data-first="11.10.2013"  value="11.10.2013"/>
+	            </span>
+	           </div>
+
+				<div class="form-line">
+	            <label>Удобное время проведения:</label><span class="b-rub">
+	                <input type="text" name="order[time]" class="numbers date" data-first="16:00"  value="16:00"/>
+	            </span>
+	           </div>
+	
+				<div class="form-line">
+                <span class="myCheck">
+                    <%= f.check_box :children_cake %>
+                </span>
+                <label>Нам нужен детский тор</label>
+                </div>
+
+				<div class="form-line">
+                <span class="myCheck">
+                    <%= f.check_box :animators %>
+                </span>
+                <label>Аниматоры</label>
+                </div>
+
+				<div class="form-line">
+                <span class="myCheck">
+                    <%= f.check_box :ornament %>
+                </span>
+                <label>Украшения</label>
+                </div>
+
+	            <div class="form-line">
+	            <label>У нас есть бюджет:</label><span class="b-rub">
+	                <input type="text" name="order[money]" class="budget" data-first="0 Р"  value="0 Р"/>
+	            </span>
+	           </div>
+
+		    </div>
 			
 			<!--corporate-->
+			
+			<div id="corporate" style="display:none;">
+
+				<div class="form-line">
+	            <label>Кол-во человек:</label><span class="b-rub">
+	                <input type="text" name="order[people]" class="numbers" data-first="1"  value="1"/>
+	            </span>
+	           </div>
+
+				<div class="form-line">
+	            <label>Дата:</label><span class="b-rub">
+	                <input type="text" name="order[date]" class="numbers date" data-first="11.10.2013"  value="11.10.2013"/>
+	            </span>
+	           </div>
+
+				<div class="form-line">
+	            <label>Удобное время проведения:</label><span class="b-rub">
+	                <input type="text" name="order[time]" class="numbers date" data-first="16:00"  value="16:00"/>
+	            </span>
+	           </div>
+
+	            <div class="form-line">
+	            <label>У нас есть бюджет:</label><span class="b-rub">
+	                <input type="text" name="order[money]" class="budget" data-first="0 Р"  value="0 Р"/>
+	            </span>
+	           </div>
+
+		    </div>
 
         </div>
 

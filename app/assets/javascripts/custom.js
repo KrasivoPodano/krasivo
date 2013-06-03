@@ -1,9 +1,9 @@
 $(function() {
-		var i = 0;
+		var i = 2;
 		
         $(".addphone").on('click', function() {
-			if(i<2) {
-            $(".more-phones").append("<div class='form-line'><label>Ещё один телефон</label> <input type='text' name='tel" + i +"'  data-first='+7 981 000-6969' value='+7 981 000-6969' /><a href='#' class='removephone'>&mdash; удалить номер</a></div>");
+			if(i<4) {
+            $(".more-phones").append("<div class='form-line'><label>Ещё один телефон</label> <input type='text' name='order[phone" + i + "]'  data-first='+7 981 000-6969' value='+7 981 000-6969' /><a href='#' class='removephone'>&mdash; удалить номер</a></div>");
 			i++;
 		}
 			return false;
@@ -67,24 +67,6 @@ $(document).ready(function(){
 		return false
 	});
 	
-	
-	
-	
-
-	
-		
-	
-	
-/*	$(".order_popup").show();*/
-	
-
-	
-
-/*
-$('#sign_in_user').bind('ajax:success', function(data, response, xhr){
-  $('#sign_in_user').hide();
-});
-*/
 
 });
 

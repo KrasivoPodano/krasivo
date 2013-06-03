@@ -43,13 +43,31 @@ $(function() {
 		target = $('#order_type_select').attr('value');
 
 		if(target == "День рождения") {
-		    $('#birthsday').show();
 		    $('#meropriyatie').hide();
+			$('#birthsday').show();
+			$('#children').hide();
+			$('#corporate').hide();
+			}
+			
+		else if(target == "Детский праздник") {
+		    $('#meropriyatie').hide();
+			$('#birthsday').hide();
+			$('#children').show();
+			$('#corporate').hide();
+			}
+			
+		else if(target == "Корпоратив") {
+			$('#meropriyatie').hide();
+			$('#birthsday').hide();
+			$('#children').hide();
+			$('#corporate').show(); 
 			}
 
 		else {
-			    $('#birthsday').hide();
-				$('#meropriyatie').show();
+			    $('#meropriyatie').show();
+				$('#birthsday').hide();
+				$('#children').hide();
+				$('#corporate').hide();
 			}
 		});
 	}
@@ -57,6 +75,7 @@ $(function() {
 	jQuery(".myCheck").mousedown(function() {
 
 		changeCheck(jQuery(this));
+		
 
 	});
 
@@ -70,10 +89,12 @@ $(function() {
 		var el = el, input = el.find("input").eq(0);
 		if (!input.attr("checked")) {
 			el.css("background-position", "0 -16px");
-			input.attr("checked", true)
+			input.attr('checked', 'checked');
+			input.val('1');
 		} else {
 			el.css("background-position", "0 0");
-			input.attr("checked", false)
+			input.attr('checked', null);
+			input.val('0');
 		}
 		return true;
 	}
