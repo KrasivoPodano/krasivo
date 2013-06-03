@@ -1,5 +1,13 @@
 Krasivo::Application.routes.draw do
 
+  namespace :b2b do
+    match 'food' => 'b2b#food'
+    match 'portfolio' => 'b2b#portfolio'
+    match 'catering' => 'b2b#catering'
+    match 'price' => 'b2b#price'
+    match 'contacts' => 'b2b#contacts'
+  end
+
   resources :line_items
   resources :events
 

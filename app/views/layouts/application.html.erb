@@ -26,7 +26,11 @@
 <%= render :partial => 'layouts/appointment_form', :locals => { :@appointment => Appointment.new } %>
 <%= render :partial => 'layouts/order_form', :locals => { :@order => Order.new, :@events => Event.all } %>
 <%= render 'layouts/auth_form' %>
+<% if b2b? %>
+<%= render 'layouts/b2b_header' %>
+<% else %>
 <%= render 'layouts/header' %>
+<% end %>
 <%= yield %>
 <%= render 'layouts/footer' %>
 </body>

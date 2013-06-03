@@ -84,5 +84,9 @@ module ApplicationHelper
      end
    end
    
+   def b2b?
+       controller.class.name.split("::").first=="B2b"
+     end
+   
    
 end
