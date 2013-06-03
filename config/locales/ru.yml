@@ -16,6 +16,7 @@ ru:
   auth_success: "Вы успешно авторизовались"
   order_success: "Вы успешно записались"
   auth_failure: "заполните поля верно"
+  order_created: "Спасибо за Ваш заказ, с Вами обязательно свяжутся"
   activerecord:
     models: 
       album:

@@ -2,8 +2,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
      if @order.save
-        redirect_to :back
-        flash[:notice] = t('message_created')
+        redirect_to :back, :notice => t('order_created')
       else
         render :new
       end
