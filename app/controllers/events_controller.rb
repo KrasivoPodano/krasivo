@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     unless @event.album.nil?
     @photos = @event.album.photos
     end
-    @events = Event.where("date >= ?", Time.now ).order("date asc")
+    @events = Event.where("date >= ?", Time.now ).order("date asc").limit(3)
   end
   
   def future
