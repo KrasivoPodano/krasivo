@@ -121,7 +121,9 @@ myMap.geoObjects.add(myPlacemark);
     <div class="blocks-bottom inner-page">
 		<% @events.each do |event| %>
         <div class="block">
+			<% unless event.front_images.blank? %>
             <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+			<% end %>
             <h2><%= event.title %></h2>
             <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | <%= event.price %> <span class="b-rub">Р</span></span>
             <p>
