@@ -33,11 +33,13 @@
 			 | <%= link_to "Мои любимые", cart_path(current_cart), :class => 'link' %>
 			<% end %>
         </div>
+		<% unless @event && @event.front_images.blank? %>
 		<% if controller?("events") && action?("show") %>
 		<a href="#"  class="hider-slider show"><span>развернуть медиа</span></a>
 		<% end %>
 		<% if action?("contacts") %>
 		<a href="#"  class="hider-slider show"><span>развернуть карту</span></a>
+		<% end %>
 		<% end %>
     </div>
 </header>

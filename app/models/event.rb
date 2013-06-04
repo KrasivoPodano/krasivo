@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :title, :date, :text, :album_id, :event_type_id, :main, :shorttext, :eventdetails, :front_images_attributes, :price
   scope :main, where(:main => true)
+  scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )
   belongs_to :album
   belongs_to :event_type
   has_many :front_images
@@ -15,7 +16,6 @@ class Event < ActiveRecord::Base
   validates :eventdetails, :length => { :maximum => 70 }
   just_define_datetime_picker :date, :add_to_attr_accessible => true
   before_destroy :ensure_not_referenced_by_any_line_item
-
   
   private
   
