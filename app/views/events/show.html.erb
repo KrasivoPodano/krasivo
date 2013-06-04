@@ -46,7 +46,7 @@
         <div class="buf"></div>
 		
 		
-		<% unless @event.album.nil? %>
+		<% unless @event.album.nil? || @event.album.photos.blank? %>
 		<h1>Фотоотчет<h1>
 		<div class="fotorama" data-width="940" style="padding-bottom: 100px;">
 			<% @photos.each do |photo| %>
