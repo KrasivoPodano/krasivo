@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   end
   
   def past
-    @events = Event.where("date <= ?", Time.now ).order("date asc")
+    @events = Event.where("date <= ?", Time.now ).order("date desc")
   end 
   
   def destroy
