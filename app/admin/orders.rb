@@ -23,5 +23,27 @@ ActiveAdmin.register Order do
     
     default_actions
   end
+  
+  
+  show do 
+    attributes_table do
+      row :id
+      row :name
+      row :phone1
+      row :phone2
+      row :phone3
+      row :mail
+      row :comment
+      row :people
+      row :date
+      row :time
+      row :beautiful_cake
+      row :ornament
+      row :children_cake
+      row :animators
+      row :money
+      row :event_type
+    end
+  end
 
 end
