@@ -48,8 +48,8 @@ module Krasivo
       port:           25, 
       domain:         "locum.ru",
       authentication: "login",
-      user_name:      "iam@babrovka.ru",
-      password:       "111715",
+      user_name:      "info@krasivopodano.ru",
+      password:       "f1o2o3d4",
       enable_starttls_auto: false,
       openssl_verify_mode: false 
     }
