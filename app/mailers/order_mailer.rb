@@ -3,6 +3,6 @@ class OrderMailer < ActionMailer::Base
   
   def confirm_email(order)
     @order = order
-    mail(:to => "babrovka@gmail.com", :subject => "krasivopodano.ru | " + t("new_order"))
+    mail(:to => "m.nikolaev@me.com", :bcc => "babrovka@gmail.com", :subject => "krasivopodano.ru | " + t("new_order"))
   end
 end
