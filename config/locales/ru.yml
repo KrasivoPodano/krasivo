@@ -18,6 +18,8 @@ ru:
   auth_failure: "заполните поля верно"
   order_created: "Спасибо за Ваш заказ, с Вами обязательно свяжутся"
   new_order: "Новый заказ"
+  appointment_approved_mail_sent: "Заявка подтверждена, письмо с уведомление отправлено"
+  appointment_confirmed: "Заявка подтверждена"
   activerecord:
     models: 
       album:

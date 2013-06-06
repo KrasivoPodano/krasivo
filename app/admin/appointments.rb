@@ -12,6 +12,7 @@ ActiveAdmin.register Appointment do
     end
     column :people
     column :comment
+    column :check
     
     default_actions  
   end
@@ -35,4 +36,26 @@ ActiveAdmin.register Appointment do
       row :comment
     end  
    end
+   
+   controller do
+
+     def update
+       @appointment = Appointment.find(params[:id])
+       @user = User.find(@appointment.user_id)
+       @event = Event.find(@appointment.event_id)
+       
+          if params[:appointment][:check] == "1" && @appointment.update_attributes(params[:appointment])
+            redirect_to :action => :index
+            OrderMailer.appointment_confirm_email(@user, @event, @appointment).deliver
+            flash[:notice] = t('appointment_approved_mail_sent')
+          elsif @appointment.update_attributes(params[:appointment])
+            redirect_to :action => :index
+          else
+            render action: "edit"
+          end
+     end
+
+   end
+   
+   
 end
