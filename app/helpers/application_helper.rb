@@ -85,8 +85,17 @@ module ApplicationHelper
    end
    
    def b2b?
-       controller.class.name.split("::").first=="B2b"
-     end
+     controller.class.name.split("::").first=="B2b"
+   end
+   
+   def title
+      base_title = "Красиво подано"
+      if @title.nil?
+        base_title
+      else
+        "#{base_title} | #{@title}"
+      end
+    end
    
    
 end
