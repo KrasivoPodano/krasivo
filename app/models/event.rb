@@ -15,17 +15,5 @@ class Event < ActiveRecord::Base
   validates :shorttext, :length => { :maximum => 125 }
   validates :eventdetails, :length => { :maximum => 70 }
   just_define_datetime_picker :date, :add_to_attr_accessible => true
-  before_destroy :ensure_not_referenced_by_any_line_item
-  
-  private
-  
-  def ensure_not_referenced_by_any_line_item
-    if line_items.empty?
-      return true
-    else
-      errors.add('Line Items present')
-      return false
-    end
-  end
   
 end
