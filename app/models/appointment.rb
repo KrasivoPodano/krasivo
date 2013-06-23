@@ -3,4 +3,6 @@ class Appointment < ActiveRecord::Base
   belongs_to :user
   belongs_to :event
   scope :checked, where(:check => true)
+  
+  
 end
