@@ -6,6 +6,13 @@ class OrderMailer < ActionMailer::Base
     mail(:to => "info@krasivopodano.ru", :cc => "m.nikolaev@me.com", :bcc => "babrovka@gmail.com", :subject => "krasivopodano.ru | " + t("new_order"))
   end
   
+  def appointment_email(user, event, appointment)
+    @user = user
+    @event = event
+    @appointment = appointment
+    mail(:to => @user.email, :bcc => ["m.nikolaev@me.com", "babrovka@gmail.com"], :subject => "krasivopodano.ru | " + t("appointment_created"))
+  end
+  
   def appointment_confirm_email(user, event, appointment)
     @user = user
     @event = event

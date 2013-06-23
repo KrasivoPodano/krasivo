@@ -20,6 +20,7 @@ ru:
   new_order: "Новый заказ"
   appointment_approved_mail_sent: "Заявка подтверждена, письмо с уведомление отправлено"
   appointment_confirmed: "Заявка подтверждена"
+  appointment_created: "Заявка создана"
   activerecord:
     models: 
       album:
@@ -82,6 +83,7 @@ ru:
         people: "Кол-во людей"
         comment: "Комментарий"
         check: "Одобрена"
+        phone: "Телефон"
       user:
         name: "Имя"
         password: "Пароль"

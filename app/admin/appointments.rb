@@ -4,13 +4,17 @@ ActiveAdmin.register Appointment do
   
   index do 
     column :user_id do |column|
-      
+      if column.user_id
+      user = User.find(column.user_id)
+      link_to user.email, admin_event_path(user)
+      end
     end
     column :event_id do |column| 
       event = Event.find(column.event)
       link_to event.title, admin_event_path(column.event)
     end
     column :people
+    column :phone
     column :comment
     column :check
     

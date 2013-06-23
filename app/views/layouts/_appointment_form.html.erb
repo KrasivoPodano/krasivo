@@ -13,7 +13,10 @@
 	  <div>Сколько человек пойдет:
 	  <%= f.number_field :people, :min => 0 %></div>
 	  <br />
-	  <div>Ваш комметарий:
+	  <div>Телефон для связи:
+	  <%= f.text_field :phone %></div>
+	  <br />
+	  <div>Ваш комментарий:
 	  <%= f.text_area :comment %></div>
 	  <br />
 	  <div><%= f.submit "Записаться", :class => 'auth_button' %></div>

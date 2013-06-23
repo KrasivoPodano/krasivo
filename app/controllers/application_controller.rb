@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  
   after_filter :store_location
 
   def store_location
@@ -19,4 +20,6 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     cart
   end
+  
+  
 end
