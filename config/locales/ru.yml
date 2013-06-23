@@ -21,6 +21,7 @@ ru:
   appointment_approved_mail_sent: "Заявка подтверждена, письмо с уведомление отправлено"
   appointment_confirmed: "Заявка подтверждена"
   appointment_created: "Заявка создана"
+  check: "Одобрить"
   activerecord:
     models: 
       album:

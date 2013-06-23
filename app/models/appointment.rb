@@ -5,4 +5,5 @@ class Appointment < ActiveRecord::Base
   scope :checked, where(:check => true)
   
   
+  
 end

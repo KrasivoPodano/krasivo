@@ -2,6 +2,20 @@ ActiveAdmin.register Appointment do
   config.batch_actions = false
   config.clear_sidebar_sections!
   
+  member_action :check, :method => :post do
+    appointment = Appointment.find(params[:id])
+    user = User.find(appointment.user_id)
+    event = Event.find(appointment.event_id)
+    OrderMailer.appointment_confirm_email(user, event, appointment).deliver
+    appointment.update_attributes(:check => true)
+    redirect_to :action => :show
+    flash[:notice] = t('appointment_approved_mail_sent')
+  end
+  
+  action_item :only => :show do
+    link_to(I18n.t('check'), check_admin_appointment_path(appointment), :method => :post) unless appointment.check?
+  end
+  
   index do 
     column :user_id do |column|
       if column.user_id
@@ -15,8 +29,8 @@ ActiveAdmin.register Appointment do
     end
     column :people
     column :phone
-    column :comment
     column :check
+    
     
     default_actions  
   end
@@ -25,7 +39,6 @@ ActiveAdmin.register Appointment do
      f.inputs t('properties') do
        f.input :people
        f.input :comment
-       f.input :check
      end
      f.actions
    end
@@ -38,28 +51,9 @@ ActiveAdmin.register Appointment do
       row :event_id
       row :people
       row :comment
+      row :phone
+      row :check
     end  
    end
-   
-   controller do
-
-     def update
-       @appointment = Appointment.find(params[:id])
-       @user = User.find(@appointment.user_id)
-       @event = Event.find(@appointment.event_id)
-       
-          if params[:appointment][:check] == "1" && @appointment.update_attributes(params[:appointment])
-            redirect_to :action => :index
-            OrderMailer.appointment_confirm_email(@user, @event, @appointment).deliver
-            flash[:notice] = t('appointment_approved_mail_sent')
-          elsif @appointment.update_attributes(params[:appointment])
-            redirect_to :action => :index
-          else
-            render action: "edit"
-          end
-     end
-
-   end
-   
-   
+     
 end
