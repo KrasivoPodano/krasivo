@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_filter :authenticate_user!
   
   def new
-    @appointment = Appointment.new
+    @appointment = Appointment.new  
   end
   
   def create
