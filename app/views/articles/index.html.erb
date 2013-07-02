@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="container blog">
+    
+	<div class="blog_left_area">	
+		<%= image_tag('blog.png', :class => 'blog_img') %>
+		<div class="tag_list_wrap">
+		<b>Популярные метки</b>	
+		<% @tags.each do |tag| %>
+        <ul>
+            <li><%= link_to tag.title, blog_path(:tag_id => tag.id) %></li>
+		</ul>
+		<% end %>
+		<div class="show_all"><%= link_to "Показать все", blog_path %></div>
+		</div>
+	</div>
+		
+    <div class="blog_main" style="">
+		<% @articles.each do |article| %>
+        <div class="blog-element">
+            <h1><%= article.title %></h1>
+			<div class="blog_date"><%= Russian::strftime(article.date, "%d %B %Y %H:%M") %></div>
+            <div class="blog_text"><%= article.text %></div>
+			<div class="read_more"><%= link_to "Читать дальше", article_path(article) %></div>
+			<%= image_tag('after_article.png', :class => 'after_article') %>
+        </div>
+		
+		<% end %>
+    </div>
+	
+	<div class="buf"></div>
+
+
+  </div>
+</div>

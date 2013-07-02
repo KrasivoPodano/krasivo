@@ -21,7 +21,6 @@ Krasivo::Application.routes.draw do
 
   get "orders/create"
 
-  # Restful
   resources :recipes
   resources :orders
 
@@ -32,7 +31,12 @@ Krasivo::Application.routes.draw do
   match 'events/:id' => 'events#show', :as => :event
   match 'future' => 'events#future', :as => :future_events
   match 'past' => 'events#past', :as => :past_events
-
+  
+  # Blog
+  match 'blog' => 'articles#index', :as => :blog
+  match 'blog/:id' => 'articles#show', :as => :article
+  
+  # Static Pages
   match '/contacts' => 'static_pages#contacts'
   match '/school' => 'static_pages#school'
   match '/services' => 'static_pages#services'

@@ -9,7 +9,7 @@
             <span><%= link_to "что преподаем", services_path, :class => ('active' if controller?("static_pages") && action?("services")) %></span>
             <span><a href="#" class="order_popup_link">записаться на урок</a></span>
             <span><%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %></span>
-            <span><%= link_to "контакты", contacts_path, :class => ('active' if controller?("static_pages") && action?("contacts")) %></span>
+            <span><%= link_to "блог", blog_path, :class => ('active' if controller?("articles")) %></span>
         </nav>
         <div class="header-contacts">
             <span class="phones">812 942 67 52</span>

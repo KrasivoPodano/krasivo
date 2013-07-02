@@ -1,0 +1,93 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container.blog {
+	margin-top: 180px;
+}
+
+
+.blog_left_area {
+	width: 220px;
+	float: left;
+	margin-bottom: 40px;
+}
+
+.blog_img {
+	margin-left: 40px;
+	margin-bottom: 40px;
+}
+
+.tag_list_wrap {
+	color: #0b4568;
+	background-color: #ffffe6;
+	width: 180px;
+	padding: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	a {
+		color: #0b4568;
+	}
+	
+	ul {
+		padding: 0px;
+		list-style: none;
+	}
+	
+	.show_all {
+		margin-top: 20px;
+		
+		
+		a {
+			text-decoration: none;
+			border-bottom: 1px dotted #0b4568;
+		}
+		
+	}
+}
+
+.blog_main {
+	margin-left: 40px;
+	width: 680px;
+	float: left;
+	margin-top: -25px;
+	margin-bottom: 40px;
+	
+	h1 {
+		
+		margin-bottom: 0px;
+	}
+	
+}
+
+.blog_date {
+	color: #0b4568;
+	
+}
+
+.blog_text {
+	margin-top: 30px;
+	color: #0b4568;
+}
+
+.read_more {
+	margin-top: 30px;
+	margin-bottom: 40px;
+
+	a {
+		color: #249ee7;
+	}
+}
+
+.blog-element {
+	margin-bottom: 100px;
+	position: relative;
+}
+
+.after_article {
+	position: absolute;
+	right: 0px;
+	
+}
