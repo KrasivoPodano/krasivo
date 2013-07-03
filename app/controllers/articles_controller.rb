@@ -1,7 +1,18 @@
 class ArticlesController < ApplicationController
   def index
-    @tags = Tag.all
-    @articles = Article.all
+    
+
+    
+    @tags = Tag.with_articles
+    
+    
+    
+    if params[:tag_id]
+      @articles = Article.includes(:tags).where(tags: { id: params[:tag_id] })
+    else
+      @articles = Article.all
+    end
+    
   end
   
   def show

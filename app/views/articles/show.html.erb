@@ -1,11 +1,11 @@
 <div class="content">
-  <div class="container blog">
+  <div class="container blog" style="margin-bottom: 50px">
     
-	<h1><%= @article.title%></h1>
+	<h1><%= @article.title %></h1>
+	<div class="blog_date"><%= Russian::strftime(@article.date, "%d %B %Y %H:%M") %></div>
+    <div class="blog_text"><%= @article.text.html_safe %></div>
 	
 
-	
-	<div class="buf"></div>
 
 
   </div>

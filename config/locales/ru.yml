@@ -22,6 +22,8 @@ ru:
   appointment_confirmed: "Заявка подтверждена"
   appointment_created: "Заявка создана"
   check: "Одобрить"
+  tags: "Тэги"
+  blog: "Блог"
   activerecord:
     models: 
       album:
@@ -36,6 +38,12 @@ ru:
       event_type:
         one: "Тип мероприятия"
         other: "Типы мероприятий"
+      tag:
+        one: "Тэг"
+        other: "Тэги"
+      article:
+        one: "Статья"
+        other: "Статьи"
       order:
         one: "Заказ"
         other: "Заказы"
@@ -106,4 +114,11 @@ ru:
         animators: "Аниматоры"
         money: "Бюджет"
         event_type: "Тип мероприятия"
-        
+      tag:
+        title: "Заголовок"
+      article:
+        title: "Заголовок"
+        date: "Дата"
+        text: "Текст"
+        tag_id: "Тэг"
+        tag: "Тэг"
