@@ -27,6 +27,11 @@ group :assets do
   gem 'turbo-sprockets-rails3'
 end
 
+group :development do  
+  gem 'populator'
+  gem 'faker'
+end
+
 group :production do  
   gem 'mysql2'
 end

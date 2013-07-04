@@ -280,6 +280,7 @@ body, html {
 	margin:0;
 	padding:0;
 	background: #fffffd;
+	position: relative;
 }
 .container {
 	width: 940px;

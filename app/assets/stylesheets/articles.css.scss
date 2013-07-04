@@ -10,7 +10,17 @@
 .blog_left_area {
 	width: 220px;
 	float: left;
-	margin-bottom: 40px;
+}
+
+.affix {
+	position: fixed;
+    top: 10px;
+}
+
+.affix-bottom {
+	position: absolute;
+	top: auto;
+	bottom: 20px;
 }
 
 .blog_img {
@@ -49,7 +59,7 @@
 }
 
 .blog_main {
-	margin-left: 40px;
+	margin-left: 260px;
 	width: 680px;
 	float: left;
 	margin-top: -25px;
