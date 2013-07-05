@@ -1,6 +1,7 @@
 ActiveAdmin.register Article do
   menu :parent => I18n.t('blog')
   config.batch_actions = false
+  config.sort_order = 'created_at_desc'
   
   index do 
      column :title
@@ -8,13 +9,14 @@ ActiveAdmin.register Article do
      column :text do |row|
        row.text.html_safe
      end
+     column :created_at
      default_actions
    end
 
    form do |f|  
      f.inputs t('properties') do
        f.input :title
-       f.input :date, :as => :datetime_picker
+       f.input :date
        f.input :text, :as => :ckeditor, :label => false
      end
      

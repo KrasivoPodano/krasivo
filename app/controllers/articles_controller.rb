@@ -8,9 +8,9 @@ class ArticlesController < ApplicationController
     
     
     if params[:tag_id]
-      @articles = Article.includes(:tags).where(tags: { id: params[:tag_id] })
+      @articles = Article.includes(:tags).where(tags: { id: params[:tag_id] }).order("created_at DESC")
     else
-      @articles = Article.all
+      @articles = Article.order("created_at DESC")
     end
     
   end
