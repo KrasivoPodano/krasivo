@@ -4,12 +4,6 @@ $(document).ready(function(){
 
        rules:{
 
-            "appointment[people]":{
-                required: true,
-                digits: true,
-				number: true,
-            },
-
 			"appointment[phone]":{
                 required: true,
                 digits: true,
@@ -21,11 +15,6 @@ $(document).ready(function(){
 
        messages:{
 
-            "appointment[people]":{
-                required: "Это поле обязательно для заполнения",
-                digits: "Укажите количество гостей числом",
-				number: "Укажите количество гостей числом",
-            },
 
 			"appointment[phone]":{
                 required: "Это поле обязательно для заполнения",

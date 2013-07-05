@@ -21,17 +21,11 @@
 	  <b id="event_price"></b><b>руб.</b></div>
 	  <br />
 	
-	  <div>Сколько человек пойдет:
-	  <%= f.text_field :people, :class => 'numbers' %></div>
-	  <br />
-	  
 	  <div class="form-line">
       <label>Телефон для связи:</label>
       <%= f.text_field :phone %>
       </div>
-	  
-	  <div>Ваш комментарий:
-	  <%= f.text_area :comment %></div>
+
 	  <br />
 	  <div><%= f.submit "Записаться", :class => 'auth_button' %></div>
 	<% end %>	
