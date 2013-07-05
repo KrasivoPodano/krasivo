@@ -101,3 +101,7 @@ table.user_events {
 #new_appointment label {
 	line-height: 26px;
 }
+
+#new_appointment label.error {
+	margin-top: 10px;
+}

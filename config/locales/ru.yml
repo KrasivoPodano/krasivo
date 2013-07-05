@@ -93,6 +93,8 @@ ru:
         comment: "Комментарий"
         check: "Одобрена"
         phone: "Телефон"
+        firstname: "Имя"
+        lastname: "Фамилия"
       user:
         name: "Имя"
         password: "Пароль"

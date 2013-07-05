@@ -27,6 +27,8 @@ ActiveAdmin.register Appointment do
       event = Event.find(column.event)
       link_to event.title, admin_event_path(column.event)
     end
+    column :firstname
+    column :lastname
     column :people
     column :phone
     column :check
@@ -48,6 +50,9 @@ ActiveAdmin.register Appointment do
       row :user_id do |row|
         link_to row.user.email, admin_user_path(row.user)
       end
+      row :event_id
+      row :firstname
+      row :lastname
       row :event_id
       row :people
       row :comment
