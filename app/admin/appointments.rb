@@ -3,10 +3,6 @@ ActiveAdmin.register Appointment do
   config.clear_sidebar_sections!
   
   
-  action_item :only => :show do
-    link_to(I18n.t('check'), check_admin_appointment_path(appointment), :method => :post) unless appointment.check?
-  end
-  
   index do 
     column :event_id do |column| 
       event = Event.find(column.event)
@@ -22,8 +18,10 @@ ActiveAdmin.register Appointment do
 
    form do |f|  
      f.inputs t('properties') do
-       f.input :people
-       f.input :comment
+       f.input :event_id, :as => :select, :collection => Event.all, :label => false
+       f.input :firstname
+       f.input :lastname
+       f.input :phone
      end
      f.actions
    end
