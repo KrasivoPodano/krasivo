@@ -32,11 +32,7 @@ module ApplicationHelper
    end
    
    def order_link(event)
-     if user_signed_in? && current_user.events.exists?(event)
-       link_to "Я записан", cart_path(current_cart), :class => controller_name == "carts" ? 'appointment_link' : 'button-blue active'
-     else
        link_to "Записаться", new_appointment_path(event_id: event, event_price: event.price), remote: true, :class => 'button-blue'
-    end 
    end
    
    

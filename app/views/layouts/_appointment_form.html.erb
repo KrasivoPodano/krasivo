@@ -11,15 +11,11 @@
 	<%= form_for @appointment do |f| %>
 	<%= f.hidden_field :event_id %>
 	  
-	  <% if user_signed_in? && current_user.name? %>
-		<% value = current_user.name %>
-	  <% else %>
-		<% value = nil %>
-	  <% end %>
+
 	
 	  <div class="form-line">
       <label>Ваше имя:</label>
-      <%= f.text_field :firstname, :value => value %>
+      <%= f.text_field :firstname %>
       </div>
 	
 	  <div class="form-line">
