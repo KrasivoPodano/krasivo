@@ -27,10 +27,7 @@
             <p>
                 стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span>
             </p>
-            <p>
-                идут: <span class="strong"><%= who_goes(@event) %> человек</span>
-            </p>
-            <%= appointment_link(@event) %> <%= order_link(@event) %>
+            <%= order_link(@event) %>
         </div>
            
 		<script type="text/javascript" src="//vk.com/js/api/openapi.js?96"></script>
