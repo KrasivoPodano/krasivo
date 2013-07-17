@@ -85,7 +85,7 @@ module ApplicationHelper
    end
    
    def title
-      base_title = "Красиво подано"
+      base_title = "Кулинарная школа Красиво подано"
       if @title.nil?
         base_title
       else
