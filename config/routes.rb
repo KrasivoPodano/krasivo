@@ -26,7 +26,6 @@ Krasivo::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
   
-  
   # Events
   match 'events/:id' => 'events#show', :as => :event
   match 'future' => 'events#future', :as => :future_events

@@ -32,6 +32,8 @@ group :development do
   gem 'faker'
 end
 
+gem "galetahub-simple_captcha", :require => "simple_captcha"
+
 group :production do  
   gem 'mysql2'
 end
