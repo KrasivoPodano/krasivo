@@ -1,7 +1,7 @@
 <div class="blue order_popup"></div>
 <div class="form order_popup">
 
-    <%= form_for @order, :remote => true do |f| %>
+    <%= form_for @order do |f| %>
         <a href="#" class="close"></a>
 
 		<div class="service-info">
@@ -202,9 +202,8 @@
             <textarea name="order[comment]"></textarea>
             </div>
 			
-		    <%= recaptcha_tags %>
 		
-		  	<div id="order_notice"></div>
+		  	<div style="color: red; margin-top: 10px;" id="order_notice"></div>
 
         </div>
 

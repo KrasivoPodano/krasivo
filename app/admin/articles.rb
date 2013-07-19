@@ -3,6 +3,19 @@ ActiveAdmin.register Article do
   config.batch_actions = false
   config.sort_order = 'created_at_desc'
   
+  
+  member_action :crosspost, :method => :post do
+    article = Article.find(params[:id])
+    SocialPoster.write(:twitter, article.text)
+    SocialPoster.write(:lj, article.text, article.title)
+    redirect_to :action => :show
+    flash[:notice] = t('article_crossposted')
+  end
+
+  action_item :only => :show do
+    link_to(I18n.t('crosspost'), crosspost_admin_article_path, :method => :post)
+  end
+  
   index do 
      column :title
      column :date
@@ -47,36 +60,7 @@ ActiveAdmin.register Article do
    end
    
    
-   controller do
-
-      def create 
-        @article = Article.new(params[:article])
-
-        respond_to do |format|
-           if @article.save
-             format.html { redirect_to :action => :index }
-             SocialPoster.write(:lj, @article.title, @article.text)
-             flash[:notice] = t('article_created')
-           else
-             format.html { render action: "new" }
-           end
-         end 
-      end
-
-      def update
-        @article = Article.find(params[:id])
-
-        respond_to do |format|
-          if @article.update_attributes(params[:article])
-            format.html { redirect_to :action => :index }
-            flash[:notice] = t('article_updated')
-          else
-            format.html { render action: "edit" }
-          end
-      end        
-    end
-    
-  end
+   
    
    
 end

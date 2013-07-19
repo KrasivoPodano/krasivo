@@ -16,6 +16,4 @@
 
 .DS_Store
 /config/database.yml
-/config/facebook.yml
-/config/twitter.yml
-/config/livejournal.yml
+/config/social.yml

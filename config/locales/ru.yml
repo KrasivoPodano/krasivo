@@ -28,6 +28,8 @@ ru:
   blog: "Блог"
   article_created: "Статья успешно создана"
   article_updated: "Статья успешно отредактирована"
+  article_crossposted: "Перепост успешно совершен"
+  crosspost: "Перепост"
   activerecord:
     models: 
       album:
