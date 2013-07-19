@@ -1,7 +1,7 @@
 <div class="blue order_popup"></div>
-<div class="form order_popup">
+<div class="form order_popup" id="order_form_block">
 
-    <%= form_for @order do |f| %>
+    <%= form_for @order, remote: true do |f| %>
         <a href="#" class="close"></a>
 
 		<div class="service-info">
@@ -182,27 +182,28 @@
 
             <div class="form-line">
             <label>Контактное лицо</label>
-            <input name="order[name]" type="text" data-first="представьтесь..." value="представьтесь..." />
+            <input name="order[name]" type="text" placeholder="представьтесь..." />
             </div>
 
             <div class="form-line">
             <label>Телефон</label>
-            <input type="text" name="order[phone1]" data-first="+7 981 000-6969" value="+7 981 000-6969"/><a href="#" class="addphone">+ добавить ещё</a>
+            <input type="text" name="order[phone1]" placeholder="+7 981 000-6969" /><a href="#" class="addphone">+ добавить ещё</a>
             </div>
 
             <div class="more-phones"> </div>
 
             <div class="form-line">
             <label>Электропочта</label>
-            <input name="order[mail]" style="width: 330px;" type="text" data-first="ваша почта..." value="ваша почта..." /> 
+            <input name="order[mail]" style="width: 330px;" type="text" data-first="ваша почта..." placeholder="ваша почта..." /> 
             </div>
 
             <div class="form-line">
             <label class="textarea">Ваш комментарий</label>
             <textarea name="order[comment]"></textarea>
             </div>
-			
-		
+
+        <%=raw recaptcha_tags %>
+
 		  	<div style="color: red; margin-top: 10px;" id="order_notice"></div>
 
         </div>
@@ -210,3 +211,5 @@
         <%= f.submit "Заказать" %>
     <% end %>
 </div>
+
+<div id="thank_you" class="form"><h1>Спасибо!</h1></div>

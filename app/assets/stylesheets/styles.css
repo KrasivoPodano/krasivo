@@ -942,7 +942,25 @@ right:10px;
 	-moz-border-radius: 7px;
 	border-radius: 7px;
 	color:#fff;
-	display:none;
+	display:none;	
+}
+
+::-webkit-input-placeholder {
+    color:    #fff;
+}
+:-moz-placeholder { 
+    color:    #fff;
+}
+::-moz-placeholder {
+    color:    #fff;
+}
+:-ms-input-placeholder { 
+    color:    #fff;
+}
+
+#thank_you {
+	display: none;
+	text-align: center;
 }
 
 .form a.active {
