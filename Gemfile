@@ -34,7 +34,7 @@ end
 
 gem 'social_poster'
 
-gem "galetahub-simple_captcha", :require => "simple_captcha"
+gem "recaptcha", :require => "recaptcha/rails"
 
 group :production do  
   gem 'mysql2'

@@ -1,17 +1,17 @@
 SocialPoster.setup do |config|
   config.fb = {
-    access_token: '524973190905503|IF7cmpA45r6cVj7aBspJ3S97J7M'
+    access_token: FACEBOOK_CONFIG['access_token']
   }
 
   config.twitter = {
-    consumer_key:       'vcAfnRVTlbmM7EIz8nKHA',
-    consumer_secret:    'KVbRFFaIvS3WtmC3aTu91rb9dzNeteK7PoCrKbIJ0',
-    oauth_token:        '378457919-bbt2OM65gWp7H7dOym24nxCwGgqWfHu9FSp3pN74',
-    oauth_token_secret: 'Kf0IY5ct4RqJeWDIQtiUQAu3B8Pj48EOvBSLb99fY'
+    consumer_key:       TWITTER_CONFIG['consumer_key'],
+    consumer_secret:    TWITTER_CONFIG['consumer_secret'],
+    oauth_token:        TWITTER_CONFIG['oauth_token'],
+    oauth_token_secret: TWITTER_CONFIG['oauth_token_secret']
   }
 
   config.lj = {
-    user:     'babrovka',
-    password: 'QwertQ1234!'
+    user:     LIVEJOURNAL_CONFIG['user'],
+    password: LIVEJOURNAL_CONFIG['password']
   }
 end

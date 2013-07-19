@@ -1,10 +1,11 @@
 <div class="blue order_popup"></div>
 <div class="form order_popup">
 
-    <%= form_for @order do |f| %>
+    <%= form_for @order, :remote => true do |f| %>
         <a href="#" class="close"></a>
 
 		<div class="service-info">
+			
 			
             <div class="form-head">
                 <h2>Заказать услугу:</h2>
@@ -201,6 +202,9 @@
             <textarea name="order[comment]"></textarea>
             </div>
 			
+		    <%= recaptcha_tags %>
+		
+		  	<div id="order_notice"></div>
 
         </div>
 

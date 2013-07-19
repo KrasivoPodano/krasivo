@@ -26,7 +26,9 @@
 </div>
 <% end %>
 <%= render :partial => 'layouts/appointment_form', :locals => { :@appointment => Appointment.new } %>
+<div id="order_form_wrapper">
 <%= render :partial => 'layouts/order_form', :locals => { :@order => Order.new, :@events => Event.all } %>
+</div>
 <%= render 'layouts/auth_form' %>
 <% if b2b? %>
 <%= render 'layouts/b2b_header' %>
