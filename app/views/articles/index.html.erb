@@ -12,7 +12,7 @@
             <li><%= link_to tag.title, blog_path(:tag_id => tag.id), :remote => true %></li>
 		</ul>
 		<% end %>
-		<div class="show_all"><%= link_to "Показать все", blog_path %></div>
+		<div class="show_all"><%= link_to "Показать все", blog_path, :remote => true %></div>
 		</div>
 	</div>
 		
