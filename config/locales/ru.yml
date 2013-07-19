@@ -26,6 +26,8 @@ ru:
   check: "Одобрить"
   tags: "Тэги"
   blog: "Блог"
+  article_created: "Статья успешно создана"
+  article_updated: "Статья успешно отредактирована"
   activerecord:
     models: 
       album:

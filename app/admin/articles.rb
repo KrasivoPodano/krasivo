@@ -43,6 +43,40 @@ ActiveAdmin.register Article do
          end
        end
      end
-     
+  
    end
+   
+   
+   controller do
+
+      def create 
+        @article = Article.new(params[:article])
+
+        respond_to do |format|
+           if @article.save
+             format.html { redirect_to :action => :index }
+             SocialPoster.write(:lj, @article.title, @article.text)
+             flash[:notice] = t('article_created')
+           else
+             format.html { render action: "new" }
+           end
+         end 
+      end
+
+      def update
+        @article = Article.find(params[:id])
+
+        respond_to do |format|
+          if @article.update_attributes(params[:article])
+            format.html { redirect_to :action => :index }
+            flash[:notice] = t('article_updated')
+          else
+            format.html { render action: "edit" }
+          end
+      end        
+    end
+    
+  end
+   
+   
 end
