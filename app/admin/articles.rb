@@ -6,7 +6,7 @@ ActiveAdmin.register Article do
   
   member_action :crosspost, :method => :post do
     article = Article.find(params[:id])
-    SocialPoster.write(:twitter, truncate(article.text, :length => 130))
+    SocialPoster.write(:twitter, article.title)
     SocialPoster.write(:lj, article.text, article.title)
     redirect_to :action => :show
     flash[:notice] = t('article_crossposted')
