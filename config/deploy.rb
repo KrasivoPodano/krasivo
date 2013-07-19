@@ -25,7 +25,7 @@ end
 after "deploy:update_code", :copy_social_config
  task :copy_social_config, roles => :app do
    social_config = "#{shared_path}/social.yml"
-   run "cp #{db_config} #{release_path}/config/social.yml"
+   run "cp #{social_config} #{release_path}/config/social.yml"
 end
 
 # В rails 3 по умолчанию включена функция assets pipelining,
