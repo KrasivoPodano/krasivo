@@ -3,6 +3,7 @@ class Order < ActiveRecord::Base
                   :date, :time, :beautiful_cake, :ornament, :children_cake, :animators, :money
   belongs_to :event
 
-  validates :name, :phone1, :mail, presence: true
+
+  validates :name, :phone1, :presence => true
 
 end

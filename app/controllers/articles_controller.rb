@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
     articles = Article.order("created_at DESC")
     
     if params[:tag_id]
-      @articles = Article.includes(:tags).where(tags: { id: params[:tag_id] })
+      @articles = Article.find( :all, :include => :tags, :conditions => "tags.id = #{params[:tag_id]}", :order => "articles.created_at DESC")
     else
       @articles = Article.all
     end
