@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+set :rails_env, "production" #added for delayed job 
+
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 require 'delayed/command'
 Delayed::Command.new(ARGV).daemonize
