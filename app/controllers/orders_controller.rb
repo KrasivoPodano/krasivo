@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
 
   def create
     if verify_recaptcha(@order) && @order.save
-      send_confirmation
       result = {status: 'ok'}
     else
       result = {errors: @order.errors.full_messages}
