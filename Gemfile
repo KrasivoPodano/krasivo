@@ -36,6 +36,9 @@ gem 'social_poster'
 
 gem "recaptcha", :require => "recaptcha/rails"
 
+gem 'delayed_job_active_record'
+gem "daemons"
+
 group :production do  
   gem 'mysql2'
 end

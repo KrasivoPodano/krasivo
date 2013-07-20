@@ -11,6 +11,7 @@
 # Если вы используете другую систему управления зависимостями,
 # закомментируйте эту строку.
 require 'bundler/capistrano'
+require "delayed/recipes" 
 
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
@@ -124,5 +125,9 @@ namespace :deploy do
     run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
   end
 end
+
+after "deploy:stop",    "delayed_job:stop"
+after "deploy:start",   "delayed_job:start"
+after "deploy:restart", "delayed_job:restart"
 
 after "deploy", "deploy:cleanup"
