@@ -8,23 +8,60 @@
 <% if @order.company? %>
   <p><b>Компания:</b> <%= @order.company %></p>
 <% end %>
+
+<% if @order.phone1? %>
 <p><b>Телефон1:</b> <%= @order.phone1 %></p>
+<% end %>
+
+<% if @order.phone2? %>
 <p><b>Телефон2:</b> <%= @order.phone2 %></p>
+<% end %>
+
+<% if @order.phone3? %>
 <p><b>Телефон3:</b> <%= @order.phone3 %></p>
+<% end %>
+
+<% if @order.mail? %>
 <p><b>Электронная почта:</b> <%= @order.mail %></p>
+<% end %>
+
+<% if @order.comment? %>
 <p><b>Комментарий:</b> <%= @order.comment %></p>
+<% end %>
+
+<% if @order.people? %>
 <p><b>Кол-во человек:</b> <%= @order.people %></p>
+<% end %>
+
+<% if @order.date? %>
 <p><b>Дата:</b> <%= Russian::strftime(@order.date, "%d %B %Y") %></p>
+<% end %>
+
+<% if @order.time? %>
 <p><b>Время:</b> <%= @order.time.strftime('%H:%M') %></p></br>
+<% end %>
 
 <p><b>Тип мероприятия:</b> <%= @order.event_type %></p></br>
-<% if @order.company? %>
+
+<% if @order.beautiful_cake? %>
   <p><b>Красивый торт:</b> нужен</p>
 <% end %>
-<p><b>Украшения:</b> <%= @order.ornament %></p>
-<p><b>Детский торт:</b> <%= @order.children_cake %></p>
-<p><b>Аниматоры:</b> <%= @order.animators %></p>
+
+<% if @order.ornament? %>
+<p><b>Украшения:</b> нужны</p>
+<% end %>
+
+<% if @order.children_cake? %>
+<p><b>Детский торт:</b> нужен</p>
+<% end %>
+
+<% if @order.animators? %>
+<p><b>Аниматоры:</b> нужны</p>
+<% end %>
+
+<% if @order.company? %>
 <p><b>Бюджет:</b> <%= @order.money %></p></br>
+<% end %>
 
 <p>Подробно заказ можно посмотреть <%= link_to "тут", admin_order_url(@order) %>
 
