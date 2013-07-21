@@ -1,5 +1,4 @@
 ActiveAdmin.register AdminUser do   
-  menu false
     
   index do                            
     column :email                     
@@ -18,5 +17,14 @@ ActiveAdmin.register AdminUser do
       f.input :password_confirmation  
     end                               
     f.actions                         
-  end                                 
+  end   
+  
+  show do
+    attributes_table do
+      row :email                     
+      row :current_sign_in_at        
+      row :last_sign_in_at           
+      row :sign_in_count
+    end  
+   end                              
 end                                   
