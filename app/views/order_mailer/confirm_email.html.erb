@@ -3,20 +3,24 @@
 <p>Поступил новый заказ с сайта krasivopodano.ru</p>
 
 
+
 <p><b>Имя:</b> <%= @order.name %></p>
-<p><b>Компания:</b> <%= @order.company %></p>
+<% if @order.company? %>
+  <p><b>Компания:</b> <%= @order.company %></p>
+<% end %>
 <p><b>Телефон1:</b> <%= @order.phone1 %></p>
 <p><b>Телефон2:</b> <%= @order.phone2 %></p>
 <p><b>Телефон3:</b> <%= @order.phone3 %></p>
 <p><b>Электронная почта:</b> <%= @order.mail %></p>
 <p><b>Комментарий:</b> <%= @order.comment %></p>
 <p><b>Кол-во человек:</b> <%= @order.people %></p>
-<p><b>Дата:</b><%= Russian::strftime(@order.date, "%d %B %Y") %></p>
-<p><b>Время:</b><%= @order.time.strftime('%H:%M') %></p></br>
+<p><b>Дата:</b> <%= Russian::strftime(@order.date, "%d %B %Y") %></p>
+<p><b>Время:</b> <%= @order.time.strftime('%H:%M') %></p></br>
 
 <p><b>Тип мероприятия:</b> <%= @order.event_type %></p></br>
-
-<p><b>Красивый торт:</b> <%= @order.beautiful_cake %></p>
+<% if @order.company? %>
+  <p><b>Красивый торт:</b> нужен</p>
+<% end %>
 <p><b>Украшения:</b> <%= @order.ornament %></p>
 <p><b>Детский торт:</b> <%= @order.children_cake %></p>
 <p><b>Аниматоры:</b> <%= @order.animators %></p>
