@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   before_filter :new_order
 
   def create
-    if verify_recaptcha(@order) && @order.save
+    if verify_recaptcha(:model => @order, :message => t('please_enter_correct_data')) && @order.save
+      send_confirmation
       result = {status: 'ok'}
     else
       result = {errors: @order.errors.full_messages}
@@ -17,6 +18,6 @@ class OrdersController < ApplicationController
   end
   
   def send_confirmation
-    OrderMailer.delay.confirm_email(@order)
+    OrderMailer.confirm_email(@order).deliver
   end
 end

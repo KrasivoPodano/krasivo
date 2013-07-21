@@ -30,6 +30,7 @@ ru:
   article_updated: "Статья успешно отредактирована"
   article_crossposted: "Перепост успешно совершен"
   crosspost: "Перепост"
+  please_enter_correct_data: "Слова не совпадают, попробуйте еще раз"
   activerecord:
     models: 
       album:
