@@ -2,5 +2,25 @@
 
 <p>Поступил новый заказ с сайта krasivopodano.ru</p>
 
+
+<b>Имя:</b> <%= @order.name %><br></br>
+<b>Компания:</b> <%= @order.company %></br></br>
+<b>Телефон1:</b> <%= @order.phone1 %></br></br>
+<b>Телефон2:</b> <%= @order.phone2 %></br></br>
+<b>Телефон3:</b> <%= @order.phone3 %></br></br>
+<b>Электронная почта:</b> <%= @order.mail %></br></br>
+<b>Комментарий:</b> <%= @order.comment %></br></br>
+<b>Кол-во человек:</b> <%= @order.people %></br></br>
+<b>Дата:</b> <%= @order.date %></br></br>
+<b>Время:</b> <%= @order.time %></br></br></br>
+
+<b>Тип мероприятия:</b> <%= @order.event_type %></br></br></br>
+
+<b>Красивый торт:</b> <%= @order.beautiful_cake %></br></br>
+<b>Украшения:</b> <%= @order.ornament %></br></br>
+<b>Детский торт:</b> <%= @order.children_cake %></br></br>
+<b>Аниматоры:</b> <%= @order.animators %></br></br>
+<b>Бюджет:</b> <%= @order.money %></br></br>
+
 <p>Подробно заказ можно посмотреть <%= link_to "тут", admin_order_url(@order) %>
 
