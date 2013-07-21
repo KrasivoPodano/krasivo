@@ -31,6 +31,7 @@ ru:
   article_crossposted: "Перепост успешно совершен"
   crosspost: "Перепост"
   please_enter_correct_data: "Слова не совпадают, попробуйте еще раз"
+  recipes: "Рецепты"
   activerecord:
     models: 
       album:
@@ -69,6 +70,9 @@ ru:
       user:
         one: "Пользователь"
         other: "Пользователи"
+      admin_user:
+        one: "Администратор"
+        other: "Администраторы"
     attributes:
       recipe:
         title: "Название"

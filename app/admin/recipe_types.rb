@@ -1,6 +1,7 @@
 ActiveAdmin.register RecipeType do
    config.batch_actions = false
    config.clear_sidebar_sections!
+   menu :parent => I18n.t('recipes')
 
    index do 
      column :title
