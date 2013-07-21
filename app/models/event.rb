@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :title, :date, :text, :album_id, :event_type_id, :main, :shorttext, :eventdetails, :front_images_attributes, :price
   scope :main, where(:main => true)
+  scope :future, where("date >= ?", Time.now)
   scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )
   belongs_to :album
   belongs_to :event_type
