@@ -1,28 +1,30 @@
 class AppointmentsController < ApplicationController
-  
-  def new
-    @appointment = Appointment.new  
-  end
+  before_filter :new_appointment
   
   def create
-    @appointment = Appointment.create(params[:appointment])
-    @firstname = params[:appointment][:firstname]
-    @lastname = params[:appointment][:lastname]
-    @phone = params[:appointment][:phone]
-    @event = Event.find(params[:appointment][:event_id])
-    
-    OrderMailer.appointment_email(@firstname, @lastname, @phone, @event).deliver
-
-    
-    respond_to do |format|
-      if @appointment.save
-        flash[:notice] = t('order_success')
-        format.js
-        format.html { redirect_to :back }
-      else
-        format.html  { redirect_to events_path }
-      end
+    if verify_recaptcha(:model => @appointment, :message => t('please_enter_correct_data')) && @appointment.save
+      
+      @firstname = params[:appointment][:firstname]
+      @lastname = params[:appointment][:lastname]
+      @phone = params[:appointment][:phone]
+      @event = Event.find(params[:appointment][:event_id])
+      
+      result = {status: 'ok'}
+    else
+      result = {errors: @appointment.errors.full_messages}
     end
+    render json: result
   end
+  
+  private
+
+  def new_appointment
+    @appointment = Appointment.new(params[:appointment])
+  end
+  
+  def send_confirmation
+    OrderMailer.appointment_email(@firstname, @lastname, @phone, @event).deliver
+  end
+  
   
 end

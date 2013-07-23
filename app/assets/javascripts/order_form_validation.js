@@ -4,9 +4,11 @@ $(document).ready(function(){
     if (response.status == 'ok') {
       scroll(0,0)
       $('.order_popup').hide();
+      $('.blue').hide();
       $('#thank_you').show().fadeOut(4000);
     }
     else{
+	  Recaptcha.reload();
       $('#order_notice').html(response.errors.join('<br>'));
     }
   });

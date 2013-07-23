@@ -958,7 +958,7 @@ right:10px;
     color:    #fff;
 }
 
-#thank_you {
+#thank_you, #appointment_thank_you {
 	display: none;
 	text-align: center;
 }

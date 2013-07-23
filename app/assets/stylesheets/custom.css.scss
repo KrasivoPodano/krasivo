@@ -97,3 +97,11 @@ table.user_events {
 .footer-contact a:hover {
 	color: #661515;
 }
+
+.new_appointment label {
+	line-height: 26px;
+}
+
+.new_appointment label.error {
+	margin-top: 5px;
+}

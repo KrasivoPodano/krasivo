@@ -1,3 +1,10 @@
+function showRecaptcha(element) {
+           Recaptcha.create("6Ldb2-QSAAAAAHX6CKLAtkjVA2ubl7X5fA4z1RjX", element, {
+             theme: "white",
+             callback: Recaptcha.focus_response_field});
+         }
+
+
 $(function() {
 	$(".hider-slider").on("click", function() {
 		$(this).hide();
@@ -112,12 +119,22 @@ $(function() {
 	$(".button-back, .order_popup_link").click(function(e) {
 		e.preventDefault();
 		$(".order_popup").show();
+		$(".blue").show();
+		showRecaptcha('order_form_reCAPTCHA');
+	})
+	
+	
+	
+	$(".auth_popup_link").click(function(e) {
+		e.preventDefault();
+		$(".auth_popup").show();
 	})
 	
 	$(".auth_popup_link").click(function(e) {
 		e.preventDefault();
 		$(".auth_popup").show();
 	})
+	
 	
 	$(".blue").click(function() {
 		$(".blue").hide();
@@ -283,3 +300,5 @@ document.documentElement.onkeydown=function(e) {
 }
 
 });
+
+
