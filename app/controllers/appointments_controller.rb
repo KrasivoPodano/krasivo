@@ -3,12 +3,11 @@ class AppointmentsController < ApplicationController
   
   def create
     if verify_recaptcha(:model => @appointment, :message => t('please_enter_correct_data')) && @appointment.save
-      send_confirmation
       @firstname = params[:appointment][:firstname]
       @lastname = params[:appointment][:lastname]
       @phone = params[:appointment][:phone]
       @event = Event.find(params[:appointment][:event_id])
-      
+      send_confirmation
       result = {status: 'ok'}
     else
       result = {errors: @appointment.errors.full_messages}
