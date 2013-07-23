@@ -10,7 +10,7 @@ class OrderMailer < ActionMailer::Base
     @firstname = firstname
     @lastname = lastname
     @phone = phone
-    @event = event.title
+    @event = event
     mail(:to => "info@krasivopodano.ru", :bcc => ["m.nikolaev@me.com", "babrovka@gmail.com"], :subject => "krasivopodano.ru | " + t("appointment_created"))
   end
   
