@@ -15,4 +15,8 @@ class StaticPagesController < ApplicationController
   
   def services
   end
+  
+  def vacancy
+    @page = Page.find_by_section('vacancy')
+  end
 end

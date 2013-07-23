@@ -32,6 +32,7 @@ ru:
   crosspost: "Перепост"
   please_enter_correct_data: "Слова не совпадают, попробуйте еще раз"
   recipes: "Рецепты"
+  events: "МК"
   activerecord:
     models: 
       album:
@@ -49,6 +50,9 @@ ru:
       tag:
         one: "Тэг"
         other: "Тэги"
+      page:
+        one: "Страница"
+        other: "Страницы"
       article:
         one: "Статья"
         other: "Статьи"
@@ -135,3 +139,7 @@ ru:
         text: "Текст"
         tag_id: "Тэг"
         tag: "Тэг"
+      page:
+        section: "Раздел"
+        title: "Заголовок"
+        text: "Текст"

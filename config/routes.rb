@@ -39,6 +39,7 @@ Krasivo::Application.routes.draw do
   match '/contacts' => 'static_pages#contacts'
   match '/school' => 'static_pages#school'
   match '/services' => 'static_pages#services'
+  match '/vacancy' => 'static_pages#vacancy'
 
   root :to => 'static_pages#home'
 

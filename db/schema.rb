@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720103604) do
+ActiveRecord::Schema.define(:version => 20130723144311) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -175,6 +175,14 @@ ActiveRecord::Schema.define(:version => 20130720103604) do
     t.integer  "money",          :limit => 8
     t.string   "event_type"
     t.integer  "event_id",                    :default => 0, :null => false
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "section"
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "photos", :force => true do |t|

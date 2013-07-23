@@ -1,6 +1,7 @@
 ActiveAdmin.register Album do
   config.batch_actions = false
   config.clear_sidebar_sections!
+  menu :parent => I18n.t('events')
 
   index do 
     column :title
