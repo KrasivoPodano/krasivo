@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class ArticlesController < ApplicationController
   def index
     
@@ -16,13 +18,30 @@ class ArticlesController < ApplicationController
     respond_to do |format|
         format.html
         format.js
-        format.rss { render :layout => false }
     end
     
   end
   
   def show
     @article = Article.find(params[:id])
+  end
+  
+  def feed
+    # this will be the name of the feed displayed on the feed reader
+    @title = "Красиво подано | Блог"
+
+    # the news items
+    @articles = Article.order("updated_at desc")
+
+    # this will be our Feed's update timestamp
+    @updated = @articles.first.updated_at unless @articles.empty?
+
+    respond_to do |format|
+      format.atom { render :layout => false }
+
+      # we want the RSS feed to redirect permanently to the ATOM feed
+      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+    end
   end
   
 end
