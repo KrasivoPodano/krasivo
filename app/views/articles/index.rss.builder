@@ -11,7 +11,7 @@ xml.rss :version => "2.0" do
         xml.description article.text
         xml.pubDate article.created_at.to_s
         xml.link article_url(article)
-        xml.guid articlet_url(article)
+        xml.guid article_url(article)
       end
     end
   end
