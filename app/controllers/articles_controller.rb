@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
     if params[:tag_id]
       @articles = Article.find( :all, :include => :tags, :conditions => "tags.id = #{params[:tag_id]}", :order => "articles.created_at DESC")
     else
-      @articles = Article.all
+      @articles = articles
     end
     
     respond_to do |format|
