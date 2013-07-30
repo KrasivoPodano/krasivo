@@ -89,6 +89,7 @@ ru:
         shorttext: "Текст для главной" 
         eventdetails: "Детали занятия"
         main: "Разместить на главной?"
+        published: "Опубликован"
       event_type:
         title: "Название"
       recipe_type:
@@ -139,6 +140,7 @@ ru:
         text: "Текст"
         tag_id: "Тэг"
         tag: "Тэг"
+        published: "Опубликован"
       page:
         section: "Раздел"
         title: "Заголовок"

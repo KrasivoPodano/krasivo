@@ -7,10 +7,10 @@ class ArticlesController < ApplicationController
     
     @tags = Tag.with_articles
     
-    articles = Article.order("created_at DESC")
+    articles = Article.published.order("created_at DESC")
     
     if params[:tag_id]
-      @articles = Article.find( :all, :include => :tags, :conditions => "tags.id = #{params[:tag_id]}", :order => "articles.created_at DESC")
+      @articles = Article.published.find( :all, :include => :tags, :conditions => "tags.id = #{params[:tag_id]}", :order => "articles.created_at DESC")
     else
       @articles = articles
     end
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
     @title = "Красиво подано | Блог"
 
     # the news items
-    @articles = Article.order("updated_at desc")
+    @articles = Article.published.order("updated_at desc")
 
     # this will be our Feed's update timestamp
     @updated = @articles.first.updated_at unless @articles.empty?

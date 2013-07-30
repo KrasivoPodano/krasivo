@@ -14,4 +14,8 @@ SocialPoster.setup do |config|
     user:     SOCIAL_CONFIG['user'],
     password: SOCIAL_CONFIG['password']
   }
+  
+  config.vk = {
+    access_token: SOCIAL_CONFIG['vk']
+  }
 end

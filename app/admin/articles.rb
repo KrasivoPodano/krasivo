@@ -19,6 +19,7 @@ ActiveAdmin.register Article do
   
   index do 
      column :title
+     column :published
      column :date
      column :text do |row|
        row.text.html_safe
@@ -30,6 +31,7 @@ ActiveAdmin.register Article do
    form do |f|  
      f.inputs t('properties') do
        f.input :title
+       f.input :published
        f.input :date
        f.input :text, :as => :ckeditor, :label => false
      end
@@ -44,6 +46,7 @@ ActiveAdmin.register Article do
   show do |article|
     attributes_table do
       row :title
+      row :published
       row :date
       row :text do |row|
         raw row.text.html_safe

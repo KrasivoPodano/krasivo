@@ -5,6 +5,7 @@ ActiveAdmin.register Event do
   
   index do 
     column :title
+    column :published
     column :date
     column :text do |row|
       row.text.html_safe
@@ -19,6 +20,7 @@ ActiveAdmin.register Event do
     
     attributes_table do
       row :title
+      row :published
       row :date
       row :main
       row :text do |row|

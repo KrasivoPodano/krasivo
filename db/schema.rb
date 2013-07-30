@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723144311) do
+ActiveRecord::Schema.define(:version => 20130730075434) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -77,8 +77,9 @@ ActiveRecord::Schema.define(:version => 20130723144311) do
     t.string   "title"
     t.datetime "date"
     t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "published",  :default => false
   end
 
   create_table "carts", :force => true do |t|
@@ -130,12 +131,13 @@ ActiveRecord::Schema.define(:version => 20130723144311) do
     t.text     "text"
     t.integer  "album_id"
     t.integer  "event_type_id"
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
     t.boolean  "main"
     t.text     "shorttext"
     t.text     "eventdetails"
-    t.decimal  "price",         :precision => 8, :scale => 0
+    t.integer  "price",         :limit => 8
+    t.boolean  "published",                  :default => false
   end
 
   create_table "front_images", :force => true do |t|

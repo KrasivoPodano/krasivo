@@ -9,11 +9,11 @@ class EventsController < ApplicationController
   end
   
   def future
-    @events = Event.where("date >= ?", Time.now ).order("date asc")
+    @events = Event.published.where("date >= ?", Time.now ).order("date asc")
   end
   
   def past
-    @events = Event.where("date <= ?", Time.now ).order("date desc")
+    @events = Event.published.where("date <= ?", Time.now ).order("date desc")
   end 
   
   def destroy
