@@ -1,14 +1,25 @@
 .ui-datepicker {
+	margin-top: 5px;
 	background-color: #249ee7;
-	padding: 3px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	border: 3px solid white;
+	border: 1px solid white;
 }
 
-.ui-datepicker a {  
+.ui-datepicker table a {  
+	padding-top: 7px;
     text-decoration: none;  
+	width: 30px;
+	height: 23px;
+	display: block;
+}
+
+.ui-datepicker table a:hover {  
+	background-color: white;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 .ui-datepicker table {  
@@ -16,8 +27,37 @@
 }
 
 .ui-datepicker-title {  
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
     text-align: center;  
 
+}
+
+.ui-datepicker table th {  
+	font-size: 10px;
+	background-color: #a1cce6;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.ui-datepicker table th span {
+	margin-left: -10px;
+}
+
+
+.ui-datepicker table tr{
+	margin-bottom: 20px;
+}
+
+.ui-datepicker table td {  
+    width: 40px;  
+	height: 40px;
+	text-align: center; 
+	vertical-align: bottom;
 }
 
 .ui-datepicker-prev, .ui-datepicker-next {  
@@ -34,6 +74,7 @@
 .ui-datepicker-prev {  
 	background-image: url('arrow_left.png');  
     float: left;  
+	margin-left: 20px;
     background-position: 0px 0px;  
 }  
 
@@ -43,5 +84,6 @@
 .ui-datepicker-next {  
 	background-image: url('arrow_right.png');  
     float: right;  
+	margin-right: 20px;
     background-position: 0px 0px;  
 }
