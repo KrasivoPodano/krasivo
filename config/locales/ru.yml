@@ -77,6 +77,9 @@ ru:
       admin_user:
         one: "Администратор"
         other: "Администраторы"
+      slide:
+          one: "Слайд"
+          other: "Слайды"
     attributes:
       recipe:
         title: "Название"
@@ -145,3 +148,9 @@ ru:
         section: "Раздел"
         title: "Заголовок"
         text: "Текст"
+      slide:
+        title: "Заголовок"
+        text: "Текс"
+        link: "Ссылка"
+        image: "Изображение"
+        position: "Порядковый номер"

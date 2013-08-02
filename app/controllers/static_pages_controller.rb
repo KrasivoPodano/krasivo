@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
     @main = Event.published.main.future
     @future = Event.published.where("date >= ?", Time.now ).order("date asc").limit(3)
     @past = Event.published.where("date <= ?", Time.now ).order("date desc").limit(3)
+    @slides = Slide.all
   end
   
   def contacts
