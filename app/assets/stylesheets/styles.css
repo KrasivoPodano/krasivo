@@ -1255,3 +1255,36 @@ border-radius: 7px;
 	width: 240px !important;
 }
 
+.ui-datepicker {
+	background-color: #249ee7;
+	padding: 3px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 3px solid white;
+}
+
+.ui-datepicker-month {
+	margin-left: 25px;
+}
+
+.ui-datepicker-prev {
+	margin-left: 25px;
+}
+
+a.ui-datepicker-prev, a.ui-datepicker-next {
+	text-decoration: none;
+}
+
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+	color: black;
+	cursor: pointer;
+}
+
+.ui-datepicker-next {
+	margin-left: 5px;
+}
+
+.ui-state-default:hover {
+	color: black;
+}

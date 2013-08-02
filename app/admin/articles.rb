@@ -22,7 +22,7 @@ ActiveAdmin.register Article do
      column :published
      column :date
      column :text do |row|
-       row.text.html_safe
+       truncate(strip_tags(row.text), length: 200).html_safe
      end
      column :created_at
      default_actions
