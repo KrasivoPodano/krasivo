@@ -68,8 +68,6 @@ $(document).ready(function(){
 	});
 	
 	
-	$(".order_popup").show();
-	$('#order_date').datepicker();	
 	
 	
 
