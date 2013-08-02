@@ -19,9 +19,3 @@ jQuery(function($){
                 yearSuffix: ''};
         $.datepicker.setDefaults($.datepicker.regional['ru']);
 });
-
-$(document).ready(function(){
-	
-	$('#order_date').datepicker();	
-
-});

@@ -121,6 +121,7 @@ $(function() {
 		$(".order_popup").show();
 		$(".blue").show();
 		showRecaptcha('order_form_reCAPTCHA');
+		$('#order_date').datepicker();	
 	})
 	
 	
