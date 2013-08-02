@@ -140,11 +140,15 @@ $(function() {
 	$(".blue").click(function() {
 		$(".blue").hide();
 		$(".form").hide();
+		$("#ui-datepicker-div").hide();
 	})
 	$(".close").click(function(e) {
 		e.preventDefault();
 		$(".blue").hide();
 		$(".form").hide();
+		$("#ui-datepicker-div").hide();
+		
+		
 	})
 	
 	
@@ -297,6 +301,7 @@ document.documentElement.onkeydown=function(e) {
     if (e.keyCode=="27") {
 		$(".blue").hide();
 		$(".form").hide();
+		$("#ui-datepicker-div").hide();
 }
 }
 
