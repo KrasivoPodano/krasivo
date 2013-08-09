@@ -59,6 +59,9 @@ ru:
       order:
         one: "Заказ"
         other: "Заказы"
+      vacancy:
+        one: "Вакансия"
+        other: "Вакансии"
       event:
         one: "Мероприятие"
         other: "Мероприятия"
@@ -146,6 +149,9 @@ ru:
         published: "Опубликован"
       page:
         section: "Раздел"
+        title: "Заголовок"
+        text: "Текст"
+      vacancy:
         title: "Заголовок"
         text: "Текст"
       slide:

@@ -1,15 +1,11 @@
-ActiveAdmin.register Page do
-  menu false
+ActiveAdmin.register Vacancy do
   config.batch_actions = false
   config.clear_sidebar_sections!
-  actions :index, :show, :new, :create, :update, :edit
   
-  
-   index do 
-     column :section
+  index do 
      column :title
      column :text do |column|
-       column.text.html_safe
+       truncate(strip_tags(column.text), length: 200).html_safe
      end
      default_actions
    end
@@ -24,11 +20,10 @@ ActiveAdmin.register Page do
 
   show do
     attributes_table do
-      row :section
       row :title
       row :text do |row|
-        row.text.html_safe
+        truncate(strip_tags(row.text), length: 200).html_safe
       end
     end  
-   end  
+   end
 end

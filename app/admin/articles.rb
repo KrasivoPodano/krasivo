@@ -32,7 +32,7 @@ ActiveAdmin.register Article do
      f.inputs t('properties') do
        f.input :title
        f.input :published
-       f.input :date
+       f.input :date, :as => :date_picker
        f.input :text, :as => :ckeditor, :label => false
      end
      

@@ -1,5 +1,9 @@
 Krasivo::Application.routes.draw do
 
+  get "vacancies/index"
+
+  get "vacancies/show"
+
   namespace :b2b do
     match 'food' => 'b2b#food'
     match 'portfolio' => 'b2b#portfolio'
