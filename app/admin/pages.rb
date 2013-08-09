@@ -1,5 +1,5 @@
 ActiveAdmin.register Page do
-  menu false
+
   config.batch_actions = false
   config.clear_sidebar_sections!
   actions :index, :show, :new, :create, :update, :edit
