@@ -21,7 +21,7 @@
                         <%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %>
                     </li>
 					<li>
-                        <%= link_to "вакансии школы", vacancy_path, :class => ('active' if controller?("static_pages") && action?("vacancy")) %>
+                        <%= link_to "вакансии школы", vacancies_path, :class => ('active' if controller?("vacancies")) %>
                     </li>
                     <li>
                         <%= link_to "контакты", contacts_path, :class => ('active' if controller?("static_pages") && action?("contacts")) %>

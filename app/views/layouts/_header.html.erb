@@ -7,6 +7,7 @@
             <span><a href="#" class="order_popup_link">заказать</a></span>
             <span><%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %></span>
             <span><%= link_to "блог", blog_path, :class => ('active' if controller?("articles")) %></span>
+			<span><%= link_to "вакансии", vacancies_path, :class => ('active' if controller?("vacancies")) %></span>
         </nav>
         <div class="header-contacts">
             <span class="phones">812 942 67 52</span>

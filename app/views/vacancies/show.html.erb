@@ -1,2 +1,14 @@
-<h1>Vacancies#show</h1>
-<p>Find me in app/views/vacancies/show.html.erb</p>
+
+
+<% @title = @vacancy.title %>
+
+<div class="content">
+  <div class="container blog" style="margin-bottom: 50px">
+    
+	<h1><%= @vacancy.title %></h1>
+
+	<div class="blog_text"><%= @vacancy.text.html_safe %></div>
+
+
+  </div>
+</div>

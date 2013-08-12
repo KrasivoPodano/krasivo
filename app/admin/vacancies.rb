@@ -1,7 +1,6 @@
 ActiveAdmin.register Vacancy do
   config.batch_actions = false
   config.clear_sidebar_sections!
-  menu false
   index do 
      column :title
      column :text do |column|

@@ -1,9 +1,5 @@
 Krasivo::Application.routes.draw do
 
-  get "vacancies/index"
-
-  get "vacancies/show"
-
   namespace :b2b do
     match 'food' => 'b2b#food'
     match 'portfolio' => 'b2b#portfolio'
@@ -30,6 +26,10 @@ Krasivo::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
   
+  # Vacancies
+  match 'vacancies/:id' => 'vacancies#show', :as => :vacancy
+  match 'vacancy' => 'vacancies#index', :as => :vacancies
+  
   # Events
   match 'events/:id' => 'events#show', :as => :event
   match 'future' => 'events#future', :as => :future_events
@@ -46,7 +46,6 @@ Krasivo::Application.routes.draw do
   match '/contacts' => 'static_pages#contacts'
   match '/school' => 'static_pages#school'
   match '/services' => 'static_pages#services'
-  match '/vacancy' => 'static_pages#vacancy'
 
   root :to => 'static_pages#home'
 
