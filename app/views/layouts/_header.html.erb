@@ -1,8 +1,5 @@
 <header>
     <div class="container">
-        <div class="links">
-            <a href="/b2b/food">директору</a>
-        </div>
         <nav class="header-menu">
             <span><%= link_to "о школе", school_path, :class => ('active' if controller?("static_pages") && action?("school")) %></span>
             <span><%= link_to "расписание", future_events_path, :class => ('active' if controller?("events") && action?("future")) %></span>
