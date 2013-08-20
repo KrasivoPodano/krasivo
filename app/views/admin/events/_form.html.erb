@@ -1,11 +1,11 @@
-<%= semantic_form_for [:admin, @event], :html => {:multipart => true} do |f| %>
+<%= semantic_form_for [:admin, @event], :html => {:multipart => true}	 do |f| %>
 
 <%= f.inputs t('properties') do %>
 
 <%= f.input :title %>
 <%= f.input :published %>
 <%= f.input :price %>
-<%= f.input :date, :as => :date_picker %>
+<%= f.input :date %>
 <%= f.input :shorttext, :input_html => { :rows => 1  } %>
 <%= f.input :eventdetails, :input_html => { :rows => 1  } %>
 <%= f.input :text, :as => :ckeditor, :label => false %>
