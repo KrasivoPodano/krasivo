@@ -9,6 +9,7 @@ ActiveAdmin.register Article do
     SocialPoster.write(:twitter, article.title)
     SocialPoster.write(:fb, article.title)
     SocialPoster.write(:lj, article.text, article.title)
+    SocialPoster.write(:vk, article.text, nil, owner_id: '-57364601')
     redirect_to :action => :show
     flash[:notice] = t('article_crossposted')
   end
