@@ -1,21 +1,33 @@
 ActiveAdmin.register Article do
   menu :parent => I18n.t('blog')
   config.batch_actions = false
-  config.sort_order = 'created_at_desc'
+  config.sort_order = 'created_at_desc'  
   
-  
-  member_action :crosspost, :method => :post do
+  member_action :crosspost, :method => :post do    
     article = Article.find(params[:id])
+    text = strip_tags(article.text).gsub(/&quot;/i,"").gsub(/&nbsp;/i,"").html_safe
     SocialPoster.write(:twitter, article.title)
     SocialPoster.write(:fb, article.title)
     SocialPoster.write(:lj, article.text, article.title)
-    SocialPoster.write(:vk, article.text, nil, owner_id: '-57364601')
+    SocialPoster.write(:vk, text, nil, owner_id: '-57364601')
+    redirect_to :action => :show
+    flash[:notice] = t('article_crossposted')
+  end
+  
+  member_action :crosspost_vk, :method => :post do
+    article = Article.find(params[:id])
+    text = ActionController::Base.helpers.strip_tags(article.text).gsub(/&quot;/i,"").gsub(/&nbsp;/i,"").html_safe
+    SocialPoster.write(:vk, text, nil, owner_id: '-57364601')
     redirect_to :action => :show
     flash[:notice] = t('article_crossposted')
   end
 
   action_item :only => :show do
     link_to(I18n.t('crosspost'), crosspost_admin_article_path, :method => :post)
+  end
+  
+  action_item :only => :show do
+    link_to(I18n.t('crosspost_vk'), crosspost_vk_admin_article_path, :method => :post)
   end
   
   index do 
