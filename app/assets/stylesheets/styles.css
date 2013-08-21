@@ -115,6 +115,10 @@ a:hover, a:active {
 a.feed {
 	color: #0b4568;
 	margin-right: 10px;
+	background:url('feed.png') left 2px no-repeat;
+	padding-left: 20px;
+	font-size: 14px;
+	line-height: 26px;
 }
 
 abbr[title] {
