@@ -8,7 +8,7 @@ atom_feed :language => 'ru-RU' do |feed|
     feed.entry( article ) do |entry|
       entry.url article_url(article)
       entry.title article.title
-      entry.text article.text, :type => 'html'
+      entry.content article.text, :type => 'html'
 
       # the strftime is needed to work with Google Reader.
       entry.updated(article.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
