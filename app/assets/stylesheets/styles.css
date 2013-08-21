@@ -111,6 +111,12 @@ a:focus {
 a:hover, a:active {
 	outline: 0;
 }
+
+a.feed {
+	color: #0b4568;
+	margin-right: 10px;
+}
+
 abbr[title] {
 	border-bottom: 1px dotted;
 }
@@ -508,6 +514,10 @@ letter-spacing: -0.5px;
 }
 nav.header-menu a:hover{
 	background:#661515;
+}
+
+nav.header-menu a.feed:hover{
+	background:none;
 }
 nav.header-menu a.active{
 	background:#cf2b2b;

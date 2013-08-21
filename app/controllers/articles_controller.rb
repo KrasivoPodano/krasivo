@@ -2,11 +2,7 @@
 
 class ArticlesController < ApplicationController
   def index
-    
-
-    
     @tags = Tag.with_articles
-    
     articles = Article.published.order("created_at DESC")
     
     if params[:tag_id]
@@ -19,7 +15,6 @@ class ArticlesController < ApplicationController
         format.html
         format.js
     end
-    
   end
   
   def show
@@ -40,7 +35,7 @@ class ArticlesController < ApplicationController
       format.atom { render :layout => false }
 
       # we want the RSS feed to redirect permanently to the ATOM feed
-      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+      format.rss { redirect_to blog_feed_path(:format => :atom), :status => :moved_permanently }
     end
   end
   

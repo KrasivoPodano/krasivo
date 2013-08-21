@@ -38,8 +38,12 @@ Krasivo::Application.routes.draw do
   # Blog
   match 'blog' => 'articles#index', :as => :blog
   match 'blog/:id' => 'articles#show', :as => :article
-  match '/feed' => 'articles#feed',
-        :as => :feed,
+  match '/blog_feed' => 'articles#feed',
+        :as => :blog_feed,
+        :defaults => { :format => 'atom' }
+        
+  match '/events_feed' => 'events#feed',
+        :as => :events_feed,
         :defaults => { :format => 'atom' }
   
   # Static Pages

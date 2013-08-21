@@ -19,7 +19,8 @@
         <a href="/" class="logo"><img src="/assets/logo.png" alt="" /></a>
         <div class="header-text">
             Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется. <br/>
-
+			<%= link_to image_tag('feed.png') + "блог", blog_feed_path, :class => 'feed' %>
+			<%= link_to image_tag('feed.png')+ "МК", events_feed_path, :class => 'feed' %>
 			
         </div>
 		<% unless controller?("events") && action?("show") && @event.front_images.blank? %>

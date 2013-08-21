@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
@@ -24,6 +26,24 @@ class EventsController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to :back }
+    end
+  end
+  
+  def feed
+    # this will be the name of the feed displayed on the feed reader
+    @title = "Красиво подано | МК"
+
+    # the news items
+    @events = Event.published.order("updated_at desc")
+
+    # this will be our Feed's update timestamp
+    @updated = @events.first.updated_at unless @events.empty?
+
+    respond_to do |format|
+      format.atom { render :layout => false }
+
+      # we want the RSS feed to redirect permanently to the ATOM feed
+      format.rss { redirect_to events_feed_path(:format => :atom), :status => :moved_permanently }
     end
   end
   
