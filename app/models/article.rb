@@ -7,4 +7,5 @@ class Article < ActiveRecord::Base
   scope :published, -> { where(published: true) }
   
   validates :title, :text, :presence => true
+  validates :title, :date, :presence => true
 end

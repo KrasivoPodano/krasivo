@@ -36,6 +36,7 @@ ru:
   events: "МК"
   email_not_unique: "Такой email уже есть"
   new_event_created: "Новый Мастер Класс в кулинарной школе Красиво Подано"
+  new_article_created: "Новая статья в блоге кулинарной школы Красиво Подано"
   activerecord:
     errors:
       models:

@@ -37,8 +37,10 @@ ActiveAdmin.register Event do
        @event = Event.new(params[:event])
        
        respond_to do |format|
-          if @event.save
+          if @event.save && params[:event][:published] == '1'
             SubscriptionMailer.events_feed_email(@event).deliver
+            format.html { redirect_to edit_admin_event_path(@event) }
+          elsif  @event.save
             format.html { redirect_to edit_admin_event_path(@event) }
           else
             format.html { render action: "new" }
