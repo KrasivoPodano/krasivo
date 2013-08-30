@@ -38,6 +38,7 @@ ActiveAdmin.register Event do
        
        respond_to do |format|
           if @event.save
+            SubscriptionMailer.events_feed_email(@event).deliver
             format.html { redirect_to edit_admin_event_path(@event) }
           else
             format.html { render action: "new" }

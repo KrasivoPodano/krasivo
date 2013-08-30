@@ -34,7 +34,15 @@ ru:
   please_enter_correct_data: "Слова не совпадают, попробуйте еще раз"
   recipes: "Рецепты"
   events: "МК"
+  email_not_unique: "Такой email уже есть"
+  new_event_created: "Новый Мастер Класс в кулинарной школе Красиво Подано"
   activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            email:
+              taken: "Подписка на такой емайл уже существует"
     models: 
       album:
         one: "Альбом"
@@ -84,6 +92,9 @@ ru:
       slide:
           one: "Слайд"
           other: "Слайды"
+      subscription:
+          one: "Подписка"
+          other: "Подписки"
     attributes:
       recipe:
         title: "Название"
@@ -161,3 +172,6 @@ ru:
         link: "Ссылка"
         image: "Изображение"
         position: "Порядковый номер"
+      subscription:
+        articles: "Блог"
+        events: "МК"

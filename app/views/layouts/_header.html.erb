@@ -21,6 +21,7 @@
             Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется. <br/>
 			<%= link_to "подпишись на блог", blog_feed_path, :class => 'feed' %>
 			<%= link_to "подпишись на мероприятия", events_feed_path, :class => 'feed' %>
+			<%= link_to "email", "#", :class => 'subscribe', :id => 'subscribe' %>
 			
         </div>
 		<% unless controller?("events") && action?("show") && @event.front_images.blank? %>

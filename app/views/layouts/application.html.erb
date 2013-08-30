@@ -29,6 +29,7 @@
 </div>
 <% end %>
 <%= render :partial => 'layouts/appointment_form', :locals => { :@appointment => Appointment.new } %>
+<%= render :partial => 'layouts/subscription_form', :locals => { :@subscription => Subscription.new } %>
 <%= render 'layouts/auth_form' %>
 <% if b2b? %>
 <%= render 'layouts/b2b_header' %>

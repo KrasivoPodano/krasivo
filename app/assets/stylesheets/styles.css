@@ -121,6 +121,13 @@ a.feed {
 	line-height: 26px;
 }
 
+a.subscribe {
+	color: #0b4568;
+
+	font-size: 14px;
+	line-height: 26px;
+}
+
 abbr[title] {
 	border-bottom: 1px dotted;
 }
@@ -982,7 +989,7 @@ right:10px;
 	text-decoration:none;
 }
 
-.form.auth_popup, .form.appointment_popup {
+.form.auth_popup, .form.appointment_popup, .form.subscription_popup  {
 	width:400px;
 	margin-left:-250px;
 }

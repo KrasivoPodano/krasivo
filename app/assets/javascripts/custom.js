@@ -67,6 +67,12 @@ $(document).ready(function(){
 		return false
 	});
 	
+	$('#subscribe').on("click", function() {
+		$('.subscription_popup').show();
+		
+	});
+	
+	
 	
 	
 	

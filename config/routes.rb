@@ -1,5 +1,7 @@
 Krasivo::Application.routes.draw do
 
+  match 'subscriptions/subscribe' => 'subscriptions#subscribe'
+
   namespace :b2b do
     match 'food' => 'b2b#food'
     match 'portfolio' => 'b2b#portfolio'
