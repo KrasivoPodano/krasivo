@@ -2,6 +2,25 @@
  
 	<%= render 'shared/slider' %>
 
+    <% unless @courses.blank? %>
+	<div class="blocks-main">
+		<h1><%= link_to "Наши курсы", courses_path %></h1>
+	</div>	
+    <div class="blocks-main">
+		<% @courses.each do |event| %>
+        <div class="block">
+			<% unless event.front_images.blank? %>
+			<%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+			<% end %>
+            <h2><%= event.title %></h2>
+            <span class="blocks-date"><%= event.price %> <span class="b-rub">Р</span></span>
+            <p><%= event.shorttext %></p>
+            <%= link_to "подробнее", event %>
+        </div>
+		<% end %>	
+    </div>
+	<% end %>
+
     <% unless @future.blank? %>
 	<div class="blocks-main">
 		<h1><%= link_to "Предстоящие события", future_events_path %></h1>

@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :date, :text, :album_id, :event_type_id, :main, :shorttext, :eventdetails, :front_images_attributes, :price, :published
+  attr_accessible :title, :date, :text, :album_id, 
+                  :event_type_id, :main, :shorttext, 
+                  :eventdetails, :front_images_attributes, :price, :published, :property
   scope :main, where(:main => true)
   scope :future, where("date >= ?", Time.now)
   scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )
@@ -12,9 +14,12 @@ class Event < ActiveRecord::Base
   has_many :appointments
   has_many :users, :through => :appointments
   accepts_nested_attributes_for :front_images, :allow_destroy => true
-  validates :title, :date, :text, :event_type_id, :price, :presence => true
+  validates :title, :text, :event_type_id, :price, :presence => true
   validates :shorttext, :length => { :maximum => 125 }
   validates :eventdetails, :length => { :maximum => 70 }
   just_define_datetime_picker :date, :add_to_attr_accessible => true
   scope :published, -> { where(published: true) }
+  scope :courses, -> { where(property: "course") }
+  scope :master_classes, -> { where(property: "master") }
+  PROPERTIES = %w[master course]
 end

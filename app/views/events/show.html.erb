@@ -21,9 +21,11 @@
 	
 	<aside>
 		<div class="event-info">
+			<% unless @event.property == "course" %>
             <p>
                 когда: <span class="strong"><%= Russian::strftime(@event.date, "%d %B") %></span>
             </p>
+			<% end %>
             <p>
                 стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span>
             </p>
@@ -56,7 +58,11 @@
             <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
 			<% end %>
             <h2><%= event.title %></h2>
-            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | <%= event.price %> <span class="b-rub">Р</span></span>
+            <span class="blocks-date">
+			<% unless event.property == "course" %>
+			<%= Russian::strftime(event.date, "%d %B") %> | 
+			<% end %>
+			<%= event.price %> <span class="b-rub">Р</span></span>
             <p><%= event.shorttext %></p>
             <%= link_to "подробнее", event %>
         </div>

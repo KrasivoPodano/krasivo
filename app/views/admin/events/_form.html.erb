@@ -3,6 +3,7 @@
 <%= f.inputs t('properties') do %>
 
 <%= f.input :title %>
+<%= f.input :property, :as => :select, :collection => Event::PROPERTIES.map { |a| [ t(a), a ] }, :include_blank => false %>
 <%= f.input :published %>
 <%= f.input :price %>
 <%= f.input :date %>

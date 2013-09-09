@@ -4,11 +4,15 @@ ActiveAdmin.register Event do
   menu :parent => I18n.t('events')
   
   index do 
+    column :property do |column|
+      t(column.property)
+    end 
     column :title
     column :published
     column :date
-    column :text do |row|
-      row.text.html_safe
+    column :text do |column|
+      text = strip_tags(column.text).gsub(/&quot;/i,"").gsub(/&nbsp;/i,"")
+  		truncate(text, length: 260, omission: '...').html_safe
     end
     column :main
     default_actions

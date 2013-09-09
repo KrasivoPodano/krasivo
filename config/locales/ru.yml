@@ -1,6 +1,8 @@
 ru:
+  true: "Да"
+  false: "Нет"
   simple_captcha:
-    label: "Введите текст с картинки"
+  label: "Введите текст с картинки"
   destroy: "Удалить"
   images: "Изображения"
   details: "Детали"
@@ -37,6 +39,9 @@ ru:
   email_not_unique: "Такой email уже есть"
   new_event_created: "Новый Мастер Класс в кулинарной школе Красиво Подано"
   new_article_created: "Новая статья в блоге кулинарной школы Красиво Подано"
+  course: "Курс"
+  master: "Мастер класс"
+  users: "Пользователи"
   activerecord:
     errors:
       models:
@@ -109,6 +114,7 @@ ru:
         eventdetails: "Детали занятия"
         main: "Разместить на главной?"
         published: "Опубликован"
+        property: "Тип"
       event_type:
         title: "Название"
       recipe_type:

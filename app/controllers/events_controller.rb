@@ -11,12 +11,16 @@ class EventsController < ApplicationController
   end
   
   def future
-    @events = Event.published.where("date >= ?", Time.now ).order("date asc")
+    @events = Event.master_classes.published.where("date >= ?", Time.now ).order("date asc")
   end
   
   def past
-    @events = Event.published.where("date <= ?", Time.now ).order("date desc")
+    @events = Event.master_classes.published.where("date <= ?", Time.now ).order("date desc")
   end 
+  
+  def courses
+    @events = Event.courses.published.order("date asc")
+  end
   
   def destroy
     @event = Event.find(params[:id])

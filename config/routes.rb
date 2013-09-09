@@ -12,19 +12,14 @@ Krasivo::Application.routes.draw do
 
   resources :line_items
   resources :events
-
-
   resources :carts
-  
   resources :appointments
-
+  resources :recipes
+  resources :orders
 
   devise_for :users, :controllers => { sessions: 'sessions' }
 
   get "orders/create"
-
-  resources :recipes
-  resources :orders
 
   mount Ckeditor::Engine => '/ckeditor'
   
@@ -36,6 +31,7 @@ Krasivo::Application.routes.draw do
   match 'events/:id' => 'events#show', :as => :event
   match 'future' => 'events#future', :as => :future_events
   match 'past' => 'events#past', :as => :past_events
+  match 'courses' => 'events#courses', :as => :courses
   
   # Blog
   match 'blog' => 'articles#index', :as => :blog

@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
-    config.batch_actions = false
+  menu :parent => I18n.t('users')
+  config.batch_actions = false
   
   index do                            
     column :email                     
