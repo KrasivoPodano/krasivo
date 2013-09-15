@@ -3,6 +3,7 @@
         <nav class="header-menu">
             <span><%= link_to "о школе", school_path, :class => ('active' if controller?("static_pages") && action?("school")) %></span>
             <span><%= link_to "расписание", future_events_path, :class => ('active' if controller?("events") && action?("future")) %></span>
+			<span><%= link_to "курсы", courses_path, :class => ('active' if controller?("events") && action?("courses")) %></span>
             <span><%= link_to "что преподаем", services_path, :class => ('active' if controller?("static_pages") && action?("services")) %></span>
             <span><a href="#" class="order_popup_link">заказать</a></span>
             <span><%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %></span>

@@ -13,7 +13,9 @@
   <div class="container blog" style="margin-bottom: 50px">
     
 	<h1><%= @article.title %></h1>
+	<% unless @article.date.nil? %>
 	<div class="blog_date"><%= Russian::strftime(@article.date, "%d %B %Y %H:%M") %></div>
+	<% end %>
     <div class="blog_text"><%= @article.text.html_safe %></div>
 	
 	
