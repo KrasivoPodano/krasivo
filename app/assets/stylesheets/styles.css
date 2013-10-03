@@ -359,6 +359,9 @@ a:hover {
 .event-main a{
 	color:#249ee7;
 }
+.event-main a.button-blue{
+	color:#ffffe6;
+}
 .event-main a:hover{
 	color:#cf2b2b;
 }
