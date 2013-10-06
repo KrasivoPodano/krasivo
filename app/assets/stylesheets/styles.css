@@ -356,13 +356,13 @@ a:hover {
 	color:#249ee7;
 	text-decoration:underline;
 }
-.event-main a{
+.event-main a, .container.blog a{
 	color:#249ee7;
 }
 .event-main a.button-blue{
 	color:#ffffe6;
 }
-.event-main a:hover{
+.event-main a:hover, .container.blog a:hover{
 	color:#cf2b2b;
 }
 .blocks-main a{
