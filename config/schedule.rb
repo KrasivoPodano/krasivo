@@ -1,4 +1,3 @@
-set :environment, 'development'
 set :output, "#{path}/log/cron.log"
 
 every 3.minutes do
