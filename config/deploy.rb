@@ -16,6 +16,9 @@
 require 'bundler/capistrano'
 require "delayed/recipes" 
 
+set :whenever_command, "rvm use 1.9.3 do bundle exec"
+require "whenever/capistrano"
+
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
 ## dayabase.yml в shared-каталог проекта на сервере и раскомментируйте
 ## следующие строки.
