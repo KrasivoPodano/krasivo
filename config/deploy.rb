@@ -8,8 +8,7 @@
 #
 # в ваш Gemfile.
 
-set :whenever_command, "rvm use 1.9.3 do bundle exec"
-require "whenever/capistrano"
+
 
 #
 # Если вы используете другую систему управления зависимостями,
