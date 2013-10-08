@@ -76,31 +76,4 @@ ActiveAdmin.register Article do
   
    end
    
-   
-   controller do
-
-      def create 
-        @article = Article.new(params[:article])
-
-        respond_to do |format|
-           if @article.save && params[:article][:published] == '1'
-             SubscriptionMailer.articles_feed_email(@article).deliver
-             format.html { redirect_to admin_article_path(@article) }
-           elsif @article.save
-             format.html { redirect_to admin_article_path(@article) }
-           else
-             format.html { render action: "new" }
-           end
-         end 
-      end
-      
-
-    
-    end
-   
-   
-   
-   
-   
-   
 end

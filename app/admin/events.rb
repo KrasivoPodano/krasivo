@@ -35,26 +35,9 @@ ActiveAdmin.register Event do
     end
   end
   
-  controller do
-     
-     def create 
-       @event = Event.new(params[:event])
-       
-       respond_to do |format|
-          if @event.save && params[:event][:published] == '1'
-            SubscriptionMailer.events_feed_email(@event).deliver
-            format.html { redirect_to edit_admin_event_path(@event) }
-          elsif  @event.save
-            format.html { redirect_to edit_admin_event_path(@event) }
-          else
-            format.html { render action: "new" }
-          end
-        end 
-     end
-        
+  controller do        
      def update
-       @event = Event.find(params[:id])
-              
+       @event = Event.find(params[:id])     
        respond_to do |format|
          if params[:preview_button] && @event.update_attributes(params[:event])
            format.html { redirect_to action: "edit" }
