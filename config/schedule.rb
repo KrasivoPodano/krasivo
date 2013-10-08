@@ -1,8 +1,8 @@
+set :environment, 'development'
 set :output, "#{path}/log/cron.log"
-job_type :script, "'#{path}/script/:task' :output"
 
 every 3.minutes do
-  script "distribute_mail"
+  rake "db:populate"
 end
 
 # Use this file to easily define all of your cron jobs.
