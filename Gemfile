@@ -20,6 +20,8 @@ gem 'devise-i18n', :github => 'tigrish/devise-i18n'
 gem 'capistrano'
 gem 'unicorn'
 
+gem 'whenever', require: false
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

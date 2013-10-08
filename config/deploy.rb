@@ -7,6 +7,10 @@
 # gem 'unicorn'
 #
 # в ваш Gemfile.
+
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
 #
 # Если вы используете другую систему управления зависимостями,
 # закомментируйте эту строку.

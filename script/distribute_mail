@@ -1,0 +1,1 @@
+SubscriptionMailer.articles_feed_email(Article.first).deliver
