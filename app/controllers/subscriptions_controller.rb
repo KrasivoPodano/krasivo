@@ -11,4 +11,13 @@ class SubscriptionsController < ApplicationController
     render json: result  
   end
   
+  def destroy
+    @subscription = Subscription.find(params[:id])
+    @subscription.destroy
+
+    respond_to do |format|
+      format.html { redirect_to root_path, :notice => 'subscription_successfully_destroyed' }
+    end
+  end
+  
 end
