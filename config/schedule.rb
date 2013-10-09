@@ -1,7 +1,7 @@
 set :output, "#{path}/log/cron.log"
 
 every 3.minutes do
-  rake "db:populate"
+  rake "mail:distribute"
 end
 
 # Use this file to easily define all of your cron jobs.

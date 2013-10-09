@@ -13,6 +13,12 @@ namespace :db do
       article.text = Populator.sentences(2..30)
       article.date = Time.now
     end
+  end
+end
 
+namespace :mail do
+  desc "Erase and fill database"
+  task :distribute => :environment do
+    SubscriptionMailer.events_feed_email(Event.first).deliver
   end
 end

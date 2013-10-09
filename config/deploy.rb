@@ -16,7 +16,7 @@
 require 'bundler/capistrano'
 require "delayed/recipes" 
 
-set :whenever_command, "rvm use 1.9.3 do bundle exec"
+set :whenever_command, "rvm use 1.9.3 do bundle exec whenever"
 require "whenever/capistrano"
 
 ## Чтобы не хранить database.yml в системе контроля версий, поместите
