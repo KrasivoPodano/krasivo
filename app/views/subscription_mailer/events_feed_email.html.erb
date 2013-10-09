@@ -1,7 +1,13 @@
 <p>Добрый день!</p>
 
-<p>В кулинарной школе Красиво Подано будет проведен мастер класс, подробнее <%= link_to "тут", event_url(@event) %><p>
+<p>В кулинарной школе Красиво Подано на следующей неделе будут проведены мастер классы:<p>
+
+<ul style="list-style-type: none; padding-left: 0px;">
+  <% @events.each do |event| %>
+  <li><b><%= Russian::strftime(event.date, "%d %B") %></b> - <%= link_to event.title, event_url(event) %></li>
+  <% end %>
+</ul>
 	
-<p>Желаем удачи!</p>
+<p>Ждем Вас!</p>
 
 <%= link_to "krasivopodano.ru", "krasivopodano.ru" %>
