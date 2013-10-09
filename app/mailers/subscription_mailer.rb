@@ -2,7 +2,7 @@ class SubscriptionMailer < ActionMailer::Base
   default from: "info@krasivopodano.ru"
   
   def events_feed_email
-    @events = Event.where(:date => Time.now.next_week..Time.now.next_week.end_of_week).order('date DESC')
+    @events = Event.where(:date => Time.now.next_week..Time.now.next_week.end_of_week).order('date ASC')
     mail(to: "babrovka@gmail.com", subject: t("events_for_the_next_week"))
   end
   
