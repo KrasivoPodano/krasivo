@@ -1,6 +1,6 @@
 set :output, "#{path}/log/cron.log"
 
-every 60.minutes do
+every :sunday, :at => '12pm' do
   rake "mail:distribute"
 end
 
