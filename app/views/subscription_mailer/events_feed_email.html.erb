@@ -1,15 +1,45 @@
-<p>Добрый день!</p>
-
-<p>В кулинарной школе Красиво Подано на следующей неделе будут проведены мастер классы:<p>
-
-<ul style="list-style-type: none; padding-left: 0px;">
-  <% @events.each do |event| %>
-  <li><b><%= Russian::strftime(event.date, "%d %B") %></b> - <%= link_to event.title, event_url(event) %></li>
-  <% end %>
-</ul>
-	
-<p>Ждем Вас!</p>
-
-<%= link_to "krasivopodano.ru", "http://krasivopodano.ru" %>
-
-<p>Чтобы отписаться от рассылки, перейдите по <%= link_to "ссылке", "#" %></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+	<td><a href="http://krasivopodano.ru"><img src="http://krasivopodano.ru/assets/logo.png" alt="logo"></a></td>
+    <td class="header-text">Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется.</td>
+    <td class="header-contacts">
+	  <span class="phones">812 942 67 52</span>
+      <br />
+      <a href="http://krasivopodano.ru/contacts">карта проезда</a>
+      <br />
+      <a href="http://krasivopodano.ru/future">все события школы</a>
+    </td>
+  </tr>
+  <tr>
+	<td colspan="3" style="text-align: center;">
+      	<p class="heading">Предстоящие события</p>
+    </td>
+  </tr>
+  <tr>
+	<% @events.limit(3).each do |event| %>
+      <td class="block" style="width:33%;">
+      <% unless event.front_images.blank? %>
+      <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+	  <% end %>
+      <h2><%= event.title %></h2>
+      <span class="blocks-date">
+	  <% unless event.property == "course" %>
+	  <%= Russian::strftime(event.date, "%d %B") %> | 
+	  <% end %>
+	  <%= event.price %> <span class="b-rub">Р</span></span>
+      <p><%= event.shorttext %></p>
+      <%= link_to "подробнее", event_url(event), :class => 'block-link' %>
+      </td>
+	<% end %>
+  </tr>
+  <tr>
+	<td colspan="3" style="text-align: center;">
+      	<p class="heading">Наши курсы</p>
+    </td>
+  </tr>
+  <tr>
+	<td colspan="3" class="block">
+      	<%= link_to image_tag(@course.front_images.first.image.url(:thumb)), event_url(@course) %>
+    </td>
+  </tr>
+</table>

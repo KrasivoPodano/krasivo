@@ -21,6 +21,7 @@ gem 'capistrano'
 gem 'unicorn'
 
 gem 'whenever', require: false
+gem 'roadie'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

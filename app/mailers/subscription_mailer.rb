@@ -1,9 +1,10 @@
 class SubscriptionMailer < ActionMailer::Base
-  default from: "info@krasivopodano.ru"
+  default :css => 'email', from: "info@krasivopodano.ru"
   
   def events_feed_email
-    @events = Event.where(:date => Time.now.next_week..Time.now.next_week.end_of_week).order('date ASC')
-    mail(to: ["m.nikolaev@me.com", "babrovka@gmail.com"], subject: t("events_for_the_next_week"))
+    @events = Event.master_classes.where(:date => Time.now.next_week..Time.now.next_week.end_of_week).order('date ASC')
+    @course = Event.courses.last
+    mail(to: ["bobrov-slava@bk.ru"], subject: t("events_for_the_next_week"))
   end
   
   def articles_feed_email(article)

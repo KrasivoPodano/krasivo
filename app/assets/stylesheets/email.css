@@ -1,0 +1,64 @@
+@font-face {
+	font-family: 'Conv_ReformaGroteskMediumC';
+	src: url('ReformaGroteskMediumC.eot');
+	src: local('☺'), url('ReformaGroteskMediumC.woff') format('woff'), url('ReformaGroteskMediumC.ttf') format('truetype'), url('ReformaGroteskMediumC.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.header-text {
+	font-size: 15px;
+	width:425px;
+	color:#9b2021;
+	line-height:25px;
+	letter-spacing: -1px;
+}
+
+.phones{
+	font-family: 'Conv_NeoSansPro-Bold',Sans-Serif;
+	font-size:18px;
+	color:#0b4568;
+	line-height:32px;
+}
+
+.header-contacts a{
+	color:#0b4568;
+	text-decoration:underline;
+	line-height:26px;
+}
+
+.header-contacts a:hover{
+	color:#cf2b2b;
+	text-decoration:underline;	
+}
+
+.heading {
+	color:#249ee7;
+	font-size:38px;
+	font-family:'Conv_ReformaGroteskMediumC',Sans-Serif;
+	text-transform:uppercase;
+	font-weight:normal;
+	margin:20px 0 30px;
+	line-height:42px;
+}
+
+.block h2{
+	font-family:'Conv_ReformaGroteskMediumC',Sans-Serif;
+	font-size:26px;
+	text-transform:uppercase;
+	font-weight:normal;
+	margin-bottom:10px;
+	color:#9b2021;
+	line-height:32px;
+	letter-spacing: 2px;
+	margin:25px 0 10px;
+}
+
+.blocks-date{
+	color:#0b4568;
+	font-weight:bold;
+}
+
+.block-link {
+	color:#249ee7;
+}
