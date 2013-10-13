@@ -19,7 +19,7 @@
 	<% @events.limit(3).each do |event| %>
     <td class="block">
     <% unless event.front_images.blank? %>
-    <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event_url(event) %>
+    <%= link_to image_tag(event.front_images.first.image.url(:email_small)), event_url(event) %>
 	  <% end %>
     <h2><%= event.title %></h2>
     <span class="blocks-date">
@@ -40,7 +40,7 @@
   <tr>
 	<td colspan="3" class="block">
       	<% unless @course.front_images.blank? %>
-	    <%= link_to image_tag(@course.front_images.first.image.url(:medium)), event_url(@course) %>
+	    <%= link_to image_tag(@course.front_images.first.image.url(:email_big)), event_url(@course) %>
 		<% end %>
 	    <h2><%= @course.title %></h2>
 	    <span class="blocks-date">
