@@ -1,8 +1,8 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
-	<td><a href="http://krasivopodano.ru"><img src="http://krasivopodano.ru/assets/logo.png" alt="logo"></a></td>
-    <td class="header-text">Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется.</td>
-    <td class="header-contacts">
+	<td style="width: 20%"><a href="http://krasivopodano.ru"><img src="http://krasivopodano.ru/assets/logo.png" alt="logo"></a></td>
+    <td class="header-text" style="width: 60%">Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется.</td>
+    <td class="header-contacts" style="width: 20%">
 	  <span class="phones">812 942 67 52</span>
       <br />
       <a href="http://krasivopodano.ru/contacts">карта проезда</a>
@@ -19,7 +19,7 @@
 	<% @events.limit(3).each do |event| %>
     <td class="block">
     <% unless event.front_images.blank? %>
-    <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+    <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event_url(event) %>
 	  <% end %>
     <h2><%= event.title %></h2>
     <span class="blocks-date">
@@ -39,7 +39,14 @@
   </tr>
   <tr>
 	<td colspan="3" class="block">
-      	<%= link_to image_tag(@course.front_images.first.image.url(:thumb)), event_url(@course) %>
-    </td>
+      	<% unless @course.front_images.blank? %>
+	    <%= link_to image_tag(@course.front_images.first.image.url(:medium)), event_url(@course) %>
+		<% end %>
+	    <h2><%= @course.title %></h2>
+	    <span class="blocks-date">
+		<%= @course.price %> <span class="b-rub">Р</span></span>
+	    <p><%= @course.shorttext %></p>
+	    <%= link_to "подробнее", event_url(@course), :class => 'block-link' %>
+	</td>
   </tr>
 </table>
