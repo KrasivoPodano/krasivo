@@ -14,6 +14,10 @@
 	letter-spacing: -1px;
 }
 
+.header-contacts {
+	text-align: right;
+}
+
 .phones{
 	font-family: 'Conv_NeoSansPro-Bold',Sans-Serif;
 	font-size:18px;
@@ -42,6 +46,11 @@
 	line-height:42px;
 }
 
+.block {
+	width: 33%;
+	vertical-align: top;
+}
+
 .block h2{
 	font-family:'Conv_ReformaGroteskMediumC',Sans-Serif;
 	font-size:26px;
@@ -51,7 +60,13 @@
 	color:#9b2021;
 	line-height:32px;
 	letter-spacing: 2px;
-	margin:25px 0 10px;
+}
+
+.block img{
+	width: 300px;
+	height: 200px;
+	margin-top: 0px;
+	padding-top: 0px;
 }
 
 .blocks-date{
