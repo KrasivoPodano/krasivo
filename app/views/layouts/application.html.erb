@@ -40,6 +40,21 @@
 <%= render :partial => 'layouts/order_form', :locals => { :@order => Order.new, :@events => Event.all } %>
 <%= render 'layouts/footer' %>
 
+<script type='text/javascript'> /* build:::7 */
+var liveTex = true,
+liveTexID = 57351,
+liveTex_object = true;
+(function() {
+var lt = document.createElement('script');
+lt.type ='text/javascript';
+lt.async = true;
+lt.src = 'http://cs15.livetex.ru/js/client.js';
+var sc = document.getElementsByTagName('script')[0];
+if ( sc ) sc.parentNode.insertBefore(lt, sc);
+else document.documentElement.firstChild.appendChild(lt);
+})();
+</script>
+
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
 (function (d, w, c) {
