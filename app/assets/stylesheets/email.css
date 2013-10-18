@@ -40,16 +40,11 @@
 	color:#249ee7;
 	font-size:38px;
 	font-family:'Conv_ReformaGroteskMediumC',Sans-Serif;
-	text-transform:uppercase;
 	font-weight:normal;
 	margin:20px 0 30px;
 	line-height:42px;
 }
 
-.block {
-	width: 33%;
-	vertical-align: top;
-}
 
 .block h2{
 	font-family:'Conv_ReformaGroteskMediumC',Sans-Serif;
@@ -69,4 +64,16 @@
 
 .block-link {
 	color:#249ee7;
+}
+
+.events_row td {
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	width: 230px;
+	vertical-align: top;
+}
+
+.events_row td.with_borders{
+   	border-right: 1px solid grey;
+	border-left: 1px solid grey;
 }

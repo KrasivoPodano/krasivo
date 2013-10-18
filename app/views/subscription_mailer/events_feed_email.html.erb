@@ -1,4 +1,4 @@
-<table width="100%" border="0" cellpadding="5" cellspacing="0">
+<table width="700px;" border="0" cellpadding="5" cellspacing="0">
   <tr>
 	<td style="width: 20%"><a href="http://krasivopodano.ru"><img src="http://krasivopodano.ru/assets/logo.png" alt="logo"></a></td>
     <td class="header-text" style="width: 50%">Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется.</td>
@@ -12,12 +12,14 @@
   </tr>
   <tr>
 	<td colspan="3" style="text-align: center;">
-      	<p class="heading">Предстоящие события</p>
+				<%= image_tag('tape-left.png')%>
+      	<span class="heading">Предстоящие события</span>
+				<%= image_tag('tape-left.png')%>
     </td>
   </tr>
-  <tr>
-	<% @events.limit(3).each do |event| %>
-    <td class="block">
+  <tr class="events_row">
+	<% @events.limit(3).each_with_index do |event, index| %>
+    <td class="block <%= if index == 1 then "with_borders" end %>">
     <% unless event.front_images.blank? %>
     <%= link_to image_tag(event.front_images.first.image.url(:email_small)), event_url(event) %>
 	  <% end %>
@@ -32,7 +34,7 @@
     </td>
 	<% end %>
   </tr>
-  <tr>
+  <!-- <tr>
 	<td colspan="3" style="text-align: center;">
       	<p class="heading">Наши курсы</p>
     </td>
@@ -48,5 +50,5 @@
 	    <p><%= @course.shorttext %></p>
 	    <%= link_to "подробнее", event_url(@course), :class => 'block-link' %>
 	</td>
-  </tr>
+  </tr> -->
 </table>
