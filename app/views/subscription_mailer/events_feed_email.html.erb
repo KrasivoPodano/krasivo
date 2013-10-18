@@ -33,24 +33,30 @@
     <%= link_to "подробнее", event_url(event), :class => 'block-link' %>
     </td>
 	<% end %>
-  </tr>
-  <!-- <tr>
-	<td colspan="3" style="text-align: center;">
-      	<p class="heading">Наши курсы</p>
+	</tr>
+	<td colspan="3" class="heading" style="padding-left: 100px; margin-top: 30px;">
+				<%= image_tag('tape-left.png')%>
+      	<span class="heading-text">Наши курсы</span>
+				<%= image_tag('tape-right.png')%>
     </td>
   </tr>
-  <tr>
-	<td colspan="3" class="block">
-      	<% unless @course.front_images.blank? %>
-	    <%= link_to image_tag(@course.front_images.first.image.url(:email_big)), event_url(@course) %>
-		<% end %>
-	    <h2><%= @course.title %></h2>
-	    <span class="blocks-date">
-		<%= @course.price %> <span class="b-rub">Р</span></span>
-	    <p><%= @course.shorttext %></p>
-	    <%= link_to "подробнее", event_url(@course), :class => 'block-link' %>
-	</td>
-  </tr> -->
+	<tr>
+	<% @courses.limit(3).each_with_index do |event, index| %>
+    <td class="block <%= if index == 1 then "with_borders" end %>">
+    <% unless event.front_images.blank? %>
+    <%= link_to image_tag(event.front_images.first.image.url(:email_small)), event_url(event), :class => 'event_img' %>
+	  <% end %>
+    <h2><%= event.title %></h2>
+    <span class="blocks-date">
+	  <% unless event.property == "course" %>
+	  <%= Russian::strftime(event.date, "%d %B") %> | 
+	  <% end %>
+	  <%= event.price %> <span class="b-rub">Р</span></span>
+    <p><%= event.shorttext %></p>
+    <%= link_to "подробнее", event_url(event), :class => 'block-link' %>
+    </td>
+	<% end %>
+  </tr>
 	<tr>
 		<td colspan="3" style="text-align: right;">
 			<%= link_to "Еще события", future_events_url, :class => 'more' %>
