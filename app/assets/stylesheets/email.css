@@ -50,7 +50,7 @@
 	margin-top: 10px;
 }
 
-.block h2{
+.block h2, .recipe h2 {
 	font-family:'Conv_ReformaGroteskMediumC',Sans-Serif;
 	font-size:16px;
 	font-weight:normal;
@@ -78,6 +78,11 @@
 	border-left: 1px solid #e0e0e0;
 }
 
+.more_row {
+	text-align: right;
+	margin-bottom: 40px;
+}
+
 .more {
 	color: #249ee7;
 }
@@ -87,4 +92,10 @@
 	height: 133px;
 	margin-top: 10px;
 	margin-right: 15px;
+}
+
+.recipe img {
+	margin-left: 10px;
+	width: 680px;
+	height: 453px;
 }

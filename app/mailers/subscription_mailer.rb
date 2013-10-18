@@ -4,6 +4,7 @@ class SubscriptionMailer < ActionMailer::Base
   def events_feed_email
     @events = Event.published.master_classes.where(:date => Time.now.next_week..Time.now.next_week.end_of_week).order('date ASC')
     @courses = Event.published.courses
+    @recipe = Recipe.last
     mail(to: ["m.nikolaev@me.com", "babrovka@gmail.com"], subject: t("events_for_the_next_week"))
   end
   
