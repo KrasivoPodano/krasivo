@@ -84,3 +84,10 @@
 .more {
 	color: #249ee7;
 }
+
+.event_img {
+	width: 200px;
+	height: 133px;
+	margin-top: 10px;
+	margin-right: 15px;
+}

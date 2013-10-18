@@ -21,7 +21,7 @@
 	<% @events.limit(3).each_with_index do |event, index| %>
     <td class="block <%= if index == 1 then "with_borders" end %>">
     <% unless event.front_images.blank? %>
-    <%= link_to image_tag(event.front_images.first.image.url(:email_small)), event_url(event) %>
+    <%= link_to image_tag(event.front_images.first.image.url(:email_small)), event_url(event), :class => 'event_img' %>
 	  <% end %>
     <h2><%= event.title %></h2>
     <span class="blocks-date">
