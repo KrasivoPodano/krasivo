@@ -36,13 +36,18 @@
 	text-decoration:underline;	
 }
 
-.heading {
+.heading-text {
 	color:#249ee7;
-	font-size:38px;
+	font-size:36px;
 	font-family:'Conv_ReformaGroteskMediumC',Sans-Serif;
 	font-weight:normal;
-	margin:20px 0 30px;
-	line-height:42px;
+	line-height:40px;
+	vertical-align: top;
+}
+
+
+.heading img {
+	margin-top: 10px;
 }
 
 .block h2{
