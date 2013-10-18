@@ -70,13 +70,13 @@
 }
 
 .events_row td {
-	border-top: 1px solid grey;
-	border-bottom: 1px solid grey;
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
 	width: 230px;
 	vertical-align: top;
 }
 
 .events_row td.with_borders{
-   	border-right: 1px solid grey;
-	border-left: 1px solid grey;
+   	border-right: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
 }
