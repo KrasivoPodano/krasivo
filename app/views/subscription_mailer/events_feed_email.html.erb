@@ -74,16 +74,16 @@
 				<%= image_tag('tape-right.png')%>
     </td>
   </tr>
-  <!-- <tr>
+  <tr>
     <td colspan="3" class="recipe">
-        <h2><%= @recipe.title %><h2>
-        <%= link_to image_tag(@recipe.image.url(:mail_big)), recipe_url(@recipe) %>
-        <%= link_to "подробнее", recipe_url(@recipe), :class => 'block-link' %>
+				<h2><%= @recipe.title %><h2>
+				<%= link_to image_tag(@recipe.image.url(:mail_big)), recipe_url(@recipe) %>
+				<%= link_to "подробнее", recipe_url(@recipe), :class => 'block-link' %>
     </td>
   </tr>
   <tr>
-    <td colspan="3" class="more_row">
-      <%= link_to "Еще рецепты", recipes_url, :class => 'more' %>
-    </td>
-  </tr> -->
+		<td colspan="3" class="more_row">
+			<%= link_to "Еще рецепты", recipes_url, :class => 'more' %>
+		</td>
+	</tr>
 </table>
