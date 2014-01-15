@@ -49,12 +49,14 @@ Krasivo::Application.routes.draw do
   match '/school' => 'static_pages#school'
   match '/services' => 'static_pages#services'
 
-  match '/:id' => 'pages#show', :as => :page
+  
 
   root :to => 'static_pages#home'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  
+  match '/:id' => 'pages#show', :as => :page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
