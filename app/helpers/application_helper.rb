@@ -91,7 +91,20 @@ module ApplicationHelper
       else
         "#{@title} | #{base_title}"
       end
-    end
+   end
+   
+   def meta_description
+     base_meta_description = "кулинарная школа, кулинарная студия, кулинарная студия спб, кулинарная школа спб, кулинарная школа в Санкт-Петербурге, кулинарная студия в Санкт-Петербурге, кулинарные мастер классы, мастер классы по кулинарии, кулинарные курсы, курсы по кулинарии, курсы по кулинарии в санкт-петербурге, курсы для поваров, поварские курсы, школа поваров, обучение кулинарии"
+     base_meta_description
+     if @meta_description.nil?
+       base_meta_description
+     else
+       @meta_description
+     end
+   end
+    
+    
+    
     
     def event_price(event_id)
       Event.find(event_id)
