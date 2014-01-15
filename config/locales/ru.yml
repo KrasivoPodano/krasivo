@@ -172,6 +172,8 @@ ru:
         section: "Раздел"
         title: "Заголовок"
         text: "Текст"
+        seo_url: "SEO адрес"
+        html_title: "HTML заголовок"
       vacancy:
         title: "Заголовок"
         text: "Текст"

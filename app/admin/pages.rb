@@ -2,11 +2,10 @@ ActiveAdmin.register Page do
 
   config.batch_actions = false
   config.clear_sidebar_sections!
-  actions :index, :show, :new, :create, :update, :edit
+  # actions :index, :show, :new, :create, :update, :edit
   
   
    index do 
-     column :section
      column :title
      column :text do |column|
        column.text.html_safe
@@ -17,6 +16,8 @@ ActiveAdmin.register Page do
    form do |f|  
      f.inputs t('properties') do
        f.input :title
+       f.input :seo_url
+       f.input :html_title
        f.input :text, :as => :ckeditor, :label => false
      end
      f.actions
@@ -24,11 +25,13 @@ ActiveAdmin.register Page do
 
   show do
     attributes_table do
-      row :section
       row :title
+      row :seo_url
+      row :html_title
       row :text do |row|
         row.text.html_safe
       end
+      
     end  
    end  
 end

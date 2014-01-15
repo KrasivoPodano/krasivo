@@ -1,5 +1,7 @@
 Krasivo::Application.routes.draw do
 
+  get "pages/show"
+
   match 'subscriptions/subscribe' => 'subscriptions#subscribe'
 
   namespace :b2b do
@@ -48,6 +50,8 @@ Krasivo::Application.routes.draw do
   match '/contacts' => 'static_pages#contacts'
   match '/school' => 'static_pages#school'
   match '/services' => 'static_pages#services'
+
+  match '/:id' => 'pages#show', :as => :page
 
   root :to => 'static_pages#home'
 
