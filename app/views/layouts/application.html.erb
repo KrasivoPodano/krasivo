@@ -10,6 +10,7 @@
   <%= auto_discovery_link_tag :rss, "/feed.rss" %>
 <meta name="keywords" content="школа" /> 
 <meta name="description" content="<%= meta_description %>" />
+<%= yield :head %>
   <!--[if lt IE 9]>
   <script>
   document.createElement('header');
@@ -20,7 +21,6 @@
   document.createElement('footer');
   </script>
   <![endif]-->
-<%= yield :head %>
 </head>
 <body>
 <% if notice %>
