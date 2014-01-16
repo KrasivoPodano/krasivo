@@ -4,43 +4,11 @@
         data-nav="none" data-shadows="false" data-cropToFit="true" data-loop="true" data-autoplay="4000">
 		<% @slides.each do |slide| %>
         <div class="slide" style="background:url(<%= slide.image.url(:medium) %>);">
-            <div class="slide-content" style="margin-top: -140px;">
-                <div class="container">
-                    <div class="slide-buttons" style="padding-top: 125px;">
-						
-                    </div>
-                    <div class="slide-text">
-                        <h2><%= slide.title %></h2>
-                        <span class="slide-date"> 
-						
-						</span>
-                        <p><%= slide.text %></p>
-						<%= link_to "подробнее", slide.link, :class => 'button-blue' %>
-                    </div>
-                </div>
-            </div>
         </div>
   	    <% end %>
 		<% @main.each do |event| %>
 	    <% unless event.front_images.blank? %>
 	        <div class="slide" style="background:url(<%= event.front_images.first.image.url(:medium) %>);">
-	            <div class="slide-content" style="margin-top: -140px;">
-	                <div class="container">
-	                    <div class="slide-buttons" style="padding-top: 125px;">
-
-	            <%= order_link(event) %>
-	                    </div>
-	                    <div class="slide-text">
-	                        <h2><%= event.title %></h2>
-	                        <span class="slide-date"><%= Russian::strftime(event.date, "%d %B") %><% if event.eventdetails? %>: 
-	            <%= event.eventdetails %>
-	            <% end %>
-	            </span>
-	                        <p><%= event.shorttext %></p>
-	            <%= link_to "подробнее", event, :class => 'button-blue' %>
-	                    </div>
-	                </div>
-	            </div>
 	        </div>
 	    <% end %>
 	    <% end %>
