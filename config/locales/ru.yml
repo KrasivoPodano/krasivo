@@ -44,6 +44,8 @@ ru:
   course: "Курс"
   master: "Мастер класс"
   users: "Пользователи"
+  menu: "Меню"
+  top_menu: "Верхнее меню"
   activerecord:
     errors:
       models:
@@ -67,6 +69,9 @@ ru:
       tag:
         one: "Тэг"
         other: "Тэги"
+      top_menu_element:
+        one: "Элемент"
+        other: "Элемены"
       page:
         one: "Страница"
         other: "Страницы"
@@ -202,3 +207,7 @@ ru:
       subscription:
         articles: "Блог"
         events: "МК"
+      top_menu_element:
+        position: "Положение"
+        title: "Заголовок"
+        link: "Ссылка"
