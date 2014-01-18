@@ -1,7 +1,11 @@
 class Event < ActiveRecord::Base
   attr_accessible :title, :date, :text, :album_id, 
                   :event_type_id, :main, :shorttext, 
-                  :eventdetails, :front_images_attributes, :price, :published, :property
+                  :eventdetails, :front_images_attributes, :price, :published, :property,
+                  :html_title, :seo_url, :meta_description
+
+  extend FriendlyId
+  friendly_id :seo_url, use: :slugged
   scope :main, where(:main => true)
   scope :future, where("date >= ?", Time.now)
   scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )

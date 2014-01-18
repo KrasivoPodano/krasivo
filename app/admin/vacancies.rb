@@ -14,6 +14,12 @@ ActiveAdmin.register Vacancy do
        f.input :title
        f.input :text, :as => :ckeditor, :label => false
      end
+     f.inputs 'SEO' do
+       f.input :seo_url
+       f.input :html_title
+       f.input :meta_description,      :input_html => { :rows => 4 }
+     end
+     
      f.actions
    end
 
@@ -23,6 +29,9 @@ ActiveAdmin.register Vacancy do
       row :text do |row|
         truncate(strip_tags(row.text), length: 200).html_safe
       end
+      row :seo_url
+      row :html_title
+      row :meta_description
     end  
    end
 end

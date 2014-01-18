@@ -32,6 +32,9 @@ ActiveAdmin.register Event do
       end
       row :album_id
       row :event_type_id
+      row :seo_url
+      row :html_title
+      row :meta_description
     end
   end
   

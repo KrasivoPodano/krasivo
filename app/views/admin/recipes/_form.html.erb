@@ -9,7 +9,11 @@
 <%= f.inputs t('recipe_type') do %>
 <%= f.input :recipe_type_id, :as => :select, :collection => RecipeType.all %>
 <% end %>
-
+<%= f.inputs 'SEO' do %>
+<%= f.input :seo_url %>
+<%= f.input :html_title %>
+<%= f.input :meta_description,      :input_html => { :rows => 4 } %>
+<% end %>
 
 <% unless @recipe.new_record? %>
 <%= link_to "Предпросмотр", recipe_path(@recipe), :target => "_blank" %>

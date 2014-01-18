@@ -23,6 +23,9 @@ ActiveAdmin.register Recipe do
         row.text.html_safe
       end
       row :recipe_type_id
+      row :seo_url
+      row :html_title
+      row :meta_description
     end  
    end
    
@@ -33,7 +36,7 @@ ActiveAdmin.register Recipe do
 
         respond_to do |format|
            if @recipe.save
-             format.html { redirect_to edit_admin_event_path(@recipe) }
+             format.html { redirect_to edit_admin_recipe_path(@recipe) }
            else
              format.html { render action: "new" }
            end

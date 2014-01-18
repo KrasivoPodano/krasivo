@@ -106,7 +106,13 @@ ru:
     attributes:
       recipe:
         title: "Название"
-        text: "Описание"        
+        text: "Описание" 
+        seo_url: "SEO адрес"
+        html_title: "HTML заголовок"
+        meta_description: "МЕТА описание"
+        image: "Изображение"
+        shorttext: "Краткий текст"
+        recipe_type_id: "Тип рецепта"       
       event:
         title: "Название"
         price: "Стоимость"
@@ -117,6 +123,9 @@ ru:
         main: "Разместить на главной?"
         published: "Опубликован"
         property: "Тип"
+        seo_url: "SEO адрес"
+        html_title: "HTML заголовок"
+        meta_description: "МЕТА описание"
       event_type:
         title: "Название"
       recipe_type:
@@ -168,6 +177,9 @@ ru:
         tag_id: "Тэг"
         tag: "Тэг"
         published: "Опубликован"
+        seo_url: "SEO адрес"
+        html_title: "HTML заголовок"
+        meta_description: "МЕТА описание"
       page:
         section: "Раздел"
         title: "Заголовок"
@@ -178,6 +190,9 @@ ru:
       vacancy:
         title: "Заголовок"
         text: "Текст"
+        seo_url: "SEO адрес"
+        html_title: "HTML заголовок"
+        meta_description: "МЕТА описание"
       slide:
         title: "Заголовок"
         text: "Текс"

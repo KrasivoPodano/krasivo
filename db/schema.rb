@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140115163452) do
+ActiveRecord::Schema.define(:version => 20140118152841) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -77,10 +77,16 @@ ActiveRecord::Schema.define(:version => 20140115163452) do
     t.string   "title"
     t.datetime "date"
     t.text     "text"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.boolean  "published",  :default => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.boolean  "published",        :default => false
+    t.string   "seo_url"
+    t.string   "html_title"
+    t.text     "meta_description"
+    t.string   "slug"
   end
+
+  add_index "articles", ["slug"], :name => "index_articles_on_slug", :unique => true
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -131,15 +137,21 @@ ActiveRecord::Schema.define(:version => 20140115163452) do
     t.text     "text"
     t.integer  "album_id"
     t.integer  "event_type_id"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
     t.boolean  "main"
     t.text     "shorttext"
     t.text     "eventdetails"
-    t.integer  "price",         :limit => 8
-    t.boolean  "published",                  :default => false
+    t.integer  "price",            :limit => 8
+    t.boolean  "published",                     :default => false
     t.string   "property"
+    t.string   "seo_url"
+    t.string   "html_title"
+    t.text     "meta_description"
+    t.string   "slug"
   end
+
+  add_index "events", ["slug"], :name => "index_events_on_slug", :unique => true
 
   create_table "front_images", :force => true do |t|
     t.string   "image_file_name"
@@ -222,7 +234,13 @@ ActiveRecord::Schema.define(:version => 20140115163452) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "seo_url"
+    t.string   "html_title"
+    t.text     "meta_description"
+    t.string   "slug"
   end
+
+  add_index "recipes", ["slug"], :name => "index_recipes_on_slug", :unique => true
 
   create_table "simple_captcha_data", :force => true do |t|
     t.string   "key",        :limit => 40
@@ -282,8 +300,14 @@ ActiveRecord::Schema.define(:version => 20140115163452) do
   create_table "vacancies", :force => true do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "seo_url"
+    t.string   "html_title"
+    t.text     "meta_description"
+    t.string   "slug"
   end
+
+  add_index "vacancies", ["slug"], :name => "index_vacancies_on_slug", :unique => true
 
 end

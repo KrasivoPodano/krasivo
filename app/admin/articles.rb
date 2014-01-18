@@ -53,6 +53,12 @@ ActiveAdmin.register Article do
        f.input :tags, :as => :check_boxes
      end
      
+     f.inputs 'SEO' do
+       f.input :seo_url
+       f.input :html_title
+       f.input :meta_description,      :input_html => { :rows => 4 }
+     end
+     
      f.actions
    end
 
@@ -64,6 +70,9 @@ ActiveAdmin.register Article do
       row :text do |row|
         raw row.text.html_safe
       end
+      row :seo_url
+      row :html_title
+      row :meta_description
     end 
     
     panel t('tags') do 
@@ -73,7 +82,7 @@ ActiveAdmin.register Article do
          end
        end
      end
-  
+     
    end
    
 end

@@ -21,6 +21,13 @@
 <%= f.input :event_type_id, :as => :select, :collection => EventType.all, :label => false %>
 <% end %>
 
+<%= f.inputs 'SEO' do %>
+<%= f.input :seo_url %>
+<%= f.input :html_title %>
+<%= f.input :meta_description,      :input_html => { :rows => 4 } %>
+<% end %>
+
+
 <% unless @event.new_record? %>
 <fieldset class="inputs"><legend><span>Изображения для слайдера</span></legend>
 <div id="album_photos" style="margin-left: 25px;">
@@ -52,7 +59,7 @@
 <%= link_to "Предпросмотр", event_path(@event), :target => "_blank" %>
 <% end %>
 
-<fieldset class="actions">
+    <fieldset class="actions">
 <ol>
 <li><%= f.submit 'Сохранить и продолжить', :name => 'preview_button' %></li>
 <li><%= f.submit 'Сохранить и закрыть' %></li>
