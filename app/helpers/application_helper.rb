@@ -111,11 +111,19 @@ module ApplicationHelper
     end
     
     def teach_list_page
-      Page.find_by_section('teach_list')
+      if Page.find_by_section('teach_list')
+        page_path(Page.find_by_section('teach_list'))
+      else
+        school_path
+      end
     end
     
     def about_page
-      Page.find_by_section('about')
+      if Page.find_by_section('about')
+        page_path(Page.find_by_section('about'))
+      else
+        school_path
+      end
     end
    
    
