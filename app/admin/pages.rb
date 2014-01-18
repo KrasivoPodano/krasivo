@@ -8,7 +8,8 @@ ActiveAdmin.register Page do
    index do 
      column :title
      column :text do |column|
-       column.text.html_safe
+       
+       column.text.html_safe if column.text.present?
      end
      default_actions
    end

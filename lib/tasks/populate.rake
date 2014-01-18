@@ -1,3 +1,5 @@
+# coding: utf-8
+
 namespace :db do
   desc "Erase and fill database"
   task :populate => :environment do
@@ -20,5 +22,13 @@ namespace :mail do
   desc "Erase and fill database"
   task :distribute => :environment do
     SubscriptionMailer.events_feed_email.deliver
+  end
+end
+
+namespace :pages do
+  desc "Erase and fill database"
+  task :populate => :environment do
+    Page.create!(:section => 'about', :title => 'О школе', :text => 'О школе')
+    Page.create!(:section => 'teach_list', :title => 'Что преподаем', :text => 'Что преподаем')
   end
 end

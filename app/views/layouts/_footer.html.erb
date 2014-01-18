@@ -6,13 +6,13 @@
 				<%= link_to "кулинарная школа", "/", :class => (unless b2b? then 'section active' else 'section' end)  %>
                 <ul>
                     <li>
-                       <%= link_to "о школе", school_path, :class => ('active' if controller?("static_pages") && action?("school")) %>
+                       <%= link_to "о школе", page_path(about_page), :class => ('active' if controller?("static_pages") && action?("school")) %>
                     </li>
                     <li>
                         <%= link_to "расписание", future_events_path, :class => ('active' if controller?("events") && action?("future")) %>
                     </li>
                     <li>
-                        <%= link_to "что преподаем", services_path, :class => ('active' if controller?("static_pages") && action?("services")) %>
+                        <%= link_to "что преподаем", page_path(teach_list_page), :class => ('active' if controller?("static_pages") && action?("services")) %>
                     </li>
                     <li>
                         <a href="#" class="order_popup_link">записаться на урок</a>

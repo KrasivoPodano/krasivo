@@ -109,6 +109,14 @@ module ApplicationHelper
     def event_price(event_id)
       Event.find(event_id)
     end
+    
+    def teach_list_page
+      Page.find_by_section('teach_list')
+    end
+    
+    def about_page
+      Page.find_by_section('about')
+    end
    
    
 end
