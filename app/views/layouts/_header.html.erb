@@ -1,7 +1,7 @@
 <header>
     <div class="container">
         <nav class="header-menu">
-            <% TopMenuElement.all.each do |element| %>
+            <% TopMenuElement.order('position ASC').each do |element| %>
                 <span><%= link_to element.title, element.link, :class => ('active' if element.link == request.fullpath) %></span>
             <% end %>
             

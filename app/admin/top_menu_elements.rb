@@ -2,6 +2,7 @@ ActiveAdmin.register TopMenuElement do
   config.batch_actions = false
   config.clear_sidebar_sections!
   menu :parent => I18n.t('menu'), :label => I18n.t('top_menu')
+  config.sort_order = "position_asc"
   
    index do
      column :position 
