@@ -1,10 +1,13 @@
 ActiveAdmin.register Slide do
   config.batch_actions = false
   config.clear_sidebar_sections!
+  config.sort_order = "position_asc"
   
    index do 
+     column :position
      column :title
      column :text
+     column :link
     
      default_actions
    end
