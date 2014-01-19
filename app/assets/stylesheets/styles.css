@@ -305,6 +305,9 @@ body, html {
 	margin: 0 auto;
 	position: relative;
 }
+.container.top_container{
+	text-align: center;
+}
 .buf{
 	float:none;
 	width: 100%;
