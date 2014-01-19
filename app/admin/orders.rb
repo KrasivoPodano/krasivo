@@ -9,7 +9,9 @@ ActiveAdmin.register Order do
     column :mail
     column :people
     column :date
-    column :time
+    column :time do |column|
+      column.time.strftime('%H:%M') if column.time.present?
+    end
     column :event_type
     
     default_actions
@@ -27,7 +29,10 @@ ActiveAdmin.register Order do
       row :comment
       row :people
       row :date
-      row :time
+      row :time do |row|
+        row.time.strftime('%H:%M') if row.time.present?
+      end
+      
       row :beautiful_cake
       row :ornament
       row :children_cake
