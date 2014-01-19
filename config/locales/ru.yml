@@ -152,6 +152,7 @@ ru:
         phone: "Телефон"
         firstname: "Имя"
         lastname: "Фамилия"
+        created_at: "Дата создания"
       user:
         name: "Имя"
         password: "Пароль"
