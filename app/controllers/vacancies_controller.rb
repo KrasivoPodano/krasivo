@@ -1,6 +1,6 @@
 class VacanciesController < ApplicationController
   def index
-    @vacancies = Vacancy.all
+    @vacancies = Vacancy.published
   end
 
   def show

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140118163721) do
+ActiveRecord::Schema.define(:version => 20140120155544) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -308,12 +308,13 @@ ActiveRecord::Schema.define(:version => 20140118163721) do
   create_table "vacancies", :force => true do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.string   "seo_url"
     t.string   "html_title"
     t.text     "meta_description"
     t.string   "slug"
+    t.boolean  "published",        :default => false
   end
 
   add_index "vacancies", ["slug"], :name => "index_vacancies_on_slug", :unique => true

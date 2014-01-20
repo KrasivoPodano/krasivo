@@ -3,6 +3,7 @@ ActiveAdmin.register Vacancy do
   config.clear_sidebar_sections!
   index do 
      column :title
+     column :published
      column :text do |column|
        truncate(strip_tags(column.text), length: 200).html_safe
      end
@@ -12,6 +13,7 @@ ActiveAdmin.register Vacancy do
    form do |f|  
      f.inputs t('properties') do
        f.input :title
+       f.input :published
        f.input :text, :as => :ckeditor, :label => false
      end
      f.inputs 'SEO' do
@@ -26,6 +28,7 @@ ActiveAdmin.register Vacancy do
   show do
     attributes_table do
       row :title
+      row :published
       row :text do |row|
         truncate(strip_tags(row.text), length: 200).html_safe
       end

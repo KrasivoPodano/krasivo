@@ -199,6 +199,7 @@ ru:
         seo_url: "SEO адрес"
         html_title: "HTML заголовок"
         meta_description: "МЕТА описание"
+        published: "Опубликована"
       slide:
         title: "Заголовок"
         text: "Текс"
