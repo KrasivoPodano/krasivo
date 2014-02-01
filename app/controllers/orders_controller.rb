@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_filter :new_order
 
   def create
-    if verify_recaptcha(:model => @order, :message => t('please_enter_correct_data')) && @order.save
+    if @order.save
       send_confirmation
       result = {status: 'ok'}
     else

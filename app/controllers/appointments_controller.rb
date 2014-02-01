@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_filter :new_appointment
   
   def create
-    if verify_recaptcha(:model => @appointment, :message => t('please_enter_correct_data')) && @appointment.save
+    if @appointment.save
       @firstname = params[:appointment][:firstname]
       @lastname = params[:appointment][:lastname]
       @phone = params[:appointment][:phone]
