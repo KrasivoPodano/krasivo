@@ -32,7 +32,7 @@ module ApplicationHelper
    end
    
    def order_link(event)
-       link_to "Записаться", new_appointment_path(event_id: event, event_price: event.price), remote: true, :class => 'button-blue'
+       link_to "Записаться", new_appointment_path(event_id: event.id, event_price: event.price), remote: true, :class => 'button-blue'
    end
    
    

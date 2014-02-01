@@ -8,11 +8,6 @@ class AppointmentsController < ApplicationController
       @event = Event.find(params[:appointment][:event_id])  
       @appointment.save
       send_confirmation
-      
-      respond_to do |format|
-        format.js
-      end
-      
   end
   
   private
