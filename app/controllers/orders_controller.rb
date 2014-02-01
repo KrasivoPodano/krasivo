@@ -2,13 +2,14 @@ class OrdersController < ApplicationController
   before_filter :new_order
 
   def create
-    if @order.save
-      send_confirmation
-      result = {status: 'ok'}
-    else
-      result = {errors: @order.errors.full_messages}
+    @order = Order.create(params[:order])
+    @order.save
+    send_confirmation
+    
+    respond_to do |format|
+      format.js
     end
-    render json: result
+
   end
 
   private

@@ -7,6 +7,7 @@ class AppointmentsController < ApplicationController
       @phone = params[:appointment][:phone]
       @event = Event.find(params[:appointment][:event_id])  
       @appointment.save
+      send_confirmation
       
       respond_to do |format|
         format.js

@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   
-  $('#new_appointment').on('ajax:success', function(data, response, xhr) {
+  $('#new_appointment').on( "submit", function() {
     // if (response.status == 'ok') {
       scroll(0,0)
       $('.appointment_popup').hide();
