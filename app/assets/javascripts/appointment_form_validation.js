@@ -51,14 +51,14 @@ $(document).ready(function(){
 $(document).ready(function(){
   
   $('#new_appointment').on('ajax:success', function(data, response, xhr) {
-    if (response.status == 'ok') {
+    // if (response.status == 'ok') {
       scroll(0,0)
       $('.appointment_popup').hide();
 	  $('#thank_you').show().fadeOut(4000);
-    }
-    else{
-      $('#appointment_notice').html(response.errors.join('<br>'));
-    }
+    // }
+    // else{
+    //   $('#appointment_notice').html(response.errors.join('<br>'));
+    // }
   });
 
 });

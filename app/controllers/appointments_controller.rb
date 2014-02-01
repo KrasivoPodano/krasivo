@@ -2,17 +2,16 @@ class AppointmentsController < ApplicationController
   before_filter :new_appointment
   
   def create
-    if @appointment.save
       @firstname = params[:appointment][:firstname]
       @lastname = params[:appointment][:lastname]
       @phone = params[:appointment][:phone]
-      @event = Event.find(params[:appointment][:event_id])
-      send_confirmation
-      result = {status: 'ok'}
-    else
-      result = {errors: @appointment.errors.full_messages}
-    end
-    render json: result
+      @event = Event.find(params[:appointment][:event_id])  
+      @appointment.save
+      
+      respond_to do |format|
+        format.js
+      end
+      
   end
   
   private
