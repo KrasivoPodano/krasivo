@@ -623,7 +623,7 @@ span.phones{
 	position:relative;
 	height:749px;
 }
-.slide{
+/*.slide{
 	width:100%;
 	max-width:1400px;
 	margin:0 auto;
@@ -633,8 +633,8 @@ span.phones{
 }
 .slidesjs-container{
 	min-height:749px;
-}
-.slide-content{
+}*/
+/*.slide-content{
 	height:199px;
 	background:url('slide-back.png') left top;
 
@@ -667,7 +667,7 @@ span.phones{
 	font-size:16px;
 	line-height:20px;
 }
-
+*/
 
 
 
@@ -869,90 +869,6 @@ box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
 	margin-top:10px;
 	padding-bottom:20px;
 }
-/* fotorama */
-.fotorama-container{
-	height:311px;
-	max-width:1400px;
-	margin:0 auto;
-	overflow: hidden;
-}
-.fotorama-container.main-page{
-	height:609px;
-}
-
-.fotorama-container.main-page .fotorama__arr{
-	position:absolute;
-	top:300px;
-	width:30px;
-	height:36px;
-	text-indent:-9999px;
-	z-index:10;
-	display:block;
-}
-.fotorama-container.main-page .fotorama__arr_next{
-	outline:none;
-	right:0;
-	margin-left:-120px;
-	background:url('slide-next.png') left top no-repeat;
-}
-.fotorama-container.main-page .fotorama__arr_prev{
-	outline:none;
-	left:90px;
-	background:url('slide-prev.png') right top no-repeat;
-}
-.fullscreen,.fotorama__wrap,.fotorama__wrap_style_fade .fotorama__frame,.fotorama__thumbs_previews{
-	background:none!important;
-}
-.hider-slider{
-	display:inline-block;
-	background:#74bee8;
-	color:#fff;
-	height:23px;
-	line-height:23px;
-	padding:0 13px;
-	text-decoration:none;
-	font-weight:bold;
-	font-size:14px;
-	position:absolute;
-	z-index:50;
-	
-}
-.hider-slider:hover{
-	color:#fff;
-	text-decoration:none;
-	background: #249ee7;
-	
-}
-.hider-slider.hide span{
-	background:url('hide.png') left 7px no-repeat;
-	padding-left:20px;
-}
-.hider-slider.show span{
-	background:url('show.png') left 7px no-repeat;
-	padding-left:20px;
-}
-.hider-slider.hide{
--webkit-border-top-left-radius: 7px;
--webkit-border-top-right-radius: 7px;
--moz-border-radius-topleft: 7px;
--moz-border-radius-topright: 7px;
-border-top-left-radius: 7px;
-border-top-right-radius: 7px;
-right:10px;
-	top:777px;	
-}
-
-.hider-slider.show{
--webkit-border-bottom-right-radius: 7px;
--webkit-border-bottom-left-radius: 7px;
--moz-border-radius-bottomright: 7px;
--moz-border-radius-bottomleft: 7px;
-border-bottom-right-radius: 7px;
-border-bottom-left-radius: 7px;
-right:10px;
-	top:190px;	
-}
-
 
 /* form */
 

@@ -73,7 +73,9 @@ $(document).ready(function(){
 	});
 	
 	
-	
+	// $(".slide").on('click', function () {
+	// 	$(this).hide();
+	// });
 	
 	
 

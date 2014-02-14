@@ -12,6 +12,7 @@
  *= require b2b
  *= require cusel
  *= require fotorama
+ *= require fotorama_override
  *= require styles
  *= require custom
  *= require articles
