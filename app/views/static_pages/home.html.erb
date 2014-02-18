@@ -1,68 +1,27 @@
 <% content_for :head do %>
 <meta name='yandex-verification' content='751d5d2b5ce252fc' />
 <% end %>
-
-<div class="content">
- 
+<div class="content"> 
 	<%= render 'shared/slider' %>
-
-    <% unless @courses.blank? %>
-	<div class="blocks-main">
-		<h1><%= link_to "Наши курсы", courses_path %></h1>
-	</div>	
-    <div class="blocks-main">
-		<% @courses.each do |event| %>
-        <div class="block">
-			<% unless event.front_images.blank? %>
-			<%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
-			<% end %>
-            <h2><%= event.title %></h2>
-            <span class="blocks-date"><%= event.price %> <span class="b-rub">Р</span></span>
-            <p><%= event.shorttext %></p>
-            <%= link_to "подробнее", event %>
-        </div>
-		<% end %>	
-    </div>
+  <!-- ПРЕДСТОЯЩИЕ СОБЫТИЯ -->
+  <% unless @future.blank? %>
+  	<div class="blocks-main">
+  		<h1><%= link_to "Предстоящие события", future_events_path %></h1>
+  	</div>	
+    <%= render 'elements', :events => @future %>
 	<% end %>
-
-    <% unless @future.blank? %>
-	<div class="blocks-main">
-		<h1><%= link_to "Предстоящие события", future_events_path %></h1>
-	</div>	
-    <div class="blocks-main">
-		<% @future.each do |event| %>
-        <div class="block">
-			<% unless event.front_images.blank? %>
-			<%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
-			<% end %>
-            <h2><%= event.title %></h2>
-            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | <%= event.price %> <span class="b-rub">Р</span></span>
-            <p><%= event.shorttext %></p>
-            <%= link_to "подробнее", event %>
-        </div>
-		<% end %>	
-    </div>
+  <!-- НАШИ КУРСЫ -->
+	<% unless @courses.blank? %>
+  	<div class="blocks-main">
+  		<h1><%= link_to "Наши курсы", courses_path %></h1>
+  	</div>	
+    <%= render 'elements', :events => @courses %>
 	<% end %>
-
+  <!-- ПРОШЕДШИЕ СОБЫТИЯ -->
 	<% unless @past.blank? %>
-	<div class="blocks-main">
-		<h1><%= link_to "Прошедшие события", past_events_path %></h1>
-	</div>
-    <div class="blocks-main">
-		<% @past.each do |event| %>
-        <div class="block">
-			<% unless event.front_images.blank? %>
-            <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
-			<% end %>
-            <h2><%= event.title %></h2>
-            <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") %> | <%= event.price %> <span class="b-rub">Р</span></span>
-            <p><%= event.shorttext %></p>
-            <%= link_to "подробнее", event %>
-        </div>
-		<% end %>
-    </div>
-	<% end %>
-	
-	
+  	<div class="blocks-main">
+  		<h1><%= link_to "Прошедшие события", past_events_path %></h1>
+  	</div>
+    <%= render 'elements', :events => @past %>
+	<% end %>	
 </div>
-
