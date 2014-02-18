@@ -5,7 +5,7 @@
         <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
 	<% end %>
         <h2><%= event.title %></h2>
-        <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") if event.date %> | <%= event.price %> <span class="b-rub">Р</span></span>
+        <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") + ' | ' if event.date %><%= event.price %> <span class="b-rub">Р</span></span>
         <p><%= event.shorttext %></p>
         <%= link_to "подробнее", event %>
     </div>
