@@ -13,6 +13,11 @@
 <%= f.input :main %>
 <% end %>
 
+<%= f.inputs t('buttons') do %>
+<%= f.input :filled %>
+<%= f.input :want_more %>
+<% end %>
+
 <%= f.inputs t('album') do %>
 <%= f.input :album_id, :as => :select, :collection => Album.all, :label => false %>
 <% end %>

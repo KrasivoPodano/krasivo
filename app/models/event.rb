@@ -2,7 +2,8 @@ class Event < ActiveRecord::Base
   attr_accessible :title, :date, :text, :album_id, 
                   :event_type_id, :main, :shorttext, 
                   :eventdetails, :front_images_attributes, :price, :published, :property,
-                  :html_title, :seo_url, :meta_description
+                  :html_title, :seo_url, :meta_description,
+                  :filled, :want_more
 
   extend FriendlyId
   friendly_id :seo_url, use: :slugged

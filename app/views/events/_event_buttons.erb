@@ -1,0 +1,9 @@
+<% if @event.filled %>
+<%= link_to "Мест нет", "#", :class => 'button-grey' %>
+<% else %>
+<%= order_link(@event) %>
+<% end %>
+
+<% if @event.want_more %>
+<br><%= link_to "Хочу также", "#", :class => 'button-blue order_popup_link' %>
+<% end %>

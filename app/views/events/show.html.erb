@@ -2,74 +2,56 @@
 <% @meta_description = @event.meta_description %>
 
 <div class="content">
-	
 	<% if @event.front_images.blank? %>
-    <div class="fotorama-container" style="height: 180px;">
-	</div>
+    <div class="fotorama-container" style="height: 180px;"></div>
 	<% else %>	
-	<div class="fotorama-container">
-       <div class="fotorama" data-width="100%" data-height="750" data-aspectRatio="1.5"
-       data-minHeight="750" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0"
-       data-shadows="false" data-cropToFit="true" data-loop="true" data-autoplay="4000">
-	    <% @front_images.each do |photo| %>
-		<%= image_tag(photo.image.url(:medium)) %>
-           <% end %>
-       </div>
-    </div>
+	  <div class="fotorama-container">
+    <div class="fotorama" data-width="100%" data-height="750" data-aspectRatio="1.5" data-minHeight="750" data-fitToWindowHeight="true" data-fitToWindowHeightMargin="0" data-margin="0" data-shadows="false" data-cropToFit="true" data-loop="true" data-autoplay="4000">
+	  <% @front_images.each do |photo| %>
+		  <%= image_tag(photo.image.url(:medium)) %>
     <% end %>
+    </div>
+    </div>
+  <% end %>
 	
-    <div class="container">
-	
-	<aside>
-		<div class="event-info">
+  <div class="container">
+	  <aside>
+		  <div class="event-info">
 			<% unless @event.property == "course" %>
-            <p>
-                когда: <span class="strong"><%= Russian::strftime(@event.date, "%d %B") %></span>
-            </p>
+        <p>когда: <span class="strong"><%= Russian::strftime(@event.date, "%d %B") %></span></p>
 			<% end %>
-            <p>
-                стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span>
-            </p>
-            <%= order_link(@event) %>
-        </div>
-           
-		<script type="text/javascript" src="//vk.com/js/api/openapi.js?96"></script>
-
-		<!-- VK Widget -->
-		<div id="vk_groups"></div>
-		<script type="text/javascript">
-		VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "160", color1: 'ffffe6', color2: '9b2021', color3: '74bee8'}, 51178669);
-		</script>
-       </aside>
-        <section class="event-main">
-            <h1><%= @event.title %></h1>
-            <%= raw @event.text.html_safe %>
+      <p>стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span></p>
+      <%= render 'event_buttons' %>
+      </div>
+      <%= render 'shared/vk_widget' %>
+    </aside>
+    <section class="event-main">
+      <h1><%= @event.title %></h1>
+      <%= raw @event.text.html_safe %>
 			<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
 			<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir"></div>
-        </section>
-        <div class="buf"></div>
-    </div>
+    </section>
+    <div class="buf"></div>
+  </div>
 
-	
 	<% unless @events.blank? %>
     <div class="blocks-bottom inner-page">
-		<% @events.each do |event| %>
-        <div class="block">
-            <% unless event.front_images.blank? %>
-            <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
-			<% end %>
-            <h2><%= event.title %></h2>
-            <span class="blocks-date">
-			<% unless event.property == "course" %>
-			<%= Russian::strftime(event.date, "%d %B") %> | 
-			<% end %>
-			<%= event.price %> <span class="b-rub">Р</span></span>
-            <p><%= event.shorttext %></p>
-            <%= link_to "подробнее", event %>
-        </div>
-		<% end %>
+    <% @events.each do |event| %>
+      <div class="block">
+        <% unless event.front_images.blank? %>
+          <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+        <% end %>
+        <h2><%= event.title %></h2>
+        <span class="blocks-date">
+        <% unless event.property == "course" %>
+          <%= Russian::strftime(event.date, "%d %B") %> | 
+        <% end %>
+        <%= event.price %> <span class="b-rub">Р</span></span>
+        <p><%= event.shorttext %></p>
+        <%= link_to "подробнее", event %>
+      </div>
+    <% end %>
     </div>
 	<% end %>
-
 
 </div>

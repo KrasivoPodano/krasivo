@@ -385,6 +385,7 @@ a:hover {
 }
 /* buttons */
 
+/*blue*/
 .button-blue{
 	height:30px;
 	font-size:14px;
@@ -393,32 +394,32 @@ a:hover {
 	background:#74bee8;
 	padding:0 17px;
 	-webkit-border-radius: 7px;
--moz-border-radius: 7px;
-border-radius: 7px;	
-display:inline-block;
-*display: inline;
+	-moz-border-radius: 7px;
+	border-radius: 7px;	
+	display:inline-block;
+	*display: inline;
 	*zoom: 1;
 	text-decoration:none;
 	font-weight:bold;
 	-webkit-box-shadow: 0px 2px 0px rgba(11, 69, 104, 1);
--moz-box-shadow:    0px 2px 0px rgba(11, 69, 104, 1);
-box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
+	-moz-box-shadow:    0px 2px 0px rgba(11, 69, 104, 1);
+	box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
 }
 .button-blue:hover{
 	background:#249ee7;
 	-webkit-box-shadow: 0px 2px 0px rgba(11, 69, 104, 1);
--moz-box-shadow:    0px 2px 0px rgba(11, 69, 104, 1);
-box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
-text-decoration:none;
-color:#ffffe6;
+	-moz-box-shadow:    0px 2px 0px rgba(11, 69, 104, 1);
+	box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
+	text-decoration:none;
+	color:#ffffe6;
 }
 .button-blue.active{
-background:#a8a633;
+	background:#a8a633;
 	-webkit-box-shadow: 0px 2px 0px rgba(47, 75, 29, 1) inset;
--moz-box-shadow:    0px 2px 0px rgba(47, 75, 29, 1) inset;
-box-shadow:         0px 2px 0px rgba(47, 75, 29, 1) inset;
+	-moz-box-shadow:    0px 2px 0px rgba(47, 75, 29, 1) inset;
+	box-shadow:         0px 2px 0px rgba(47, 75, 29, 1) inset;
 }
-
+/*pink*/
 .button-pink{
 	height:30px;
 	font-size:14px;
@@ -427,31 +428,51 @@ box-shadow:         0px 2px 0px rgba(47, 75, 29, 1) inset;
 	background:#74bee8;
 	padding:0 17px;
 	-webkit-border-radius: 7px;
--moz-border-radius: 7px;
-border-radius: 7px;	
-display:inline-block;
-*display: inline;
+	-moz-border-radius: 7px;
+	border-radius: 7px;	
+	display:inline-block;
+	*display: inline;
 	*zoom: 1;
 	text-decoration:none;
 	font-weight:bold;
 	-webkit-box-shadow: 0px 2px 0px rgba(11, 69, 104, 1);
--moz-box-shadow:    0px 2px 0px rgba(11, 69, 104, 1);
-box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
+	-moz-box-shadow:    0px 2px 0px rgba(11, 69, 104, 1);
+	box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
 }
 .button-pink:hover{
 	background:#FAA6C4;
 	-webkit-box-shadow: 0px 2px 0px rgba(11, 69, 104, 1);
--moz-box-shadow:    0px 2px 0px rgba(11, 69, 104, 1);
-box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
-text-decoration:none;
-color:#ffffe6;
+	-moz-box-shadow:    0px 2px 0px rgba(11, 69, 104, 1);
+	box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
+	text-decoration:none;
+	color:#ffffe6;
 }
 .button-pink.active{
-background:#FAA6C4;
+	background:#FAA6C4;
 	-webkit-box-shadow: 0px 2px 0px rgba(47, 75, 29, 1) inset;
--moz-box-shadow:    0px 2px 0px rgba(47, 75, 29, 1) inset;
-box-shadow:         0px 2px 0px rgba(47, 75, 29, 1) inset;
+	-moz-box-shadow:    0px 2px 0px rgba(47, 75, 29, 1) inset;
+	box-shadow:         0px 2px 0px rgba(47, 75, 29, 1) inset;
 }
+/*grey*/
+.button-grey, .button-grey:hover, .button-grey.active {
+	height:30px;
+	font-size:14px;
+	line-height:30px;
+	color:#ffffe6;
+	background: #b4b4b4;
+	padding:0 17px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;	
+	display:inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-decoration:none;
+	font-weight:bold;
+	cursor: default;
+}
+
+
 
 a.comments.button-back{
 	width:auto;

@@ -46,6 +46,7 @@ ru:
   users: "Пользователи"
   menu: "Меню"
   top_menu: "Верхнее меню"
+  buttons: "Кнопки"
   activerecord:
     errors:
       models:
@@ -131,6 +132,8 @@ ru:
         seo_url: "SEO адрес"
         html_title: "HTML заголовок"
         meta_description: "МЕТА описание"
+        filled: "Нет мест"
+        want_more: "Хочу также"
       event_type:
         title: "Название"
       recipe_type:
