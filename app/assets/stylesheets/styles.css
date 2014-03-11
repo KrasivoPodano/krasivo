@@ -362,7 +362,7 @@ a:hover {
 .event-main a, .container.blog a{
 	color:#249ee7;
 }
-.event-main a.button-blue{
+.event-main a.button-blue, .event-main a.button-grey{
 	color:#ffffe6;
 }
 .event-main a:hover, .container.blog a:hover{
