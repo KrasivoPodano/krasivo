@@ -1,5 +1,7 @@
 Krasivo::Application.routes.draw do
 
+  mount RedactorRails::Engine => '/redactor_rails'
+
   match 'subscriptions/subscribe' => 'subscriptions#subscribe'
 
   namespace :b2b do
@@ -21,7 +23,6 @@ Krasivo::Application.routes.draw do
 
   get "orders/create"
 
-  mount Ckeditor::Engine => '/ckeditor'
   
   # Vacancies
   match 'vacancies/:id' => 'vacancies#show', :as => :vacancy

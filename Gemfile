@@ -42,6 +42,8 @@ gem "recaptcha", :require => "recaptcha/rails"
 gem 'delayed_job_active_record'
 gem "daemons"
 
+gem 'redactor-rails-paperclip'
+
 group :production do  
   gem 'mysql2'
 end

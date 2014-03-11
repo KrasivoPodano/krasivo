@@ -17,5 +17,6 @@
  *= require custom
  *= require articles
  *= require datepicker
+ *= require redactor-rails
  */
 

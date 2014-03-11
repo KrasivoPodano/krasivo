@@ -9,7 +9,7 @@
 <%= f.input :date %>
 <%= f.input :shorttext, :input_html => { :rows => 1  } %>
 <%= f.input :eventdetails, :input_html => { :rows => 1  } %>
-<%= f.input :text, :as => :ckeditor, :label => false %>
+<%= f.input :text, input_html: { class: "redactor" }, :label => false  %>
 <%= f.input :main %>
 <% end %>
 
