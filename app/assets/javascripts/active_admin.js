@@ -1,6 +1,6 @@
 //= require active_admin/base
+//= require redactor-rails/config
 //= require redactor-rails
-
 
 
 

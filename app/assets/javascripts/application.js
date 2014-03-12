@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require redactor-rails
 //= require_self
 //= require_tree .
 
