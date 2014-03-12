@@ -7,7 +7,8 @@
         <h2><%= event.title %></h2>
         <span class="blocks-date"><%= Russian::strftime(event.date, "%d %B") + ' | ' if event.date %><%= event.price %> <span class="b-rub">Р</span></span>
         <p><%= event.shorttext %></p>
-        <%= link_to "подробнее", event %>
+        <%= link_to "подробнее", event %> |
+        <%= order_link_normal(event) %>
     </div>
 <% end %>
 </div>

@@ -35,6 +35,10 @@ module ApplicationHelper
        link_to "Записаться", new_appointment_path(event_id: event.id, event_price: event.price), remote: true, :class => 'button-blue'
    end
    
+   def order_link_normal(event)
+       link_to "записаться", new_appointment_path(event_id: event.id, event_price: event.price), remote: true
+   end
+   
    
    
    def cart_like(event)
