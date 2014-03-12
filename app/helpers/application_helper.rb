@@ -36,7 +36,9 @@ module ApplicationHelper
    end
    
    def order_link_normal(event)
-       link_to "записаться", new_appointment_path(event_id: event.id, event_price: event.price), remote: true
+     unless event.filled || event.want_more
+       ("| " + (link_to "записаться", new_appointment_path(event_id: event.id, event_price: event.price), remote: true)).html_safe
+     end
    end
    
    

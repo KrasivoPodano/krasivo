@@ -117,6 +117,7 @@ $(function() {
 
 	
 	$(".button-back, .order_popup_link").click(function(e) {
+		window.scrollTo(0, 0);
 		e.preventDefault();
 		$(".order_popup").show();
 		$(".blue").show();

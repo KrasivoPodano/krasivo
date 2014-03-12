@@ -21,7 +21,7 @@
         <p>когда: <span class="strong"><%= Russian::strftime(@event.date, "%d %B") %></span></p>
 			<% end %>
       <p>стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span></p>
-      <%= render 'event_buttons' %>
+      <%= render 'event_buttons', :@event => @event %>
       </div>
       <%= render 'shared/vk_widget' %>
     </aside>
@@ -31,7 +31,7 @@
 			<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
 			<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir"></div>
 			<br>
-			<%= render 'event_buttons' %>
+			<%= render 'event_buttons', :@event => @event %>
     </section>
     <div class="buf"></div>
   </div>
