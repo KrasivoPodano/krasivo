@@ -2,14 +2,11 @@ class OrdersController < ApplicationController
   before_filter :new_order
 
   def create
-    @order = Order.create(params[:order])
-    @order.save
-    send_confirmation
-    
-    respond_to do |format|
-      format.js
+    unless params[:order][:email2].present?
+      @order = Order.create(params[:order])
+      @order.save
+      send_confirmation
     end
-
   end
 
   private

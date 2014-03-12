@@ -4,131 +4,6 @@
     <%= form_for @order, remote: true do |f| %>
         <a href="#" class="close"></a>
 
-		<div class="service-info">
-			
-			
-            <div class="form-head">
-                <h2>Заказать услугу:</h2>
-                <select name="order[event_type]" id="order_type_select">
-                    <option value="Мероприятие" selected="selected">Мероприятие</option>
-                    <option value="День рождения">День рождения</option>
-                    <option value="Детский праздник">Детский праздник</option>
-                    <option value="Корпоратив">Корпоратив</option>
-                </select>
-            </div>
-
-			<div class="form-line">
-            <label>Кол-во человек:</label><span class="b-rub">
-                <input type="text" name="order[people]" class="numbers" data-first="1"  value="1"/>
-            </span>
-           </div>
-
-			<div class="form-line">
-            <label>Дата:</label><span class="b-rub">
-                <input type="text" id="order_date" name="order[date]" class="numbers date" data-first="11.10.2013"  value="11.10.2013"/>
-            </span>
-           </div>
-
-			<div class="form-line">
-            <label>Удобное время проведения:</label><span class="b-rub">
-                <input type="text" name="order[time]" class="numbers date" data-first="16:00"  value="16:00"/>
-            </span>
-           </div>
-
-
-
-			<%= f.hidden_field :event_id %>
-
-			<!--meropriyatie-->
-			<div id="meropriyatie">
-				
-				
-			
-	            <div class="form-line">
-	            <label>У нас есть бюджет:</label><span class="b-rub">
-	                <input type="text" name="order[money]" class="budget" data-first="0 Р"  value="0 Р"/>
-	            </span>
-	           </div>
-	
-		    </div>
-		
-			<!--birthsday-->
-				<div id="birthsday" style="display:none;">
-
-					
-		
-					<div class="form-line">
-                    <span class="myCheck">
-                        <%= f.check_box :beautiful_cake %>
-                    </span>
-                    <label>Я хочу красивый торт</label>
-                    </div>
-
-					<div class="form-line">
-                    <span class="myCheck">
-                        <%= f.check_box :ornament %>
-                    </span>
-                    <label>Украшения</label>
-                    </div>
-
-		            <div class="form-line">
-		            <label>У нас есть бюджет:</label><span class="b-rub">
-		                <input type="text" name="order[money]" class="budget" data-first="0 Р"  value="0 Р"/>
-		            </span>
-		           </div>
-
-			    </div>		
-			<!--children-->
-			<div id="children" style="display:none;">
-
-				
-	
-				<div class="form-line">
-                <span class="myCheck">
-                    <%= f.check_box :children_cake %>
-                </span>
-                <label>Нам нужен детский тор</label>
-                </div>
-
-				<div class="form-line">
-                <span class="myCheck">
-                    <%= f.check_box :animators %>
-                </span>
-                <label>Аниматоры</label>
-                </div>
-
-				<div class="form-line">
-                <span class="myCheck">
-                    <%= f.check_box :ornament %>
-                </span>
-                <label>Украшения</label>
-                </div>
-
-	            <div class="form-line">
-	            <label>У нас есть бюджет:</label><span class="b-rub">
-	                <input type="text" name="order[money]" class="budget" data-first="0 Р"  value="0 Р"/>
-	            </span>
-	           </div>
-
-		    </div>
-			
-			<!--corporate-->
-			
-			<div id="corporate" style="display:none;">
-
-				
-
-	            <div class="form-line">
-	            <label>У нас есть бюджет:</label><span class="b-rub">
-	                <input type="text" name="order[money]" class="budget" data-first="0 Р"  value="0 Р"/>
-	            </span>
-	           </div>
-
-		    </div>
-
-        </div>
-
-
 
         <div class="client-info">
 	
@@ -157,7 +32,7 @@
             <label class="textarea">Ваш комментарий</label>
             <textarea name="order[comment]"></textarea>
             </div>
-			
+			      <%= f.email_field :email2 %>
 
 
 		  	<div style="color: red; margin-top: 10px;" id="order_notice"></div>

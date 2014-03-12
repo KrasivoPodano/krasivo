@@ -1,7 +1,7 @@
 #encoding: utf-8
-
 class Subscription < ActiveRecord::Base
-  attr_accessible :articles, :email, :events
+  attr_accessor :email2
+  attr_accessible :articles, :email, :events, :email2
   
   validates :email, :presence => {:message => 'Укажите email'}
   validates :email, :length => {:minimum => 3, :maximum => 254},
