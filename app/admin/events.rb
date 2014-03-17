@@ -12,11 +12,25 @@ ActiveAdmin.register Event do
     column :date
     column :text do |column|
       text = strip_tags(column.text).gsub(/&quot;/i,"").gsub(/&nbsp;/i,"")
-  		truncate(text, length: 260, omission: '...').html_safe
+      truncate(text, length: 260, omission: '...').html_safe
     end
     column :main
     default_actions
   end
+  
+  # index :as => :grid, :columns => 7 do |event|
+  #   span do
+  #     I18n.t(event.property)
+  #   end
+  #   div do
+  #     event.date.strftime('%d.%m.%y') if event.date
+  #   end
+  #   div do
+  #     a :href => edit_admin_event_path(event) do
+  #       truncate(event.title, length: 40)
+  #     end
+  #   end
+  # end
   
   form :partial => "form"
   
