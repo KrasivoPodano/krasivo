@@ -4,7 +4,7 @@
 <%= f.input :title %>
 <%= f.input :image, :as => :file, :hint => ( f.object.new_record? || !f.object.image ) ? nil : image_tag(f.object.image.url(:medium)) %> 
 <%= f.input :shorttext, :input_html => { :rows => 1  } %>
-<%= f.input :text, :as => :ckeditor, :label => false %>
+<%= f.input :text, input_html: { class: "redactor" }, :label => false  %>
 <% end %>
 <%= f.inputs t('recipe_type') do %>
 <%= f.input :recipe_type_id, :as => :select, :collection => RecipeType.all %>
