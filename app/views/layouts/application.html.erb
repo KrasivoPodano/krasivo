@@ -30,6 +30,7 @@
 <% end %>
 <%= render :partial => 'layouts/appointment_form', :locals => { :@appointment => Appointment.new } %>
 <%= render :partial => 'layouts/subscription_form', :locals => { :@subscription => Subscription.new } %>
+<%= render :partial => 'layouts/order_form', :locals => { :@order => Order.new, :@events => Event.all } %>
 <%= render 'layouts/auth_form' %>
 <% if b2b? %>
 <%= render 'layouts/b2b_header' %>
@@ -37,7 +38,7 @@
 <%= render 'layouts/header' %>
 <% end %>
 <%= yield %>
-<%= render :partial => 'layouts/order_form', :locals => { :@order => Order.new, :@events => Event.all } %>
+
 <%= render 'layouts/footer' %>
 
 <script type='text/javascript'> /* build:::7 */

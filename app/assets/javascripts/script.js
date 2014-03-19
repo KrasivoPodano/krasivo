@@ -120,7 +120,6 @@ $(function() {
 		window.scrollTo(0, 0);
 		e.preventDefault();
 		$(".order_popup").show();
-		$(".blue").show();
 		// showRecaptcha('order_form_reCAPTCHA');
 		$('#order_date').datepicker();	
 	})

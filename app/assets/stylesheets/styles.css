@@ -932,16 +932,20 @@ box-shadow:         0px 2px 0px rgba(11, 69, 104, 1);
 	text-decoration:none;
 }
 
-.form.auth_popup, .form.appointment_popup, .form.subscription_popup  {
+.form.auth_popup, .form.appointment_popup, .form.subscription_popup {
 	width:400px;
 	margin-left:-250px;
+}
+
+.form.order_popup {
+	width:540px;
+	margin-left:-360px;
 }
 
 
 .form.notice {
 	display:block;
 	width:400px;
-	margin-left:-250px;
 }
 
 .form h2{
@@ -1124,7 +1128,7 @@ border-radius: 7px;
 display:inline-block;
 vertical-align: top;
 text-decoration:none;
-margin-top:70px;
+margin-top:40px;
 }
 input[type="submit"]:hover{
 	background:#186999;
@@ -1182,7 +1186,7 @@ input[type="submit"]:hover{
 }
 textarea{
 	padding:35px 20px 20px;
-	width:660px;
+	width:480px;
 	height:135px;
 	color:#249ee7;
 	font-size:14px;
