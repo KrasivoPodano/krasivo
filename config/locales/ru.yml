@@ -47,6 +47,7 @@ ru:
   menu: "Меню"
   top_menu: "Верхнее меню"
   buttons: "Кнопки"
+  event_published: "Мероприятие опубликовано, и теперь отображается на сайте"
   activerecord:
     errors:
       models:

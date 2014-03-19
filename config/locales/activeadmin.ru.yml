@@ -7,6 +7,7 @@ ru:
     view: "Открыть"
     edit: "Изменить"
     delete: "Удалить"
+    publish: "Опубликовать"
     delete_confirmation: "Вы уверены, что хотите удалить это?"
     new_model: "Создать %{model}"
     create_model: "Создать %{model}"

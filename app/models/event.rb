@@ -27,4 +27,9 @@ class Event < ActiveRecord::Base
   scope :courses, -> { where(property: "course") }
   scope :master_classes, -> { where(property: "master") }
   PROPERTIES = %w[master course]
+  
+  def publish 
+    self.published = true
+    self.save
+  end
 end
