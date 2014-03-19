@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
   friendly_id :seo_url, use: :slugged
   scope :main, where(:main => true)
   scope :future, where("date >= ?", Time.now)
+  scope :past, where("date <= ?", Time.now)
   scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )
   belongs_to :album
   belongs_to :event_type
@@ -32,4 +33,10 @@ class Event < ActiveRecord::Base
     self.published = true
     self.save
   end
+  
+  def past?
+    self.property != 'course' && self.date.past?
+  end
+    
+  
 end

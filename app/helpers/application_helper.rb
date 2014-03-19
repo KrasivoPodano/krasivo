@@ -36,13 +36,13 @@ module ApplicationHelper
    end
    
    def order_link_normal(event)
-     if event.filled
-       "| Мест нет"
-     elsif event.want_more
-       nil
-     else
-       ("| " + (link_to "записаться", new_appointment_path(event_id: event.id, event_price: event.price), remote: true)).html_safe
-     end
+       if event.filled
+         "| Мест нет"
+       elsif event.want_more
+         nil
+       else
+         ("| " + (link_to "записаться", new_appointment_path(event_id: event.id, event_price: event.price), remote: true)).html_safe
+       end
    end
    
    

@@ -1,22 +1,25 @@
 <div class="content">
 	<div style="margin-top: 250px;">
     <div class="blocks-bottom">
-		<% @events.each do |event| %>
+      <% @events.each do |event| %>
         <div class="block" style="margin-top: -80px;">
-            	<% unless event.front_images.blank? %>
-	            <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
-				<% end %>
-	            <h2><%= event.title %></h2>
-	            <span class="blocks-date">
-				<% unless event.property == "course" %>
-				<%= Russian::strftime(event.date, "%d %B") %> | 
-				<% end %>
-				<%= event.price %> <span class="b-rub">Р</span></span>
-	            <p><%= event.shorttext %></p>
-	            <%= link_to "подробнее", event %>
-              <%= order_link_normal(event) %>
+          <% unless event.front_images.blank? %>
+            <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
+          <% end %>
+          <h2><%= event.title %></h2>
+          <span class="blocks-date">
+            <% unless event.property == "course" %>
+              <%= Russian::strftime(event.date, "%d %B") %> | 
+            <% end %>
+            <%= event.price %> <span class="b-rub">Р</span>
+          </span>
+          <p><%= event.shorttext %></p>
+          <%= link_to "подробнее", event %>
+          <% unless event.past? %>
+            <%= order_link_normal(event) %>
+          <% end %>
         </div>
-		<% end %>
+      <% end %>
     </div>
 	</div>
 </div>

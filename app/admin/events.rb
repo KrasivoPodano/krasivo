@@ -8,6 +8,22 @@ ActiveAdmin.register Event do
   filter :property, as: :select, :collection => Event::PROPERTIES.map{|v| [I18n.t(v),v]}
   menu :parent => I18n.t('events')
   
+  
+  scope 'Все', :all, :default => true
+  scope 'Предстоящие' do |events|
+    events.future
+  end
+  scope 'Прошедшие' do |events|
+    events.past 
+  end
+  scope 'Курсы' do |events|
+    events.courses 
+  end
+  scope 'Мастер классы' do |events|
+    events.master_classes 
+  end
+  
+  
   index do 
     column :property do |column|
       t(column.property)
