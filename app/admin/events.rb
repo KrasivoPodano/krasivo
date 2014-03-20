@@ -43,6 +43,8 @@ ActiveAdmin.register Event do
         :class => "member_link edit_link"
       links += link_to I18n.t('active_admin.publish'), publish_admin_event_path(event),
         :class => "member_link edit_link"
+      links += link_to I18n.t('active_admin.copy'), copy_admin_event_path(event),
+        :class => "member_link edit_link"
       links += link_to I18n.t('active_admin.delete'), admin_event_path(event),
         :method => :delete,
         :confirm => I18n.t('active_admin.delete_confirmation')
@@ -111,6 +113,25 @@ ActiveAdmin.register Event do
      event = Event.find(params[:id])
      event.publish
      redirect_to :back, :notice => t('event_published')
+   end
+   
+   member_action :copy, :method => :get do
+     event = Event.find(params[:id])
+     @event = Event.new
+     @event.assign_attributes(
+         title: event.title,
+         property: event.property, 
+         price: event.price,
+         date: event.date,
+         shorttext: event.shorttext,
+         eventdetails: event.eventdetails,
+         text: event.text,
+         event_type_id: event.event_type_id,
+         seo_url: event.seo_url,
+         html_title: event.html_title,
+         meta_description: event.meta_description
+     )
+     render :action => :new, :layout => false
    end
    
 

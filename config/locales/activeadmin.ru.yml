@@ -8,6 +8,8 @@ ru:
     edit: "Изменить"
     delete: "Удалить"
     publish: "Опубликовать"
+    copy: "Создать копию"
+    copy_model: "Создать копию"
     delete_confirmation: "Вы уверены, что хотите удалить это?"
     new_model: "Создать %{model}"
     create_model: "Создать %{model}"
