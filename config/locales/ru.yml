@@ -48,6 +48,7 @@ ru:
   top_menu: "Верхнее меню"
   buttons: "Кнопки"
   event_published: "Мероприятие опубликовано, и теперь отображается на сайте"
+  event_unpublished: "Мероприятие снято с публикации и больше недоступно на сайте"
   activerecord:
     errors:
       models:

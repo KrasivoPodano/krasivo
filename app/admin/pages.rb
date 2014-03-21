@@ -17,7 +17,7 @@ ActiveAdmin.register Page do
    form do |f|  
      f.inputs t('properties') do
        f.input :title
-       f.input :text, :as => :ckeditor, :label => false
+       f.input :text, input_html: { class: "redactor" }, :label => false
      end
      
      f.inputs 'SEO' do

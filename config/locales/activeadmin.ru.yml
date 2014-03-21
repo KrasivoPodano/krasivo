@@ -8,6 +8,7 @@ ru:
     edit: "Изменить"
     delete: "Удалить"
     publish: "Опубликовать"
+    unpublish: "Не публиковать"
     copy: "Создать копию"
     copy_model: "Создать копию"
     delete_confirmation: "Вы уверены, что хотите удалить это?"

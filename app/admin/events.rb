@@ -41,8 +41,13 @@ ActiveAdmin.register Event do
         :class => "member_link edit_link"
       links += link_to I18n.t('active_admin.edit'), edit_admin_event_path(event),
         :class => "member_link edit_link"
-      links += link_to I18n.t('active_admin.publish'), publish_admin_event_path(event),
-        :class => "member_link edit_link"
+      if event.published
+        links += link_to I18n.t('active_admin.unpublish'), unpublish_admin_event_path(event),
+          :class => "member_link edit_link"
+      else
+        links += link_to I18n.t('active_admin.publish'), publish_admin_event_path(event),
+          :class => "member_link edit_link"
+      end
       links += link_to I18n.t('active_admin.copy'), copy_admin_event_path(event),
         :class => "member_link edit_link"
       links += link_to I18n.t('active_admin.delete'), admin_event_path(event),
@@ -113,6 +118,13 @@ ActiveAdmin.register Event do
      event = Event.find(params[:id])
      event.publish
      redirect_to :back, :notice => t('event_published')
+   end
+   
+   member_action :unpublish, :method => :get do
+     event = Event.find(params[:id])
+     event.published = false
+     event.save
+     redirect_to :back, :notice => t('event_unpublished')
    end
    
    member_action :copy, :method => :get do
