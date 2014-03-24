@@ -7,9 +7,10 @@ ActiveAdmin.register Page do
   
    index do 
      column :title
+     column :seo_url
      column :text do |column|
-       
-       column.text.html_safe if column.text.present?
+       text = strip_tags(column.text).gsub(/&quot;/i,"").gsub(/&nbsp;/i,"")
+       truncate(text, length: 100, omission: '...').html_safe
      end
      default_actions
    end

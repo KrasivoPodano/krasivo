@@ -46,7 +46,6 @@ Krasivo::Application.routes.draw do
         :defaults => { :format => 'atom' }
   
   # Static Pages
-  match '/contacts' => 'static_pages#contacts'
   match '/school' => 'static_pages#school'
   match '/services' => 'static_pages#services'
 
