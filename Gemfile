@@ -38,7 +38,7 @@ end
 gem 'social_poster'
 
 gem "recaptcha", :require => "recaptcha/rails"
-
+gem "galetahub-simple_captcha", :require => "simple_captcha"
 gem 'delayed_job_active_record'
 gem "daemons"
 

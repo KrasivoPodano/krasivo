@@ -11,7 +11,7 @@ Krasivo::Application.routes.draw do
     match 'price' => 'b2b#price'
     match 'contacts' => 'b2b#contacts'
   end
-
+  match 'orders/refresh_captcha_div' => 'orders#refresh_captcha_div'
   resources :line_items
   resources :events
   resources :carts
@@ -21,9 +21,6 @@ Krasivo::Application.routes.draw do
 
   devise_for :users, :controllers => { sessions: 'sessions' }
 
-  get "orders/create"
-
-  
   # Vacancies
   match 'vacancies/:id' => 'vacancies#show', :as => :vacancy
   match 'vacancy' => 'vacancies#index', :as => :vacancies

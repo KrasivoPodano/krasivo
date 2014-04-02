@@ -1,8 +1,6 @@
 ru:
   true: "Да"
   false: "Нет"
-  simple_captcha:
-  label: "Введите текст с картинки"
   destroy: "Удалить"
   images: "Изображения"
   details: "Детали"

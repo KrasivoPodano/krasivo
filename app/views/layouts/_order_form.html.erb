@@ -32,6 +32,9 @@
             <label class="textarea">Ваш комментарий</label>
             <textarea name="order[comment]"></textarea>
             </div>
+            <div class="form-line" id="captcha_wrapper">
+              <%= render :partial => 'orders/captcha_wrapper' %>
+            </div> 
 			      <%= f.email_field :email2 %>
 
 

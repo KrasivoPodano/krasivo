@@ -1,0 +1,7 @@
+ru:
+  simple_captcha:
+    placeholder: "Введите код"
+    label: "Введите данные с картинки"
+    message:
+      default: "Неверно"
+      product: "Неверно!"
