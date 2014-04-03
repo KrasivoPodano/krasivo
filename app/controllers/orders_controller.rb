@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   def create
     if @order.save_with_captcha
       result = {status: 'ok'}
+      send_confirmation
     else
       result = {errors: @order.errors}
     end
