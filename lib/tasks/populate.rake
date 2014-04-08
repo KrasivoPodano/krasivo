@@ -1,21 +1,30 @@
 # coding: utf-8
+require 'populator'
+require 'faker'
 
 namespace :db do
   desc "Erase and fill database"
-  task :populate => :environment do
-    require 'populator'
-    require 'faker'
-    
+  task :articles => :environment do
     ArticleTag.destroy_all
-    
     Article.destroy_all
-    
     Article.populate 10..100 do |article|
       article.title = Populator.words(1..5).titleize
       article.text = Populator.sentences(2..30)
       article.date = Time.now
     end
   end
+
+  task :events => :environment do
+    Events.destroy_all
+    Events.populate 30 do |event|
+      
+    end
+    Events.populate 30 do |event|
+
+    end
+  end
+  
+  
 end
 
 namespace :mail do
