@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
   extend FriendlyId
   friendly_id :seo_url, use: :slugged
   scope :main, where(:main => true)
+  scope :filled, where(:filled => true)
+  scope :not_filled, where(:filled => false)
   scope :future, where("date >= ?", Time.now)
   scope :past, where("date <= ?", Time.now)
   scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )

@@ -17,33 +17,49 @@ namespace :db do
   task :events => :environment do
     Event.destroy_all
     FrontImage.destroy_all
-    Event.populate 30 do |event|
+    Event.populate 3 do |event|
       event.title = Populator.sentences(1)
       event.date = Date.today + rand(200)
       event.text = Populator.sentences(20..40)
       event.event_type_id = EventType.pluck(:id)
       event.main = %w[true false]
-      event.shorttext = Populator.sentences(2..4)
-      event.eventdetails = Populator.sentences(2..4)
+      event.shorttext = Populator.words(3)
+      event.eventdetails = Populator.words(3)
       event.price = %w[500 1000 1500 2000]
       event.published = true
-      event.property = Event::PROPERTIES
+      event.property = 'master'
+      event.filled = false
     end
     puts "Future events created!"
     
-    Event.populate 30 do |event|
+    Event.populate 3 do |event|
       event.title = Populator.sentences(1)
       event.date = Date.today - rand(200)
       event.text = Populator.sentences(20..40)
       event.event_type_id = EventType.pluck(:id)
       event.main = %w[true false]
-      event.shorttext = Populator.sentences(2..4)
-      event.eventdetails = Populator.sentences(2..4)
+      event.shorttext = Populator.words(3)
+      event.eventdetails = Populator.words(3)
       event.price = %w[500 1000 1500 2000]
       event.published = true
-      event.property = Event::PROPERTIES
+      event.property = 'master'
+      event.filled = false
     end
     puts "Past events created!"
+    
+    Event.populate 3 do |event|
+      event.title = Populator.sentences(1)
+      event.text = Populator.sentences(20..40)
+      event.event_type_id = EventType.pluck(:id)
+      event.main = %w[true false]
+      event.shorttext = Populator.words(3)
+      event.eventdetails = Populator.words(3)
+      event.price = %w[500 1000 1500 2000]
+      event.published = true
+      event.property = 'course'
+      event.filled = false
+    end
+    puts "Courses created!"
 
     
     Event.all.each do |event|
