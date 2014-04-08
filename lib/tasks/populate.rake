@@ -15,14 +15,44 @@ namespace :db do
   end
 
   task :events => :environment do
-    Events.destroy_all
-    Events.populate 30 do |event|
-      
+    Event.destroy_all
+    FrontImage.destroy_all
+    Event.populate 30 do |event|
+      event.title = Populator.sentences(1)
+      event.date = Date.today + rand(200)
+      event.text = Populator.sentences(20..40)
+      event.event_type_id = EventType.pluck(:id)
+      event.main = %w[true false]
+      event.shorttext = Populator.sentences(2..4)
+      event.eventdetails = Populator.sentences(2..4)
+      event.price = %w[500 1000 1500 2000]
+      event.published = true
+      event.property = Event::PROPERTIES
     end
-    Events.populate 30 do |event|
+    puts "Future events created!"
+    
+    Event.populate 30 do |event|
+      event.title = Populator.sentences(1)
+      event.date = Date.today - rand(200)
+      event.text = Populator.sentences(20..40)
+      event.event_type_id = EventType.pluck(:id)
+      event.main = %w[true false]
+      event.shorttext = Populator.sentences(2..4)
+      event.eventdetails = Populator.sentences(2..4)
+      event.price = %w[500 1000 1500 2000]
+      event.published = true
+      event.property = Event::PROPERTIES
+    end
+    puts "Past events created!"
 
+    
+    Event.all.each do |event|
+      FrontImage.create(:event_id => event.id, :image => File.open(Dir.glob(File.join(Rails.root, 'covers', '*')).sample))
     end
+    puts "Front images attached!"
+    
   end
+  
   
   
 end
