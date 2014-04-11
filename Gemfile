@@ -30,10 +30,10 @@ group :assets do
   gem 'turbo-sprockets-rails3'
 end
 
-group :development do  
-  gem 'populator'
-  gem 'faker'
-end
+
+gem 'populator'
+gem 'faker'
+
 
 gem 'social_poster'
 
