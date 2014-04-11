@@ -25,6 +25,9 @@
           <%= f.text_field :phone %>
           <%= f.email_field :email %>
         </div>
+        <div class="form-line" id="appointment_captcha_wrapper">
+          <%= render :partial => 'appointments/captcha_wrapper' %>
+        </div>
       	<div style="color: red; margin-top: 10px;" id="appointment_notice"></div>
       	<br />
       	<div><%= f.submit "Записаться", :class => 'auth_button' %></div>

@@ -15,6 +15,7 @@ Krasivo::Application.routes.draw do
   resources :line_items
   resources :events
   resources :carts
+  match 'appointments/refresh_captcha_div' => 'appointments#refresh_captcha_div'
   resources :appointments
   resources :recipes
   resources :orders
