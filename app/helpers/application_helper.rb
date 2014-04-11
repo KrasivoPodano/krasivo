@@ -135,6 +135,14 @@ module ApplicationHelper
         school_path
       end
     end
+    
+    def event_date_time(event, separator=nil)
+      if separator
+        (Russian::strftime(event.date, "%d %B #{("в %H:%M") if event.date.hour != 0}")).to_s + ' | ' if event.date.present?
+      else
+        (Russian::strftime(event.date, "%d %B #{("в %H:%M") if event.date.hour != 0}")).to_s if event.date.present?
+      end
+    end
    
    
 end

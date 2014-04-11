@@ -8,10 +8,8 @@
           <% end %>
           <h2><%= event.title %></h2>
           <span class="blocks-date">
-            <% unless event.property == "course" %>
-              <%= Russian::strftime(event.date, "%d %B") %> | 
-            <% end %>
-            <%= event.price %> <span class="b-rub">Р</span>
+            <%= event_date_time(event) %><%= event.price %> 
+            <span class="b-rub">Р</span>
           </span>
           <p><%= event.shorttext %></p>
           <%= link_to "подробнее", event %>

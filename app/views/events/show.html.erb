@@ -18,7 +18,7 @@
 	  <aside>
 		  <div class="event-info">
 			<% unless @event.property == "course" %>
-        <p>когда: <span class="strong"><%= Russian::strftime(@event.date, "%d %B") %></span></p>
+        <p>когда: <span class="strong"><%= event_date_time(@event) %></span></p>
 			<% end %>
       <p>стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span></p>
       <%= render 'event_buttons', :@event => @event %>

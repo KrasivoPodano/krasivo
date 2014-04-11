@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140311191221) do
+ActiveRecord::Schema.define(:version => 20140411125442) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(:version => 20140311191221) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
-    t.date     "date"
+    t.datetime "date"
     t.text     "text"
     t.integer  "album_id"
     t.integer  "event_type_id"
@@ -151,6 +151,7 @@ ActiveRecord::Schema.define(:version => 20140311191221) do
     t.string   "slug"
     t.boolean  "filled",                        :default => false
     t.boolean  "want_more",                     :default => false
+    t.string   "duration"
   end
 
   add_index "events", ["slug"], :name => "index_events_on_slug", :unique => true
