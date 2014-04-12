@@ -21,6 +21,7 @@
         <p>когда: <span class="strong"><%= event_date_time(@event) %></span></p>
 			<% end %>
       <p>стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span></p>
+      <p><%= event_duration(@event) %></p>
       <%= render 'event_buttons', :@event => @event %>
       </div>
       <%= render 'shared/vk_widget' %>

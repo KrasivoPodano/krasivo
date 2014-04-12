@@ -143,6 +143,10 @@ module ApplicationHelper
         (Russian::strftime(event.date, "%d %B #{("в %H:%M") if event.date.hour != 0}")).to_s if event.date.present?
       end
     end
+    
+    def event_duration(event)
+      ('продолжительность: ' + event.duration) if event.duration.present?
+    end
    
    
 end

@@ -9,6 +9,7 @@
         <%= event_date_time(event, true) %><%= event.price %> 
         <span class="b-rub">Р</span>
       </span>
+      <p><%= event_duration(event) %></p>
       <p><%= event.shorttext %></p>
       <%= link_to "подробнее", event %>
       <% unless event.past? %>
