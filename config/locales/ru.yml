@@ -134,6 +134,7 @@ ru:
         meta_description: "МЕТА описание"
         filled: "Нет мест"
         want_more: "Хочу также"
+        duration: "Продолжительность"
       event_type:
         title: "Название"
       recipe_type:

@@ -3,14 +3,14 @@ class Event < ActiveRecord::Base
                   :event_type_id, :main, :shorttext, 
                   :eventdetails, :front_images_attributes, :price, :published, :property,
                   :html_title, :seo_url, :meta_description,
-                  :filled, :want_more
+                  :filled, :want_more, :duration
 
   extend FriendlyId
   friendly_id :seo_url, use: :slugged
   scope :main, where(:main => true)
   scope :filled, where(:filled => true)
   scope :not_filled, where(:filled => false)
-  scope :future, where("date >= ?", Time.now)
+  scope :future, where{(date == nil) | (date >= Time.now)}
   scope :past, where("date <= ?", Time.now)
   scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )
   belongs_to :album
@@ -37,7 +37,7 @@ class Event < ActiveRecord::Base
   end
   
   def past?
-    self.property != 'course' && self.date.past?
+    self.date && self.property != 'course' && self.date.past? 
   end
     
   

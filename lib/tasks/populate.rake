@@ -29,6 +29,7 @@ namespace :db do
       event.published = true
       event.property = 'master'
       event.filled = false
+      event.duration = ['1 час', '2 часа', '3 часа']
     end
     puts "Future events created!"
     
@@ -44,6 +45,7 @@ namespace :db do
       event.published = true
       event.property = 'master'
       event.filled = false
+      event.duration = ['1 час', '2 часа', '3 часа']
     end
     puts "Past events created!"
     
@@ -58,6 +60,7 @@ namespace :db do
       event.published = true
       event.property = 'course'
       event.filled = false
+      event.duration = ['1 час', '2 часа', '3 часа']
     end
     puts "Courses created!"
 

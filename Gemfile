@@ -33,7 +33,7 @@ end
 
 gem 'populator'
 gem 'faker'
-
+gem "squeel"
 
 gem 'social_poster'
 

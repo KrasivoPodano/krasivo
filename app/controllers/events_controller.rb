@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
   
   def future
-    @events = Event.master_classes.published.where("date >= ?", Time.now ).order("date asc")
+    @events = Event.master_classes.published.future.order("date asc")
   end
   
   def past

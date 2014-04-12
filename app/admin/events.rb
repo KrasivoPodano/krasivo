@@ -35,6 +35,7 @@ ActiveAdmin.register Event do
       text = strip_tags(column.text).gsub(/&quot;/i,"").gsub(/&nbsp;/i,"")
       truncate(text, length: 100, omission: '...').html_safe
     end
+    column :duration
     column "" do |event|
       links = ''.html_safe
       links += link_to I18n.t('active_admin.view'), admin_event_path(event),
