@@ -51,7 +51,7 @@ module Krasivo
       domain:         "locum.ru",
       authentication: "login",
       user_name:      "info@krasivopodano.ru",
-      password:       "f1o2o3d4",
+      password:       "woo7eeMuet6hoo6",
       enable_starttls_auto: false,
       openssl_verify_mode: false 
     }
