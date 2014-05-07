@@ -10,8 +10,8 @@ class Event < ActiveRecord::Base
   scope :main, where(:main => true)
   scope :filled, where(:filled => true)
   scope :not_filled, where(:filled => false)
-  scope :future, where{(date == nil) | (date >= Time.now)}
-  scope :past, where("date <= ?", Time.now)
+  scope :future, lambda { where{(date == nil) | (date >= Time.now)} }
+  scope :past, lambda { where("date <= ?", Time.now) }
   scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )
   belongs_to :album
   belongs_to :event_type

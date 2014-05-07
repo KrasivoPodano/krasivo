@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     unless @event.album.nil?
     @photos = @event.album.photos
     end
-    @events = Event.published.where("date >= ?", Time.now ).order("date asc").limit(3)
+    @events = Event.published.future.order("date asc").limit(3)
   end
   
   def future
@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   end
   
   def past
-    @events = Event.master_classes.published.where("date <= ?", Time.now ).order("date desc")
+    @events = Event.master_classes.published.past.order("date desc")
   end 
   
   def courses

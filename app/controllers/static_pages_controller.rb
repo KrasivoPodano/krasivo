@@ -13,8 +13,8 @@ class StaticPagesController < ApplicationController
   end
   
   def contacts
-    @event = Event.published.where("date >= ?", Time.now ).order("date asc").first
-    @events = Event.published.where("date >= ?", Time.now ).order("date asc").limit(3)
+    @event = Event.published.future.order("date asc").first
+    @events = Event.published.future.order("date asc").limit(3)
   end
   
   def shcool
