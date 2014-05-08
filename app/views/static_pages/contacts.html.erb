@@ -57,7 +57,12 @@ myMap.geoObjects.add(myPlacemark);
                     Кстати, у нас есть кое-что:
                 </p>
                 <p>
-                    <span class="strong"><%= Russian::strftime(@event.date, "%d %B") if @event.date %> — <%= @event.title %></span>
+                    <span class="strong">
+                      <% if @event.date %>
+                        <%= Russian::strftime(@event.date, "%d %B") if @event.date %> — 
+                      <% end %>
+                      <%= @event.title %>
+                    </span>
                 </p>
                 <p>
                     стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span>
@@ -114,23 +119,24 @@ myMap.geoObjects.add(myPlacemark);
     </div>
 	<% unless @events.blank? %>
     <div class="blocks-bottom inner-page">
-		<% @events.each do |event| %>
+      <% events.each do |event| %>
         <div class="block">
-			<% unless event.front_images.blank? %>
+          <% unless event.front_images.blank? %>
             <%= link_to image_tag(event.front_images.first.image.url(:thumb)), event %>
-			<% end %>
-            <h2><%= event.title %></h2>
-            <span class="blocks-date">
-			<% unless event.property == "course" %>
-			<%= Russian::strftime(event.date, "%d %B") if event.date %> | 
-			<% end %>
-			<%= event.price %> <span class="b-rub">Р</span></span>
-            <p>
-                <%= event.shorttext %>
-            </p>
-            <%= link_to "подробнее", event %>
+          <% end %>
+          <h2><%= event.title %></h2>
+          <span class="blocks-date">
+            <%= event_date_time(event, true) %><%= event.price %> 
+            <span class="b-rub">Р</span>
+          </span>
+          <p><%= event_duration(event) %></p>
+          <p><%= event.shorttext %></p>
+          <%= link_to "подробнее", event %>
+          <% unless event.past? %>
+            <%= order_link_normal(event) %>
+          <% end %>
         </div>
-		<% end %>
+      <% end %>
     </div>
     <% end %>
 </div>
