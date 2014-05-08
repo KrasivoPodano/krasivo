@@ -57,7 +57,7 @@ myMap.geoObjects.add(myPlacemark);
                     Кстати, у нас есть кое-что:
                 </p>
                 <p>
-                    <span class="strong"><%= Russian::strftime(@event.date, "%d %B") %> — <%= @event.title %></span>
+                    <span class="strong"><%= Russian::strftime(@event.date, "%d %B") if event.date %> — <%= @event.title %></span>
                 </p>
                 <p>
                     стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span>
@@ -122,7 +122,7 @@ myMap.geoObjects.add(myPlacemark);
             <h2><%= event.title %></h2>
             <span class="blocks-date">
 			<% unless event.property == "course" %>
-			<%= Russian::strftime(event.date, "%d %B") %> | 
+			<%= Russian::strftime(event.date, "%d %B") if event.date %> | 
 			<% end %>
 			<%= event.price %> <span class="b-rub">Р</span></span>
             <p>
