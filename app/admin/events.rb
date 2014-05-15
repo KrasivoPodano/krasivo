@@ -98,6 +98,7 @@ ActiveAdmin.register Event do
   end
   
   controller do        
+    
      def update
        @event = Event.find(params[:id])     
        respond_to do |format|
@@ -142,8 +143,10 @@ ActiveAdmin.register Event do
          event_type_id: event.event_type_id,
          seo_url: event.seo_url,
          html_title: event.html_title,
-         meta_description: event.meta_description
+         meta_description: event.meta_description,
+         front_images: event.front_images
      )
+     
      render :action => :new, :layout => false
    end
    

@@ -33,17 +33,21 @@
 <%= f.input :seo_url %>
 <%= f.input :html_title %>
 <%= f.input :meta_description,      :input_html => { :rows => 4 } %>
+<%= f.input :front_images, :as => :hidden %>
+
 <% end %>
 
 
-<% unless @event.new_record? %>
+<% unless action?('new') %>
 <fieldset class="inputs"><legend><span>Изображения для слайдера</span></legend>
 <div id="album_photos" style="margin-left: 25px;">
 	<% @event.front_images.each do |image| %>
 	<div class="album_element" id="<%= image.id %>" onMouseOut="$(this).children('.image_caption').hide();" onmouseover="$(this).children('.image_caption').show();">
 	<div class="image_caption" style="display: none;">
+	<% unless action?('copy') %>
 		<%= link_to 'Удалить', admin_event_front_image_path(@event, image),
 		            :confirm => 'Вы уверены?', :method => :delete, :class => 'image_destroy', :remote => true %>
+	<% end %>
 	</div>
 	<%= image_tag image.image.url(:admin), :class => 'album__image', :id => image.id %>
 	</div>
@@ -58,6 +62,7 @@
 
 <%= file_field_tag("event_front_images_image", multiple: true, name: "event[front_images_attributes][][image]") %>
 <%= f.submit 'Загрузить изображения', :name => 'preview_button' %>
+
 
 </div>
 <% end %>

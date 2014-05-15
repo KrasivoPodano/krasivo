@@ -1,8 +1,8 @@
 class Event < ActiveRecord::Base
   attr_accessible :title, :date, :text, :album_id, 
                   :event_type_id, :main, :shorttext, 
-                  :eventdetails, :front_images_attributes, :price, :published, :property,
-                  :html_title, :seo_url, :meta_description,
+                  :eventdetails, :front_images_attributes, :front_images, :price, :published, :property,
+                  :html_title, :seo_url, :meta_description, :front_image_ids,
                   :filled, :want_more, :duration
 
   extend FriendlyId
