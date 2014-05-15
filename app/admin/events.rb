@@ -97,7 +97,9 @@ ActiveAdmin.register Event do
     end
   end
   
-  controller do        
+  controller do       
+    
+
     
      def update
        @event = Event.find(params[:id])     

@@ -33,8 +33,7 @@
 <%= f.input :seo_url %>
 <%= f.input :html_title %>
 <%= f.input :meta_description,      :input_html => { :rows => 4 } %>
-<%= f.input :front_images, :as => :hidden %>
-
+<%= f.input :front_images, input_html: {class: 'hidden'} %>
 <% end %>
 
 
