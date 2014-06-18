@@ -46,7 +46,7 @@ ActiveAdmin.register Article do
        f.input :title
        f.input :published
        f.input :date, :as => :date_picker
-       f.input :text, :as => :ckeditor, :label => false
+       f.input :text, input_html: { class: "redactor" }, :label => false
      end
      
      f.inputs t('tags') do
