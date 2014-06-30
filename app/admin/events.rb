@@ -98,9 +98,6 @@ ActiveAdmin.register Event do
   end
   
   controller do       
-    
-
-    
      def update
        @event = Event.find(params[:id])     
        respond_to do |format|

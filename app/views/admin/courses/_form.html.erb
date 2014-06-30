@@ -62,11 +62,16 @@
 <% end %>
 <% end %>
 
+<%= f.inputs t('events') do %>
+<%= f.input :events, :as => :check_boxes, :collection => Event.all  %>
+<% end %>
+
+
 <% unless @course.new_record? %>
 <%= link_to "Предпросмотр", course_path(@course), :target => "_blank" %>
 <% end %>
 
-    <fieldset class="actions">
+<fieldset class="actions">
 <ol>
 <li><%= f.submit 'Сохранить и продолжить', :name => 'preview_button' %></li>
 <li><%= f.submit 'Сохранить и закрыть' %></li>

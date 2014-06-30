@@ -40,7 +40,7 @@ ActiveAdmin.register Course do
   form :partial => "form"
   
   
-  show do
+  show do |course|
     
     attributes_table do
       row :title
@@ -52,8 +52,35 @@ ActiveAdmin.register Course do
       row :seo_url
       row :html_title
       row :meta_description
+      
+      panel t('events') do 
+         table_for course.events do 
+           column 'Заголовок' do |column|
+            column.title
+           end
+           column 'Даты' do |column|
+             Russian::strftime(column.date, "%d %B %Y") if column.date
+           end
+         end
+       end
     end
   end
+  
+  controller do       
+     def update
+       @course = Course.find(params[:id])     
+       respond_to do |format|
+         if params[:preview_button] && @course.update_attributes(params[:course])
+           format.html { redirect_to action: "edit" }
+           flash[:notice] = t('event_updated')
+        elsif @course.update_attributes(params[:course])
+          format.html { redirect_to :action => :index }
+         else
+           format.html { render action: "edit" }
+         end
+       end
+     end        
+   end
       
    
    # custom_actions 

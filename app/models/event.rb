@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
   scope :with_images, includes(:front_images).where( :front_images => {:event_id=>true} )
   belongs_to :album
   belongs_to :event_type
+  belongs_to :course
   has_many :front_images
   has_many :orders
   has_many :line_items
