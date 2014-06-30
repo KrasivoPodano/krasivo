@@ -1,0 +1,47 @@
+<%= redactor_lang('ru') %>
+
+<%= semantic_form_for [:admin, @course], :html => {:multipart => true}	 do |f| %>
+
+<%= f.inputs t('properties') do %>
+
+<%= f.input :title %>
+<%= f.input :duration %>
+
+<%= f.input :published %>
+<%= f.input :price %>
+
+<%= f.input :shorttext, :input_html => { :rows => 1  } %>
+<%= f.input :eventdetails, :input_html => { :rows => 1  } %>
+<%= f.input :text, input_html: { class: "redactor" }, :label => false  %>
+<%= f.input :main %>
+<% end %>
+
+<%= f.inputs t('buttons') do %>
+<%= f.input :filled %>
+<%= f.input :want_more %>
+<% end %>
+
+
+
+
+<%= f.inputs 'SEO' do %>
+<%= f.input :seo_url %>
+<%= f.input :html_title %>
+<%= f.input :meta_description,      :input_html => { :rows => 4 } %>
+<% end %>
+
+
+
+<fieldset class="actions">
+<ol>
+<li><%= f.submit 'Сохранить и продолжить', :name => 'preview_button' %></li>
+<li><%= f.submit 'Сохранить и закрыть' %></li>
+<li><%= button_to "Отмена", admin_courses_path, :html => { "data-method" => "get" } %></li>
+</ol>
+</fieldset>
+
+<% end %>
+
+
+
+
