@@ -28,11 +28,45 @@
 <%= f.input :seo_url %>
 <%= f.input :html_title %>
 <%= f.input :meta_description,      :input_html => { :rows => 4 } %>
+<%= f.input :front_images, input_html: {class: 'hidden'} %>
 <% end %>
 
 
+<% unless action?('new') %>
+<fieldset class="inputs"><legend><span>Изображения для слайдера</span></legend>
+<div id="album_photos" style="margin-left: 25px;">
+	<% @course.front_images.each do |image| %>
+	<div class="album_element" id="<%= image.id %>" onMouseOut="$(this).children('.image_caption').hide();" onmouseover="$(this).children('.image_caption').show();">
+	<div class="image_caption" style="display: none;">
+	<% unless action?('copy') %>
+		<%= link_to 'Удалить', admin_front_image_path(image),
+		            :confirm => 'Вы уверены?', :method => :delete, :class => 'image_destroy', :remote => true %>
+	<% end %>
+	</div>
+	<%= image_tag image.image.url(:admin), :class => 'album__image', :id => image.id %>
+	</div>
+	<% end %>
 
-<fieldset class="actions">
+</div>
+</fieldset>
+
+<%= f.inputs t('more_images') do %>
+<div style="margin-left: 25px;">
+
+
+<%= file_field_tag("course_front_images_image", multiple: true, name: "course[front_images_attributes][][image]") %>
+<%= f.submit 'Загрузить изображения', :name => 'preview_button' %>
+
+
+</div>
+<% end %>
+<% end %>
+
+<% unless @course.new_record? %>
+<%= link_to "Предпросмотр", course_path(@course), :target => "_blank" %>
+<% end %>
+
+    <fieldset class="actions">
 <ol>
 <li><%= f.submit 'Сохранить и продолжить', :name => 'preview_button' %></li>
 <li><%= f.submit 'Сохранить и закрыть' %></li>
@@ -41,7 +75,4 @@
 </fieldset>
 
 <% end %>
-
-
-
 

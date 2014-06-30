@@ -44,7 +44,7 @@
 	<div class="album_element" id="<%= image.id %>" onMouseOut="$(this).children('.image_caption').hide();" onmouseover="$(this).children('.image_caption').show();">
 	<div class="image_caption" style="display: none;">
 	<% unless action?('copy') %>
-		<%= link_to 'Удалить', admin_event_front_image_path(@event, image),
+		<%= link_to 'Удалить', admin_front_image_path(image),
 		            :confirm => 'Вы уверены?', :method => :delete, :class => 'image_destroy', :remote => true %>
 	<% end %>
 	</div>

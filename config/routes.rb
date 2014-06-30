@@ -26,6 +26,9 @@ Krasivo::Application.routes.draw do
   match 'vacancies/:id' => 'vacancies#show', :as => :vacancy
   match 'vacancy' => 'vacancies#index', :as => :vacancies
   
+  # Courses
+  resources :courses, :only => [:show]
+  
   # Events
   match 'events/:id' => 'events#show', :as => :event
   match 'future' => 'events#future', :as => :future_events
