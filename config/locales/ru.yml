@@ -109,6 +109,9 @@ ru:
       subscription:
           one: "Подписка"
           other: "Подписки"
+      course:
+          one: "Курс"
+          other: "Курсы"
     attributes:
       recipe:
         title: "Название"
@@ -120,6 +123,22 @@ ru:
         shorttext: "Краткий текст"
         recipe_type_id: "Тип рецепта"       
       event:
+        title: "Название"
+        price: "Стоимость"
+        date: "Дата"
+        text: "Описание" 
+        shorttext: "Текст для главной" 
+        eventdetails: "Детали занятия"
+        main: "Разместить на главной?"
+        published: "Опубликован"
+        property: "Тип"
+        seo_url: "SEO адрес"
+        html_title: "HTML заголовок"
+        meta_description: "МЕТА описание"
+        filled: "Нет мест"
+        want_more: "Хочу также"
+        duration: "Продолжительность"
+      course:
         title: "Название"
         price: "Стоимость"
         date: "Дата"

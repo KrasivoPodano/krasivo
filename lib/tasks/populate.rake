@@ -72,6 +72,29 @@ namespace :db do
     
   end
   
+  task :copy_events_to_courses => :environment do
+    Event.courses.each do |event|
+      Course.create(
+        :title => event.title,
+        :text => event.text,
+        :main => event.main,
+        :shorttext => event.shorttext,
+        :eventdetails => event.eventdetails,
+        :price => event.price,
+        :published => event.published,
+        :property => event.property,
+        :seo_url => event.seo_url,
+        :html_title => event.html_title,
+        :meta_description => event.meta_description,
+        :slug => event.slug,
+        :filled => event.filled,
+        :want_more => event.want_more,
+        :duration => event.duration
+        )
+    puts "Events copied!"
+    end
+  end
+  
   
   
 end

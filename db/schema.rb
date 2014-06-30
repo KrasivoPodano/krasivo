@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140411125442) do
+ActiveRecord::Schema.define(:version => 20140630041527) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -108,6 +108,26 @@ ActiveRecord::Schema.define(:version => 20140411125442) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "courses", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.boolean  "main"
+    t.text     "shorttext"
+    t.text     "eventdetails"
+    t.integer  "price"
+    t.boolean  "published",        :default => false
+    t.string   "property"
+    t.string   "seo_url"
+    t.string   "html_title"
+    t.text     "meta_description"
+    t.string   "slug"
+    t.boolean  "filled",           :default => false
+    t.boolean  "want_more",        :default => false
+    t.string   "duration"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0

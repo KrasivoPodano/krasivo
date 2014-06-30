@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  text: MyText
+  main: false
+  shorttext: MyText
+  eventdetails: MyText
+  price: 1
+  published: false
+  property: 
+  seo_url: MyString
+  html_title: MyString
+  meta_description: MyText
+  slug: MyString
+  filled: false
+  want_more: false
+  duration: MyString
+
+two:
+  title: MyString
+  text: MyText
+  main: false
+  shorttext: MyText
+  eventdetails: MyText
+  price: 1
+  published: false
+  property: 
+  seo_url: MyString
+  html_title: MyString
+  meta_description: MyText
+  slug: MyString
+  filled: false
+  want_more: false
+  duration: MyString
