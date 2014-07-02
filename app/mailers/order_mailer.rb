@@ -8,7 +8,7 @@ class OrderMailer < ActionMailer::Base
     mail(:to => "info@krasivopodano.ru", 
          :cc => "m.nikolaev@me.com", 
          :bcc => "babrovka@gmail.com", 
-         :subject => "ВАЖНО: krasivopodano.ru | " + t("new_order"),
+         :subject => "krasivopodano.ru | " + t("new_order"),
          'Importance' => 'high',
          'X-Priority' => '1')
   end
@@ -20,7 +20,7 @@ class OrderMailer < ActionMailer::Base
     @event = event
     mail(:to => "info@krasivopodano.ru", 
          :bcc => ["m.nikolaev@me.com", "babrovka@gmail.com"], 
-         :subject => "ВАЖНО: krasivopodano.ru | " + t("appointment_created"),
+         :subject => "krasivopodano.ru | " + t("appointment_created"),
           'Importance' => 'high',
           'X-Priority' => '1')
   end
@@ -31,7 +31,7 @@ class OrderMailer < ActionMailer::Base
     @appointment = appointment
     mail(:to => @user.email, 
          :bcc => ["m.nikolaev@me.com", "babrovka@gmail.com"], 
-         :subject => "ВАЖНО: krasivopodano.ru | " + t("appointment_confirmed"),
+         :subject => "krasivopodano.ru | " + t("appointment_confirmed"),
           'Importance' => 'high',
           'X-Priority' => '1')
   end
