@@ -7,7 +7,9 @@
 	Фамилия: <%= @lastname %></br></br>
 	Телефон: <%= @phone %></br></br>
 	Мероприятие: <%= @event.title %></br></br>
-	Дата: <%= Russian::strftime(@event.date, "%d %B") %></br>
+	<% if @event.date %>
+	  Дата: <%= Russian::strftime(@event.date, "%d %B") %></br>
+  <% end %>
 <p>
 				
 <p>Желаем удачи!</p>
