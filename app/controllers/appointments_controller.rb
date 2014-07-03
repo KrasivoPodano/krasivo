@@ -27,7 +27,7 @@ class AppointmentsController < ApplicationController
   end
   
   def send_confirmation
-    OrderMailer.appointment_email(@firstname, @lastname, @phone, @event).deliver
+    OrderMailer.appointment_email(@firstname, @lastname, @phone, @event, @appointment).deliver
   end
   
   

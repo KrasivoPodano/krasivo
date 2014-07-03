@@ -4,6 +4,7 @@ ActiveAdmin.register Appointment do
   
   
   index do 
+    column :id
     column :event_id do |column| 
       event = Event.find(column.event)
       link_to event.title, admin_event_path(column.event)
