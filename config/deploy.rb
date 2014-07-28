@@ -67,7 +67,7 @@ set :login,           "krasivopodano"
 set :use_sudo,        false
 set :deploy_to,       "/home/#{user}/projects/#{application}"
 set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"
-set :unicorn_pid,     "/var/run/unicorn/#{application}.#{login}.pid"
+set :unicorn_pid,     "/var/run/unicorn/#{user}/#{application}.#{login}.pid"
 set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
 role :web,            deploy_server
 role :app,            deploy_server
