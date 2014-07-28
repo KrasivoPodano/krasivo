@@ -83,6 +83,13 @@
 	margin-top: 30px;
 	color: #0b4568;
 	float: left;
+	
+	p:after {
+		content: ' ';
+		display: block;
+		clear: both;
+	}
+	
 }
 
 .read_more {
