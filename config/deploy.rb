@@ -16,6 +16,7 @@
 require 'bundler/capistrano'
 require "delayed/recipes" 
 
+
 set :whenever_command, "rvm use 1.9.3 do bundle exec whenever"
 require "whenever/capistrano"
 
