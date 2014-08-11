@@ -100,7 +100,6 @@ namespace :db do
 end
 
 namespace :mail do
-  desc "Erase and fill database"
   task :distribute => :environment do
     SubscriptionMailer.events_feed_email.deliver
   end
