@@ -1,0 +1,15 @@
+<nav class="header-menu" >
+  <% TopMenuElement.first_row.order('position ASC').each do |element| %>
+    <span><%= link_to element.title, element.link, :class => ('active' if element.link == request.fullpath) %></span>
+    <% end %>
+  <span><a href="#" class="order_popup_link">заказать</a></span>
+</nav>
+
+<% unless TopMenuElement.second_row.blank? %>
+  <nav class="header-menu" >
+    <% TopMenuElement.second_row.order('position ASC').each do |element| %>
+      <span><%= link_to element.title, element.link, :class => ('active' if element.link == request.fullpath) %></span>
+      <% end %>
+  </nav>
+<% end %>
+

@@ -1,66 +1,66 @@
 /* fotorama */
 .fotorama-container{
-	height:311px;
-	max-width:1400px;
-	margin:0 auto;
-	overflow: hidden;
-	
+  height:311px;
+  max-width:1400px;
+  margin:0 auto;
+  overflow: hidden;
+
 }
 .fotorama-container.main-page{
-	height:609px;
-	
+  height:609px;
+
 }
 
 .fotorama-container.main-page .fotorama__arr{
-	position:absolute;
-	top:300px;
-	width:30px;
-	height:36px;
-	text-indent:-9999px;
-	z-index:10;
-	display:block;
+  position:absolute;
+  top:300px;
+  width:30px;
+  height:36px;
+  text-indent:-9999px;
+  z-index:10;
+  display:block;
 }
 .fotorama-container.main-page .fotorama__arr_next{
-	outline:none;
-	right:0;
-	margin-left:-120px;
-	background:url('slide-next.png') left top no-repeat;
+  outline:none;
+  right:0;
+  margin-left:-120px;
+  background:url('slide-next.png') left top no-repeat;
 }
 .fotorama-container.main-page .fotorama__arr_prev{
-	outline:none;
-	left:90px;
-	background:url('slide-prev.png') right top no-repeat;
+  outline:none;
+  left:90px;
+  background:url('slide-prev.png') right top no-repeat;
 }
 .fullscreen,.fotorama__wrap,.fotorama__wrap_style_fade .fotorama__frame,.fotorama__thumbs_previews{
-	background:none!important;
+  background:none!important;
 }
 .hider-slider{
-	display:inline-block;
-	background:#74bee8;
-	color:#fff;
-	height:23px;
-	line-height:23px;
-	padding:0 13px;
-	text-decoration:none;
-	font-weight:bold;
-	font-size:14px;
-	position:absolute;
-	z-index:50;
-	
+  display:inline-block;
+  background:#74bee8;
+  color:#fff;
+  height:23px;
+  line-height:23px;
+  padding:0 13px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:14px;
+  position:absolute;
+  z-index:50;
+
 }
 .hider-slider:hover{
-	color:#fff;
-	text-decoration:none;
-	background: #249ee7;
-	
+  color:#fff;
+  text-decoration:none;
+  background: #249ee7;
+
 }
 .hider-slider.hide span{
-	background:url('hide.png') left 7px no-repeat;
-	padding-left:20px;
+  background:url('hide.png') left 7px no-repeat;
+  padding-left:20px;
 }
 .hider-slider.show span{
-	background:url('show.png') left 7px no-repeat;
-	padding-left:20px;
+  background:url('show.png') left 7px no-repeat;
+  padding-left:20px;
 }
 .hider-slider.hide{
 -webkit-border-top-left-radius: 7px;
@@ -70,7 +70,7 @@
 border-top-left-radius: 7px;
 border-top-right-radius: 7px;
 right:10px;
-	top:777px;	
+  top:727px;
 }
 
 .hider-slider.show{
@@ -81,11 +81,11 @@ right:10px;
 border-bottom-right-radius: 7px;
 border-bottom-left-radius: 7px;
 right:10px;
-	top:190px;	
+  top:140px;
 }
 
 .fotorama-container .slide {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 
