@@ -1,15 +1,14 @@
 <% @title = "Контакты" %>
-
 <% content_for :head do %>
 <script src="http://api-maps.yandex.ru/2.0/?load=package.standard&mode=debug&lang=ru-RU" type="text/javascript"></script>
 <script type="text/javascript">
     /* При успешной загрузке API выполняется
        соответствующая функция */
-    ymaps.ready(function () { 
+    ymaps.ready(function () {
        var myMap = new ymaps.Map("YMapsID", {
 // Центр карты
 center: [59.9160,30.3091],
-// Коэффициент масштабирования 
+// Коэффициент масштабирования
 zoom: 16,
 // Тип карты
 type: "yandex#map"
@@ -27,7 +26,7 @@ type: "yandex#map"
     /* Опции метки:
        - флаг перетаскивания метки */
     draggable: false,
-    /* - показывать значок метки 
+    /* - показывать значок метки
        при открытии балуна */
     hideIconOnBalloonOpen: true
 }
@@ -35,89 +34,46 @@ type: "yandex#map"
 
 // Добавление метки на карту
 myMap.geoObjects.add(myPlacemark);
-    
-    
+
+
     });
 </script>
 <% end %>
 
 <div class="content">
-    <div class="fotorama-container map">
-       <div id="YMapsID" style="height: 750px;"></div>
-    </div>
-    <div class="container">
-	
+  <div class="fotorama-container map">
+    <div id="YMapsID" style="height: 750px;"></div>
+  </div>
+  <div class="container">
 
-		
-		
-        <aside>
-			<% unless @event.nil? %>
-            <div class="event-info">
-                <p>
-                    Кстати, у нас есть кое-что:
-                </p>
-                <p>
-                    <span class="strong">
-                      <% if @event.date %>
-                        <%= Russian::strftime(@event.date, "%d %B") if @event.date %> — 
-                      <% end %>
-                      <%= @event.title %>
-                    </span>
-                </p>
-                <p>
-                    стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span>
-                </p>
+    <aside>
+      <% unless @event.nil? %>
+      <div class="event-info">
+        <p>Кстати, у нас есть кое-что:</p>
+        <p>
+          <span class="strong">
+            <% if @event.date %>
+            <%= Russian::strftime(@event.date, "%d %B") if @event.date %> —
+            <% end %>
+            <%= @event.title %>
+          </span>
+        </p>
+        <p>стоимость: <span class="strong"><%= @event.price %> <span class="b-rub">Р</span></span></p>
+        <p><%= link_to "Подробнее", @event %></p>
+      </div>
+      <% end %>
+      <%= render 'shared/vk_widget' %>
+    </aside>
 
-                <p>
-                    <%= link_to "Подробнее", @event %>
-                </p>
-            </div>
-			<% end %>
+    <section class="event-main">
+      <%= @text.html_safe %>
+      <div class="buf"></div>
+    </section>
 
-			<%= render 'shared/vk_widget' %>
-			
-        </aside>
+    <div class="buf"></div>
+  </div>
 
-		
-		
-        <section class="event-main">
-            <h1>наш адрес — не дом и не улица!</h1>
-
-            <h3>наш адрес:</h3>
-
-            <p>
-                Измайловский проспект, д. 2, офис 56, лестница №7 <br/>
-				Вход через кафе "Галата". Домофон №19
-            </p>
-
-            <h3>Телефон для связи:</h3>
-            <p>
-                812 942-67-52 
-            </p>
-
-
-			<h3>Наша почта:</h3>
-            <p>
-                по любым вопросам - <a href="mailto:info@krasivopodano.ru">info@krasivopodano.ru</a><br/>
-				по вопросам рекламы - <a href="mailto:pr@krasivopodano.ru">pr@krasivopodano.ru</a><br/>
-				есть вопрос к мастер-шефу - <a href="mailto:master@krasivopodano.ru">master@krasivopodano.ru</a><br/>
-				нужна фудсъемка - <a href="mailto:mail@krasivopodano.ru">mail@krasivopodano.ru</a><br/>
-            </p>
-            
-
-            <h3>скайп для связи:</h3>
-            <a href="skype:krasivopodano">krasivopodano</a>
-
-            <div class="buf"></div>
-            
-
-		
-			
-            
-        </section>
-        <div class="buf"></div>
-    </div>
-	<% unless @events.blank? %>
+  <% unless @events.blank? %>
     <div class="blocks-bottom inner-page">
       <% @events.each do |event| %>
         <div class="block">
@@ -126,7 +82,7 @@ myMap.geoObjects.add(myPlacemark);
           <% end %>
           <h2><%= event.title %></h2>
           <span class="blocks-date">
-            <%= event_date_time(event, true) %><%= event.price %> 
+            <%= event_date_time(event, true) %><%= event.price %>
             <span class="b-rub">Р</span>
           </span>
           <p><%= event_duration(event) %></p>
@@ -139,4 +95,5 @@ myMap.geoObjects.add(myPlacemark);
       <% end %>
     </div>
     <% end %>
+
 </div>

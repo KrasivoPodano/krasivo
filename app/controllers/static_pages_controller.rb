@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_filter :set_contacts_text, only: :contacts
+
   def home
     @main = Event.master_classes.published.main.future.not_filled
     @future = Event.master_classes.published.future.order("date asc")
@@ -25,5 +27,13 @@ class StaticPagesController < ApplicationController
 
   def vacancy
     @page = Page.find_by_section('vacancy')
+  end
+
+  def set_contacts_text
+    if ContactsPage.first
+      @text = ContactsPage.first.text
+    else
+      @text = nil
+    end
   end
 end
