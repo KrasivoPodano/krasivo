@@ -239,5 +239,6 @@ ru:
         position: "Положение"
         title: "Заголовок"
         link: "Ссылка"
+        row: "Ряд"
       contacts_page:
         text: 'Текст'

@@ -1,41 +1,25 @@
+<%= render 'shared/top_menu'%>
 <header>
-    <div class="container top_container">
-        <nav class="header-menu">
-            <% TopMenuElement.order('position ASC').each do |element| %>
-                <span><%= link_to element.title, element.link, :class => ('active' if element.link == request.fullpath) %></span>
-            <% end %>
-            
-            <!-- <span><%= link_to "о школе", school_path, :class => ('active' if controller?("static_pages") && action?("school")) %></span>
-            <span><%= link_to "расписание", future_events_path, :class => ('active' if controller?("events") && action?("future")) %></span>
-            <span><%= link_to "курсы", courses_path, :class => ('active' if controller?("events") && action?("courses")) %></span>
-            <span><%= link_to "что преподаем", services_path, :class => ('active' if controller?("static_pages") && action?("services")) %></span>
-            <span><%= link_to "рецепты", recipes_path, :class => ('active' if controller?("recipes") && action?("index", "show")) %></span>
-            <span><%= link_to "блог", blog_path, :class => ('active' if controller?("articles")) %></span>
-            <span><%= link_to "вакансии", vacancies_path, :class => ('active' if controller?("vacancies")) %></span> -->
-            <span><a href="#" class="order_popup_link">заказать</a></span>
-        </nav>
-        <div class="header-contacts">
-            <span class="phones">812 942 67 52</span>
-            <br />
-            <a href="/contacts">карта проезда</a>
-            <br />
-            <a href="/future">все события школы</a>
-        </div>
-        <a href="/" class="logo"><img src="/assets/logo.png" alt="" /></a>
-        <div class="header-text">
-            Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется. <br/>
-			<%= link_to "подпишись на блог", blog_feed_path, :class => 'feed' %>
-			<%= link_to "подпишись на мероприятия", events_feed_path, :class => 'feed' %>
-			<%= link_to "email", "#", :class => 'subscribe', :id => 'subscribe' %>
-			
-        </div>
-		<% unless controller?("events") && action?("show") && @event.front_images.blank? %>
-		<% if controller?("events") && action?("show") %>
-		<a href="#"  class="hider-slider show"><span>развернуть медиа</span></a>
-		<% end %>
-		<% if action?("contacts") %>
-		<a href="#"  class="hider-slider show"><span>развернуть карту</span></a>
-		<% end %>
-		<% end %>
+  <div class="container top_container">
+    <div class="header-contacts">
+      <span class="phones">812 942 67 52</span><br />
+      <a href="/contacts">карта проезда</a><br />
+      <a href="/future">все события школы</a>
     </div>
+    <a href="/" class="logo"><img src="/assets/logo.png" alt="" /></a>
+    <div class="header-text">
+      Красиво подано — это самая настоящая кулинарная школа. <br/> Только ходить в нее можно, когда захочется. <br/>
+      <%= link_to "подпишись на блог", blog_feed_path, :class => 'feed' %>
+      <%= link_to "подпишись на мероприятия", events_feed_path, :class => 'feed' %>
+      <%= link_to "email", "#", :class => 'subscribe', :id => 'subscribe' %>
+    </div>
+    <% unless controller?("events") && action?("show") && @event.front_images.blank? %>
+      <% if controller?("events") && action?("show") %>
+        <a href="#"  class="hider-slider show"><span>развернуть медиа</span></a>
+      <% end %>
+      <% if action?("contacts") %>
+        <a href="#"  class="hider-slider show"><span>развернуть карту</span></a>
+      <% end %>
+      <% end %>
+  </div>
 </header>
