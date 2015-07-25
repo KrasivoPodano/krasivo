@@ -14,7 +14,7 @@
 # Если вы используете другую систему управления зависимостями,
 # закомментируйте эту строку.
 require 'bundler/capistrano'
-require "delayed/recipes" 
+require "delayed/recipes"
 
 
 set :whenever_command, "rvm use 1.9.3 do bundle exec whenever"
@@ -76,7 +76,7 @@ role :db,             deploy_server, :primary => true
 
 # Следующие строки необходимы, т.к. ваш проект использует rvm.
 set :rvm_ruby_string, "1.9.3"
-set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake" 
+set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake"
 set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
 
 # Настройка системы контроля версий и репозитария,
@@ -91,7 +91,7 @@ set :scm,             :git
 #set :repository,      "ssh://#{user}@#{deploy_server}/home/#{user}/git/#{application}.git"
 
 ## Если ваш репозиторий в GitHub, используйте такую конфигурацию
-set :repository,    "git@github.com:babrovka/krasivo.git"
+set :repository,    "git@github.com:db87987/krasivo.git"
 
 ## --- Ниже этого места ничего менять скорее всего не нужно ---
 
@@ -133,7 +133,7 @@ namespace :deploy do
   end
 end
 
-set :rails_env, "production" #added for delayed job 
+set :rails_env, "production" #added for delayed job
 
 
 after "deploy", "deploy:cleanup"
