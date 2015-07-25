@@ -6,7 +6,7 @@ ru:
   details: "Детали"
   properties: "Свойства"
   title: "Название"
-  image: "Изображение"  
+  image: "Изображение"
   event_type: "Тип мероприятия"
   recipe_type: "Тип рецепта"
   front_images: "Изображение для слайдера"
@@ -54,7 +54,7 @@ ru:
           attributes:
             email:
               taken: "Подписка на такой емайл уже существует"
-    models: 
+    models:
       album:
         one: "Альбом"
         few: "Альбомы"
@@ -112,22 +112,25 @@ ru:
       course:
           one: "Курс"
           other: "Курсы"
+      contacts_page:
+          one: "Контакты"
+          other: "Контакты"
     attributes:
       recipe:
         title: "Название"
-        text: "Описание" 
+        text: "Описание"
         seo_url: "SEO адрес"
         html_title: "HTML заголовок"
         meta_description: "МЕТА описание"
         image: "Изображение"
         shorttext: "Краткий текст"
-        recipe_type_id: "Тип рецепта"       
+        recipe_type_id: "Тип рецепта"
       event:
         title: "Название"
         price: "Стоимость"
         date: "Дата"
-        text: "Описание" 
-        shorttext: "Текст для главной" 
+        text: "Описание"
+        shorttext: "Текст для главной"
         eventdetails: "Детали занятия"
         main: "Разместить на главной?"
         published: "Опубликован"
@@ -142,8 +145,8 @@ ru:
         title: "Название"
         price: "Стоимость"
         date: "Дата"
-        text: "Описание" 
-        shorttext: "Текст для главной" 
+        text: "Описание"
+        shorttext: "Текст для главной"
         eventdetails: "Детали занятия"
         main: "Разместить на главной?"
         published: "Опубликован"
@@ -157,7 +160,7 @@ ru:
       event_type:
         title: "Название"
       recipe_type:
-        title: "Название"    
+        title: "Название"
       photo:
         title: "Название"
         image: "Изображение"
@@ -236,3 +239,5 @@ ru:
         position: "Положение"
         title: "Заголовок"
         link: "Ссылка"
+      contacts_page:
+        text: 'Текст'
