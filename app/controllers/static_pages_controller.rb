@@ -11,18 +11,18 @@ class StaticPagesController < ApplicationController
     @courses = Event.courses.published.order("date desc").limit(3)
     @slides = Slide.all
   end
-  
+
   def contacts
     @event = Event.published.future.order("date asc").first
     @events = Event.published.future.order("date asc").limit(3)
   end
-  
+
   def shcool
   end
-  
+
   def services
   end
-  
+
   def vacancy
     @page = Page.find_by_section('vacancy')
   end
